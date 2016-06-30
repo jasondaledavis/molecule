@@ -1,0 +1,348 @@
+/*GLOBAL STYLES*/
+body {
+    margin: 0;
+    min-height: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+body:before {
+    content: "";
+    position: fixed;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    z-index: 1000;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6, p {
+    margin-bottom: 30px;
+}
+
+/* Links */
+a {
+    .transition;
+    text-decoration: none;
+    color: @Links;
+    
+    &:hover {
+        text-decoration: none;
+        color:@Links-hover;
+    }
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+hr {
+  -ms-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+p iframe {
+    width:100%;
+}
+
+/* List Items */
+ul,
+ol {
+  list-style-position: inside;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+li {
+  padding-bottom: 10px;
+}
+
+blockquote {
+  font-style: italic;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  
+}
+
+cite {
+  margin-bottom: 20px;
+  display: block;
+  font-style: normal;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Text Highlight */
+::-moz-selection,
+::selection {
+    background:@Main;
+    text-shadow: none;
+    color: @White;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: solid 1px;
+  padding: 12px;
+}
+
+td,
+th {
+  padding: 4px;
+}
+
+/*classes to make themechecker happy*/
+.bypostauthor,
+.commentlist .bypostauthor {
+    background:@White;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:focus {
+    background-color: @White;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: @Black;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar. */
+}
+
+/* MAIN CONTAINER */
+.page-content {
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin:0 auto;
+    padding:40px 0;
+}
+
+.centered {
+    margin:0 auto;
+    text-align: center;
+}
+
+/* TOOLTIPS */
+a.tooltip {
+    outline:none; 
+    color: @Gray !important;
+    
+        span {
+            z-index:10;
+            display:none; 
+            padding:0 20px 14px;
+            margin-top:10px; 
+            margin-left:8px;
+            width:300px; 
+            line-height:26px;
+            text-align: left;
+            .border-radius;
+            box-shadow: 5px 5px 8px @Gray;
+
+            &:hover span{
+                display:inline; 
+                position:absolute; 
+                color: @Gray;
+                border:1px solid @Gray; 
+                background:@lightWhite;
+
+            strong {
+                line-height:30px;
+            
+                &:hover {
+                    text-decoration:none;
+                } 
+            }
+        }
+    }
+}
+
+.callout {
+    z-index:20;
+    position:absolute;
+    top:30px;
+    border:0;
+    left:-12px;
+}
+
+/* THEME WP GALLERY */
+.molecule-gallery-thumbs{
+    clear:left;
+    margin-top:35px;
+
+    li{
+        float:left;
+        margin-right:10px;
+        img{
+            vertical-align:bottom;
+        }
+    }
+}
+
+/* Item specific clearing */
+.post-excerpt.clearcol {
+    clear: both;
+}
+
+/* WP Styles for Images */
+.alignleft,
+.alignleft img {
+    margin-right: 1.5em;
+    margin-bottom: 1.5em;
+    float: left;
+}
+
+.alignright,
+.alignright img {
+    margin-left: 1.5em;
+    margin-bottom: 1.5em;
+    float: right;
+}
+
+.aligncenter,
+.aligncenter img {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    clear: both;
+}
+
+.wp-caption {
+    max-width: 100%;
+
+    img {
+        margin: 0;
+        padding: 0;
+        border: 0 none;
+    }
+}
+
+.wp-caption p.wp-caption-text {
+    color: @White;
+    background-color: @Gray;
+    padding: 6px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.wp-caption.alignleft {
+    text-align: left;
+    margin-right: 1.1em;
+    margin-bottom: 1.1em;
+}
+
+.wp-caption.alignright {
+    text-align: right;
+    margin-left: 1.1em;
+    margin-bottom: 1.1em;
+}
+
+.wp-caption.aligncenter {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    clear: both;
+}
+
+/* Single Portfolio Navigation
+------------------------------------------------*/
+.project-nav {
+    display: inline-block;
+    width: 100%;
+    margin: 30px 0 0 0;
+    list-style: none;
+    position: relative;
+    font-size:30px;
+}
+.project-nav .back {
+    position: absolute;
+    left: 50%;
+    display: inline-block;
+    font-size: 27px;
+}
+.project-nav .next,
+.project-nav .prev {
+    display: inline-block;
+}
+.project-nav .prev {
+    position: absolute;
+    left: 0;
+}
+.project-nav .next {
+    position: absolute;
+    right: 0;
+}
+.project-nav .back a,
+.project-nav .next a,
+.project-nav .prev a {
+    color: @Main;
+    &:hover {
+        color: @Secondary;
+    }
+} 
+.project-desc {
+    margin:40px;
+    color:@White;
+}
+
+.jetpack-portfolio p:first-of-type {
+    font-weight: bold;
+}
+
+/*Search Results Page*/
+.search.search-no-results form#searchform.searchbar select {
+    background: @White url(../img/arrow.png) 97% 59% no-repeat;
+    color: @Main;
+    padding: 10px 4px;
+    width: 100%;
+    height: 50px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.error404 h2,
+.search h1 {
+    margin-top: 40px;
+    a{
+        color: @Main;
+        text-decoration: none;
+        &:hover{color:@Secondary;}
+    }
+}

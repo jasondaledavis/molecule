@@ -1,0 +1,121 @@
+/* ======================= */
+/* PLUGINS
+/* ======================= */
+/*----------------------------------------------*/
+/* Visual Composer
+/*----------------------------------------------*/
+/*.vc_row {
+    padding:40px 0;
+}*/
+
+.mol-row h2.widgettitle {
+    color:@White;
+    .font-size(1);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.mol-row .widget.widget_meta ul li,
+.mol-row .widget.widget_categories ul li,
+.mol-row .widget_recent_entries ul li {
+    list-style-type: square;
+    color: @White;
+    a {color:@White;}
+}
+
+
+/*----------------------------------------------*/
+/* Moto Slider
+/*----------------------------------------------*/
+/*.ms_layers_wrapper h1 {
+    font-size:64px;
+    line-height:54px;
+    margin-bottom:30px;
+     word-wrap: break-word
+}
+.ms_layers_wrapper h2 {
+    font-size:24px;
+    line-height:28px;
+    margin-bottom:10px;
+     word-wrap: break-word
+}
+.ms_layers_wrapper h3 {
+    font-size:18px;
+    line-height:14px;
+    margin-bottom:30px;
+     word-wrap: break-word
+}*/
+
+.mpsl-layer.mpsl-header-dark, .mpsl-layer.mpsl-header-white {
+    font-weight: bold !important;
+    font-family: 'Playfair Display', sans-serif !important;
+}
+
+/*----------------------------------------------*/
+/* Gravity Forms theme customizations
+------------------------------------------------*/
+.gform_wrapper .gform_footer input.button, 
+.gform_wrapper .gform_footer input[type=submit], 
+.gform_wrapper .gform_footer input[type=image] {
+    padding: 12px 20px 12px 20px;
+    border: 0;
+    display: inline-block;
+    text-transform: uppercase;
+    width: auto;
+    background: @Links;
+    box-shadow: -5px 5px 0 rgba(0,0,0,0.1);
+    text-align: center;
+    color: @White;
+    .border-radius;
+    cursor: pointer;
+    .transition;
+    &:hover {
+        background:@Links-hover;
+        color: @White;
+        box-shadow: -2px 2px 0 rgba(0,0,0,0.1);
+    }
+}
+.gform_wrapper input[type=text], 
+.gform_wrapper input[type=url], 
+.gform_wrapper input[type=email], 
+.gform_wrapper input[type=tel], 
+.gform_wrapper input[type=number], 
+.gform_wrapper input[type=password],
+.gform_wrapper select, 
+.gform_wrapper textarea {
+    padding: 10px 8px !important;
+    outline: none;
+    margin: 0;
+    width: 100%;
+    .border-radius;
+    display: inline-block;
+    margin-bottom: 20px;
+    .box-sizing;
+    box-shadow: none;
+    color: @Black;
+    background: @lightWhite;
+    border:solid 1px @Gray;
+    &:focus {
+            border:solid 1px @Main;
+        }
+}
+
+.gform_wrapper ::-webkit-input-placeholder {
+   color: @Gray;
+}
+
+.gform_wrapper :-moz-placeholder { 
+   color: @Gray;
+}
+
+.gform_wrapper ::-moz-placeholder {  
+   color: @Gray;
+}
+
+.gform_wrapper :-ms-input-placeholder {  
+    color: @Gray;
+}
+
+.gform_wrapper .ginput_complex label,
+.gform_wrapper .gfield_required {display: none !important;}
