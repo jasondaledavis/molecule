@@ -327,30 +327,6 @@ if (!class_exists('Redux_Framework_config')) {
                 'heading'   => __('Header Settings', 'molecule'),
                 'desc'      => __('<p class="description">Settings for your theme header area.</p>', 'molecule'),
                 'fields'    => array(
-                    // array(
-                    //     'id'        => 'header-slider',
-                    //     'type'      => 'text',
-                    //     'title'     => __( 'Homepage Header Slider', 'molecule' ),
-                    //     'subtitle'  => __( 'Please add your Master Slider shortcode to this field.<br /><br /><em>eg;</em> [slider id="1"]', 'molecule' )
-                    // ),
-                    // array(
-                    //     'id'        => 'overlay-show-hide',
-                    //     'type'      => 'switch',
-                    //     'title'     => __('Header Overlay Visibility', 'molecule'),
-                    //     'subtitle'  => __('Toggle the visibility of the overlay in the headers.', 'molecule'),
-                    //     'default'   => false,
-                    //     'on'        => 'Show',
-                    //     'off'       => 'Hide',
-                    // ),
-                    // array(
-                    //     'id'        => 'separator-show-hide',
-                    //     'type'      => 'switch',
-                    //     'title'     => __('Header Separator Visibility', 'molecule'),
-                    //     'subtitle'  => __('Toggle the visibility of the separator in the headers.', 'molecule'),
-                    //     'default'   => true,
-                    //     'on'        => 'Show',
-                    //     'off'       => 'Hide',
-                    // ),
                     array(
                         'id'        => 'header-top-light-background-color',
                         'type'      => 'color',
@@ -664,7 +640,7 @@ if (!class_exists('Redux_Framework_config')) {
                                 'text-align'  => 'center',
                                 'line-height'  => '55px',
                                 'font-weight'  => '700', 
-                                'color'  => '#ffffff',
+                                'color'  => '#102229',
                                 'font-family' => 'Playfair Display', 
                                 'google'      => true
                             ),
