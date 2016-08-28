@@ -1,37 +1,23 @@
 <?php
 //================================================================================//
-// Define Constants
-//================================================================================//
-// General Directories
-define( 'CAPSTONE_THEME_DIR', get_template_directory() . '/' );
-define( 'CAPSTONE_THEME_URI', get_template_directory_uri() . '/' );
-// CSS & JS Directories
-define( 'CAPSTONE_THEME_JS_URI', get_template_directory_uri().'/assets/js/' );
-define( 'CAPSTONE_THEME_CSS_URI', get_template_directory_uri().'/assets/css/' );
-//================================================================================//
-// Molecule functions and definitions */
-//================================================================================//
-//================================================================================//
-//================================================================================//
-// Register the Redux Framework and Config file
-//================================================================================//
-if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/capstone/redux/ReduxCore/framework.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/capstone/redux/ReduxCore/framework.php' );
-}
-if ( !isset( $redux_config ) && file_exists( dirname( __FILE__ ) . '/capstone/redux/config/framework-config.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/capstone/redux/config/framework-config.php' );
-}
-//================================================================================//
 // Register the themes custom functions and supporting files/directories
 //================================================================================//
-require_once CAPSTONE_THEME_DIR . '/capstone/inc/theme-function.php';
-
+require get_template_directory() . '/inc/theme-function.php';
 /**
  * Molecule only works in WordPress 4.4 or later.
  */
 if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
-    require CAPSTONE_THEME_DIR . '/inc/back-compat.php';
+    require get_template_directory() . '/inc/back-compat.php';
 }
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
 
 if ( ! function_exists( 'molecule_setup' ) ) :
 /**
@@ -52,10 +38,11 @@ function molecule_setup() {
      * If you're building a theme based on Molecule, use a find and replace
      * to change 'molecule' to the name of your theme in all the template files
      */
-    load_theme_textdomain( 'molecule', CAPSTONE_THEME_DIR .'languages' );
+    load_theme_textdomain( 'molecule', get_template_directory() .'languages' );
 
     // Add default posts and comments RSS feed links to head.
     add_theme_support( 'automatic-feed-links' );
+
 
     /*
      * Let WordPress manage the document title.
@@ -64,6 +51,14 @@ function molecule_setup() {
      * provide it for us.
      */
     add_theme_support( 'title-tag' );
+
+    add_theme_support( 'custom-logo', array(
+      'height'      => 800,
+      'width'       => 1200,
+      'flex-height' => true,
+      'flex-width' => true,
+      'header-selector' => '.site-title a',
+    ) );
 
     /*
      * Enable support for Post Thumbnails on posts and pages.
@@ -75,10 +70,11 @@ function molecule_setup() {
     add_image_size( 'news-large', 1200, 360, true ); // Large Post Thumbnail (appears on single post and archive pages)
     add_image_size( 'header-image-full', 2000, 800, true); // Page Header Image
 
-    // This theme uses wp_nav_menu() in one location.
+    // This theme uses wp_nav_menu() in two locations.
     register_nav_menus( array(
-          'main' => __( 'Header Navigation', 'molecule' ),
-        ) );
+      'primary' => __( 'Primary Menu', 'molecule' ),
+      'social'  => __( 'Social Links Menu', 'molecule' ),
+    ) );
 
     /*
      * Switch default core markup for search form, comment form, and comments
@@ -96,9 +92,14 @@ function molecule_setup() {
     * This theme styles the visual editor to resemble the theme style,
     * specifically font, colors, icons, and column width.
     */
-    // add_editor_style( array( 'css/editor-style.css', molecule_fonts_url() ) );
+    add_editor_style( array( 'assets/css/editor.css', molecule_fonts_url() ) );
+
+    // Indicate widget sidebars can use selective refresh in the Customizer.
+    add_theme_support( 'customize-selective-refresh-widgets' );
+
 }
 endif; // molecule_setup
+
 add_action( 'after_setup_theme', 'molecule_setup' );
 
 /**
@@ -149,6 +150,47 @@ function molecule_widgets_init() {
 }
 add_action( 'widgets_init', 'molecule_widgets_init' );
 
+if ( ! function_exists( 'molecule_fonts_url' ) ) :
+/**
+ * Register Google fonts for Molecule.
+ *
+ * Create your own molecule_fonts_url() function to override in a child theme.
+ *
+ * @since Molecule 1.0
+ *
+ * @return string Google fonts URL for the theme.
+ */
+function molecule_fonts_url() {
+  $fonts_url = '';
+  $fonts     = array();
+  $subsets   = 'latin,latin-ext';
+
+  /* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
+  if ( 'off' !== _x( 'on', 'Merriweather font: on or off', 'molecule' ) ) {
+    $fonts[] = 'Merriweather:400,700,900,400italic,700italic,900italic';
+  }
+
+  /* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
+  if ( 'off' !== _x( 'on', 'Playfair+Display font: on or off', 'molecule' ) ) {
+    $fonts[] = 'Playfair+Display:400,700';
+  }
+
+  /* translators: If there are characters in your language that are not supported by Inconsolata, translate this to 'off'. Do not translate into your own language. */
+  if ( 'off' !== _x( 'on', 'Abril+Fatface font: on or off', 'molecule' ) ) {
+    $fonts[] = 'Abril+Fatface:400';
+  }
+
+  if ( $fonts ) {
+    $fonts_url = add_query_arg( array(
+      'family' => urlencode( implode( '|', $fonts ) ),
+      'subset' => urlencode( $subsets ),
+    ), 'https://fonts.googleapis.com/css' );
+  }
+
+  return $fonts_url;
+}
+endif;
+
 /**
  * Handles JavaScript detection.
  *
@@ -169,30 +211,40 @@ add_action( 'wp_head', 'molecule_javascript_detection', 0 );
 
 function molecule_scripts() {
 
-  if ( !is_admin() ) {
-    
-    wp_enqueue_script( 'jquery' );
+    // Add custom fonts, used in the main stylesheet.
+    wp_enqueue_style( 'molecule-fonts', molecule_fonts_url(), array(), null );
 
-    // Register Scripts
-      wp_register_script( 'main-js', CAPSTONE_THEME_JS_URI .'min/main-min.js', array('jquery'), false, true );
-     
-    // Register Styles
-      wp_register_style( 'style', CAPSTONE_THEME_URI .'style.css' );
-      wp_register_style( 'main', CAPSTONE_THEME_URI .'assets/css/main.css' );
-      
-      if ( !is_admin() && isset($GLOBALS['capstone_molecule']['custom-css']) && !empty($GLOBALS['capstone_molecule']['custom-css']) ) {
-          wp_add_inline_style( 'style', $GLOBALS['capstone_molecule']['custom-css'] );
+    // Enqueue Scripts
+      wp_enqueue_script( 'main-js', get_template_directory_uri() .'/assets/js/min/main-min.js', array('jquery'), false, true );
+      wp_enqueue_script( 'fitvids-min-js', get_template_directory_uri() .'/assets/js/min/jquery.fitvids-min.js', array('jquery'), false, true );
+
+      // Load the html5 shiv.
+      wp_enqueue_script( 'molecule-html5-min', get_template_directory_uri() . '/assets/js/min/html5-min.js', array(), '3.7.3' );
+      wp_script_add_data( 'molecule-html5-min', 'conditional', 'lt IE 9' );
+
+      wp_enqueue_script( 'molecule-skip-link-focus-fix-min', get_template_directory_uri() . '/assets/js/min/skip-link-focus-fix-min.js', array(), '20160816', true );
+
+      if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
       }
-      
-    // Enqueue Scripts (Global)
-      wp_enqueue_script( 'main-js' );
-      
+
+      if ( is_singular() && wp_attachment_is_image() ) {
+        wp_enqueue_script( 'molecule-keyboard-image-navigation-min', get_template_directory_uri() . '/js/min/keyboard-image-navigation-min.js', array( 'jquery' ), '20160816' );
+      }
+
+      wp_enqueue_script( 'molecule-script', get_template_directory_uri() . '/assets/js/min/functions-min.js', array( 'jquery' ), '20160816', true );
+
+      wp_localize_script( 'molecule-script', 'screenReaderText', array(
+        'expand'   => __( 'expand child menu', 'molecule' ),
+        'collapse' => __( 'collapse child menu', 'molecule' ),
+      ) );
+     
     // Enqueue Styles (Global)
-      wp_enqueue_style( 'style' );
-      wp_enqueue_style( 'main' );
-  }
+      wp_enqueue_style( 'molecule-style', get_stylesheet_uri() );
+      wp_enqueue_style( 'main', get_template_directory_uri() .'/assets/css/main.css' );
 
 }
+
 add_action( 'wp_enqueue_scripts', 'molecule_scripts' );
 
 /**

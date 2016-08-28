@@ -20,11 +20,7 @@ get_header( 'inner' ); ?>
                
                 <?php the_content(); ?>  
 
-                    <?php if ( is_singular(array('post')) ) { ?>
-
                         <?php get_template_part( 'partials/social', 'share' ); ?>
-
-                    <?php } ?>
 
                     <div class="post-tags">
                         
@@ -39,42 +35,6 @@ get_header( 'inner' ); ?>
             </article><!-- end .post-single -->
 
         <?php endwhile; endif; ?>
-
-            <div class="blog-content-btm">
-
-                <div class="grid wfull">
-
-                    <div class="row">
-                        
-                        <div class="c12">
-
-                        <?php if ( !is_singular( array('page', 'attachment', 'post') ) ){ ?>
-
-                            <ul class="project-nav">
-                                <li class="prev"><?php next_post_link('%link', '<i class="fa fa-angle-left"></i>'); ?></li>
-                                <li class="back"><a href="<?php echo get_permalink($capstone_molecule['general-portfolio-page']); ?>"><i class="fa fa-th"></i></a></li>
-                                <li class="next"><?php previous_post_link('%link', '<i class="fa fa-angle-right"></i>'); ?></li>
-                            </ul><!-- .project-nav -->
-
-                        <?php //} elseif ( is_singular() ) { ?>
-
-                            <?php //if ( is_active_sidebar( 'blog-below-content' )  ) : ?>
-
-                            <?php //if ( !function_exists( 'dynamic_sidebar' ) || !dynamic_sidebar( "blog-below-content" ) ) : ?>
-
-                            <?php// endif; ?>
-
-                            <?php //endif; ?>
-
-                        <?php } ?>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
 
         <?php if ( is_singular(array('post')) ) { ?>
 

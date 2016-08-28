@@ -172,7 +172,7 @@
 
         <div class="custom-headings-inner">
 
-            <h1 class="page-title entry-title"><?php _e('Search Results For: ');?><?php the_search_query() ?></h1>
+            <h1 class="page-title entry-title"><?php _e('Search Results For: ', 'molecule');?><?php the_search_query() ?></h1>
 
         </div>
 

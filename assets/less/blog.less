@@ -1,22 +1,5 @@
 /* General*/
-h2.entry-title {
-    text-align: center;
-}
-
-.blog h1.page-title.entry-title {
-    text-transform: uppercase;
-}
-/*
-.single .page-title {
-    margin:0;
-    padding:0;
-}*/
-
-.single .page-subtitle {
-    margin-top: 0;
-    margin-bottom: 0;
-    .font-size(1);
-}
+.sticky {color: @Main} /*makes theme checker happy*/
 
 /* Search Bar */
 .searchbar input[type="text"],
@@ -69,7 +52,7 @@ h2.entry-title {
 }
 
 .post-thumbnail a img:hover {
-    .opacity;
+    .opacity(.8);
     .transition;         
 }
 
@@ -78,7 +61,7 @@ h2.entry-title {
     display: inline;
     list-style-type: none;
     a {
-        color:@Secondary;
+        color:@Main;
         &:hover {
             color:@Secondary-hover;
         }
@@ -126,6 +109,10 @@ h2.entry-title {
 }
 
 /*Blog Single Post Detail Styles*/
+.single .page-subtitle {
+    .font-size(4);
+}
+
 .entry {
     width: 66.66%;
     margin: 40px auto 0;
@@ -147,6 +134,7 @@ h2.entry-title {
     a{
         border-bottom: dotted 1px;
         word-wrap: break-word;
+        font-weight: bold;
     }
 
 }
@@ -162,31 +150,21 @@ h2.entry-title {
     text-transform: uppercase;
     width: auto;
     background: @Main;
-    /*box-shadow: -5px 5px 0 rgba(0,0,0,0.1);*/
     text-align: center;
     color: @White;
     .border-radius;
     &:hover {
         background:@White;
         color: @Main;
-        /*box-shadow: -2px 2px 0 rgba(0,0,0,0.1);*/
     }
 }
-/*
-.read-more:after {
-    content: "\f178";
-    font-family: FontAwesome;
-    padding-left: 12px;
-    padding-top: 4px;
-}*/
-
 .custom-headings-inner .meta-details p {
-    color: @White;
+    color: @Main;
     a{
         margin-right: 5px;
-        color: @lightWhite;
+        color: @Main;
         &:hover{
-            color:@Secondary;
+            .opacity;
         }
     }
 }
@@ -608,15 +586,40 @@ h2.entry-title {
 }
 
 /*Social share on single posts*/
+h3.sd-title {
+    margin:80px 0 50px;
+    font-weight: normal;
+    .font-size(1) !important;
+    font-family: 'Playfair Display', cursive;
+}
 .social-share {
     margin:80px 0 50px;
-    h4 {.font-size(1);}
-    li {
-        display: inline;
-        list-style-type: none;
-        margin-right: 0px;
-        a{
-            border-bottom: none;
+        h4 {
+            .font-size(1);
+            font-family: 'Playfair Display', cursive;
         }
-    }
+        ul {
+            margin-left: 0;
+        }
+        li {
+            display: inline;
+            list-style-type: none;
+            margin-right: 6px;
+            a{
+                border-bottom: none;
+                .font-size(2.2);
+            }
+        }
+}
+.social-share .fa-facebook-square {
+    color:#3b5998;
+}
+.social-share .fa-twitter-square {
+    color:#0084b4;
+}
+.social-share .fa-linkedin-square {
+    color:#0077B5;
+}
+.social-share .fa-google-plus-square {
+    color: #d34836;
 }

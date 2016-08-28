@@ -18,21 +18,6 @@ jQuery(document).ready(function ($) {
     
     });
 
-    /* hamburger navigation
-    --------------------------------------------------*/
-
-    // jQuery(function($){
-    //     $( '.overlay-mobile-nav' ).click(function(){
-    //         $('.overlay-responsive-menu').addClass('overlay-expand');
-    //         $('.overlay-menu-btn').addClass('overlay-btn-none');
-    //     });
-        
-    //      $( '.overlay-close-btn' ).click(function(){
-    //         $('.overlay-responsive-menu').removeClass('overlay-expand');
-    //         $('.overlay-menu-btn').removeClass('overlay-btn-none');
-    //     });
-    // });
-
     /* Sticky navigation
     --------------------------------------------------*/
     
@@ -53,7 +38,7 @@ jQuery(document).ready(function ($) {
     /* FitVids Responsive Video
     --------------------------------------------------*/
     
-    // $('.grid').fitVids();
+    $('.grid').fitVids();
     
     /* Title fade on scroll
     --------------------------------------------------*/
@@ -63,7 +48,7 @@ jQuery(document).ready(function ($) {
     if(windowWidth > 1024) {
     
         $(window).scroll(function () {
-            var $titleFade = $('.custom-headings, .custom-header-image, .header-pattern');
+            var $titleFade = $('.custom-headings, .custom-header-image');
             var windowScroll = $(this).scrollTop();
             $titleFade.css({
                 'margin-top': -(windowScroll / 0) + "px",
@@ -76,17 +61,17 @@ jQuery(document).ready(function ($) {
     /* Scroll
     --------------------------------------------------*/
 
-    $.fn.scrollView = function() {
-        return this.each(function() {
-            $('html, body').animate({
-                scrollTop: $(this).offset().top - 150
-            }, 600);
-        });
-    };
+    // $.fn.scrollView = function() {
+    //     return this.each(function() {
+    //         $('html, body').animate({
+    //             scrollTop: $(this).offset().top - 150
+    //         }, 600);
+    //     });
+    // };
 
-    $('#scroll-link').click(function(event) {
-        event.preventDefault();
-        $('.page-content').scrollView();
-    });
+    // $('#scroll-link').click(function(event) {
+    //     event.preventDefault();
+    //     $('.page-content').scrollView();
+    // });
 
 });
