@@ -55,10 +55,10 @@ function molecule_custom_header_and_background() {
 		'width'                  => 1200,
 		'height'                 => 280,
 		'flex-height'            => true,
-		'flex-width'            => true,
+		'flex-width'             => true,
 		'wp-head-callback'       => 'molecule_header_style',
-		'header-selector' => '.site-title a',
-		'header-text'     => true,
+		'header-selector'        => '.site-title a',
+		'header-text'            => true,
 	) ) );
 }
 add_action( 'after_setup_theme', 'molecule_custom_header_and_background' );
@@ -251,11 +251,11 @@ function molecule_get_color_schemes() {
 		'default' => array(
 			'label'  => __( 'Default', 'molecule' ),
 			'colors' => array(
-				'#1a1a1a',
 				'#ffffff',
-				'#007acc',
-				'#1a1a1a',
-				'#686868',
+				'#ffffff',
+				'#a88c5e',
+				'#102229',
+				'#cccccc',
 			),
 		),
 		'dark' => array(
@@ -264,7 +264,7 @@ function molecule_get_color_schemes() {
 				'#262626',
 				'#1a1a1a',
 				'#9adffd',
-				'#e5e5e5',
+				'#686868',
 				'#c1c1c1',
 			),
 		),
@@ -462,7 +462,7 @@ function molecule_get_color_scheme_css( $colors ) {
 	}
 
 	/* Page Background Color */
-	.site {
+	.page-content {
 		background-color: {$colors['page_background_color']};
 	}
 
@@ -508,14 +508,12 @@ function molecule_get_color_scheme_css( $colors ) {
 	.main-navigation a:focus,
 	.dropdown-toggle:hover,
 	.dropdown-toggle:focus,
-	.social-navigation a:hover:before,
-	.social-navigation a:focus:before,
 	.post-navigation a:hover .post-title,
 	.post-navigation a:focus .post-title,
 	.tagcloud a:hover,
 	.tagcloud a:focus,
-	.site-branding .site-title a:hover,
-	.site-branding .site-title a:focus,
+	.site-title a:hover,
+	.site-title a:focus,
 	.entry-title a:hover,
 	.entry-title a:focus,
 	.entry-footer a:hover,
@@ -527,9 +525,7 @@ function molecule_get_color_scheme_css( $colors ) {
 	.comment-reply-link,
 	.comment-reply-link:hover,
 	.comment-reply-link:focus,
-	.required,
-	.site-info a:hover,
-	.site-info a:focus {
+	.required {
 		color: {$colors['link_color']};
 	}
 
@@ -580,12 +576,11 @@ function molecule_get_color_scheme_css( $colors ) {
 	.main-navigation a,
 	.menu-toggle,
 	.dropdown-toggle,
-	.social-navigation a,
 	.post-navigation a,
 	.pagination a:hover,
 	.pagination a:focus,
 	.widget-title a,
-	.site-branding .site-title a,
+	.site-title a,
 	.entry-title a,
 	.page-links > .page-links-title,
 	.comment-author,
@@ -638,9 +633,6 @@ function molecule_get_color_scheme_css( $colors ) {
 	 * IE8 and earlier will drop any block with CSS3 selectors.
 	 * Do not combine these styles with the next block.
 	 */
-	body:not(.search-results) .entry-summary {
-		color: {$colors['secondary_text_color']};
-	}
 
 	blockquote,
 	.post-password-form label,
@@ -669,8 +661,6 @@ function molecule_get_color_scheme_css( $colors ) {
 	.comment-awaiting-moderation,
 	.logged-in-as,
 	.form-allowed-tags,
-	.site-info,
-	.site-info a,
 	.wp-caption .wp-caption-text,
 	.gallery-caption,
 	.widecolumn label,
@@ -708,7 +698,6 @@ function molecule_get_color_scheme_css( $colors ) {
 	.main-navigation .primary-menu,
 	.menu-toggle,
 	.dropdown-toggle:after,
-	.social-navigation a,
 	.image-navigation,
 	.comment-navigation,
 	.tagcloud a,
@@ -806,9 +795,6 @@ function molecule_page_background_color_css() {
 
 	$css = '
 		/* Custom Page Background Color */
-		.site {
-			background-color: %1$s;
-		}
 
 		mark,
 		ins,
@@ -886,14 +872,12 @@ function molecule_link_color_css() {
 		.main-navigation a:focus,
 		.dropdown-toggle:hover,
 		.dropdown-toggle:focus,
-		.social-navigation a:hover:before,
-		.social-navigation a:focus:before,
 		.post-navigation a:hover .post-title,
 		.post-navigation a:focus .post-title,
 		.tagcloud a:hover,
 		.tagcloud a:focus,
-		.site-branding .site-title a:hover,
-		.site-branding .site-title a:focus,
+		.site-title a:hover,
+		.site-title a:focus,
 		.entry-title a:hover,
 		.entry-title a:focus,
 		.entry-footer a:hover,
@@ -905,9 +889,7 @@ function molecule_link_color_css() {
 		.comment-reply-link,
 		.comment-reply-link:hover,
 		.comment-reply-link:focus,
-		.required,
-		.site-info a:hover,
-		.site-info a:focus {
+		.required {
 			color: %1$s;
 		}
 
@@ -999,12 +981,11 @@ function molecule_main_text_color_css() {
 		.main-navigation a,
 		.menu-toggle,
 		.dropdown-toggle,
-		.social-navigation a,
 		.post-navigation a,
 		.pagination a:hover,
 		.pagination a:focus,
 		.widget-title a,
-		.site-branding .site-title a,
+		.site-title a,
 		.entry-title a,
 		.page-links > .page-links-title,
 		.comment-author,
@@ -1076,7 +1057,6 @@ function molecule_main_text_color_css() {
 		.main-navigation .primary-menu,
 		.menu-toggle,
 		.dropdown-toggle:after,
-		.social-navigation a,
 		.image-navigation,
 		.comment-navigation,
 		.tagcloud a,
@@ -1172,8 +1152,6 @@ function molecule_secondary_text_color_css() {
 		.comment-awaiting-moderation,
 		.logged-in-as,
 		.form-allowed-tags,
-		.site-info,
-		.site-info a,
 		.wp-caption .wp-caption-text,
 		.gallery-caption,
 		.widecolumn label,

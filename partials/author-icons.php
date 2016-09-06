@@ -1,3 +1,12 @@
+<?php
+/**
+ * The template part for displaying an Author icons
+ *
+ * @package WordPress
+ * @subpackage Molecule
+ * @since Molecule 1.0
+ */
+?>
 <ul class="author-social-icons">
 
 <?php 

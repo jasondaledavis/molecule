@@ -1,0 +1,120 @@
+/*
+Theme Name: Molecule
+Description: Used to style the WooCommerce Shop Pages.
+*/
+.woocommerce-error, 
+.woocommerce-info, 
+.woocommerce-message,
+.woocommerce-info {
+    border-top-color: #a88c5e;
+}
+#add_payment_method table.cart td.actions .coupon .input-text, 
+.woocommerce-cart table.cart td.actions .coupon .input-text, 
+.woocommerce-checkout table.cart td.actions .coupon .input-text {
+	width: 100%;
+}
+.woocommerce div.product p.price, 
+.woocommerce div.product span.price,
+.woocommerce-info:before {
+    color: #a88c5e;
+}
+.woocommerce ul.products li.product .price {
+    color: #a88c5e;
+    display: block;
+    font-weight: 400;
+    margin-bottom: .5em;
+    font-size: .857em;
+}
+.woocommerce span.onsale {
+    min-height: 3.6em;
+    min-width: 3.6em;
+    padding: .202em;
+    font-weight: 700;
+    position: absolute;
+    text-align: center;
+    line-height: 3.236;
+    top: -.5em;
+    left: -.5em;
+    margin: 0;
+    border-radius: 100%;
+    background-color: #a88c5e;
+    color: #fff;
+    font-size: .857em;
+    -webkit-font-smoothing: antialiased;
+}
+.woocommerce ul.products li.product .price ins {
+    color:#686868;
+}
+
+.sidebar .woocommerce #respond input#submit, 
+.sidebar .woocommerce a.button, 
+.sidebar .woocommerce button.button, 
+.sidebar .woocommerce input.button {
+    margin-top: 30px;
+}
+
+
+.woocommerce #respond input#submit, 
+.woocommerce a.button, 
+.woocommerce button.button, 
+.woocommerce input.button {
+	padding: 12px 20px 12px 20px;
+    border: 0;
+    display: inline-block;
+    text-transform: uppercase;
+    width: 100%;
+    background: #1a1a1a;
+    text-align: center;
+    color: #ffffff;
+    border-radius:0;
+	white-space: nowrap;
+}
+.woocommerce .cart input.button[name="update_cart"],
+#add_payment_method .wc-proceed-to-checkout a.checkout-button, 
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button, 
+.woocommerce-checkout .wc-proceed-to-checkout a.checkout-button,
+tr td input.button,
+.woocommerce button.button.alt, 
+.woocommerce input.button.alt {
+    background-color: #1a1a1a;
+    color: #fff;
+    width: auto;
+    -webkit-font-smoothing: antialiased;
+}
+.woocommerce .cart input.button[name="update_cart"]:hover,
+#add_payment_method .wc-proceed-to-checkout a.checkout-button:hover, 
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover, 
+.woocommerce-checkout .wc-proceed-to-checkout a.checkout-button:hover,
+.woocommerce button.button.alt:hover, 
+.woocommerce input.button.alt:hover,
+.woocommerce #respond input#submit:hover, 
+.woocommerce a.button:hover, 
+.woocommerce button.button:hover, 
+.woocommerce input.button:hover {
+	background:#a88c5e;
+    color: #ffffff;
+}
+.woocommerce ul.products li.product h3 {
+    padding: .5em 0;
+    margin: 0 0 10px;
+    border-bottom: dotted 1px #a88c5e;
+}
+ul.products li.product, 
+.woocommerce-page ul.products li.product {
+    padding: 3px;
+    border: double #a88c5e;
+    /*width: 30.7%;*/
+}
+.woocommerce div.product form.cart .variations select,
+.woocommerce .woocommerce-ordering select {
+	background: #f8f8f8 url(../img/arrow.png) 97% 59% no-repeat;
+    color: #686868;
+    padding: 10px 4px;
+    width: 100%;
+    height: 50px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius:3px;
+    border-color: #686868;
+    cursor: pointer;
+}

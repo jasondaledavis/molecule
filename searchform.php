@@ -1,3 +1,12 @@
+<?php
+/**
+ * Template for displaying search forms in Molecule
+ *
+ * @package WordPress
+ * @subpackage Molecule
+ * @since Molecule 1.0
+ */
+?>
 <form class="searchbar" method="get" action="<?php echo home_url( '/' ); ?>">
 
 	<div class="input-prepend">

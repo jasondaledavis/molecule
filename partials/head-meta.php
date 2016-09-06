@@ -1,4 +1,12 @@
-<?php global $capstone_molecule; ?>
+<?php
+/**
+ * The template part for displaying an Head Meta
+ *
+ * @package WordPress
+ * @subpackage Molecule
+ * @since Molecule 1.0
+ */
+?>
 <!DOCTYPE html>
 <!--[if IE 9 ]><html <?php language_attributes(); ?> class="ie9"><![endif]-->
 <!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->

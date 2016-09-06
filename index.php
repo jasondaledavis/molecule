@@ -1,189 +1,132 @@
-<?php if (is_front_page() ) { ?>
 <?php
 /**
-* The main template file.
-*
-* @package molecule
-*/
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ * @link http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package WordPress
+ * @subpackage Molecule
+ * @since Molecule 1.0
+ */
+
 get_header(); ?>
-
-<?php } else { ?>
-
-<?php
-
-get_header( 'inner' ); ?>
-
-<?php } ?>
 
 <?php if ( is_active_sidebar( 'sidebar-blog' )  ) : ?>
 
-	<div class="grid">
+    <div class="grid">
 
-		<div class="row">
+        <div class="row">
 
-			<div class="c9">
+            <div class="c9">
+            
+                <div class="post-index">
 
-				<div class="post-index">
+                <?php if ( have_posts() ) : ?>
 
-					<?php $counter = 0; if ( have_posts() ) : while ( have_posts() ) : the_post(); 
+        		<?php if ( is_home() && ! is_front_page() ) : ?>
+        			<header>
+        				<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+        			</header>
+        		<?php endif; ?>
 
-					if(++$counter % 2 == 0) {
+        		<?php
+                    // Start the loop.
+                    while ( have_posts() ) : the_post();
 
-					if( class_exists ( 'Advads_Ad' ) ) { 
+                        /*
+                         * Include the Post-Format-specific template for the content.
+                         * If you want to override this in a child theme, then include a file
+                         * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                         */
+                        get_template_part( 'page-templates/content', get_post_format() );
 
-					echo 
-					'<div class="hs-ad">
-					<div class="grid">
-					<div class="row">
-					<div class="c9">';
+                    // End the loop.
+                    endwhile;
 
-					the_ad_placement('manual'); 
+                    // Previous/next page navigation.
+                    the_posts_pagination( array(
+                        'prev_text'          => __( '', 'molecule' ),
+                        'next_text'          => __( '', 'molecule' ),
+                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'molecule' ) . ' </span>',
+                    ) );
 
-					echo '</div>
-					</div>
-					</div>
-					</div>'; }
+                // If no content, include the "No posts found" template.
+                else :
+                    get_template_part( 'page-templates/content', 'none' );
 
-					} ?>
+                endif;
+                ?>
+               
+                </div><!-- end .post-index -->
 
-					<article <?php post_class( 'post-excerpt' ); ?>>
+            </div><!-- end .c9 -->
 
-						<div class="date-stamp">
-							<div class="month updated"><?php the_time( 'M' ); ?></div>
-							<div class="date-border"></div>
-							<div class="day updated"><?php the_time( 'd' ); ?></div>
-						</div>
+            <?php get_sidebar(); ?>
 
-						<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        </div><!-- end .row -->
 
-						<div class="meta-details">
-
-							<p><?php _e( '<i class="fa fa-clock-o"></i> Posted on', 'molecule' ); ?> <span class="post-date updated"><?php the_time( 'F jS Y' ); ?></span> / <?php _e( '<i class="fa fa-folder-open-o"></i> in', 'molecule' ); ?> <span><?php the_category( ' & ' ); ?></span> / <?php _e( '<i class="fa fa-comment-o"></i> with', 'molecule' ); ?> <span> <a href="<?php the_permalink(); ?>#comments"><?php $commentscount = get_comments_number(); echo $commentscount; ?> <?php _e( 'Comments', 'molecule' ); ?></a></span></p>
-
-						</div><!-- end .meta-details -->
-
-						<div class="post-thumbnail">
-
-							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'news-large' ); ?></a>
-
-						</div><!-- end .post-thumbnail -->
-
-						<?php the_excerpt(); ?>
-
-						<div class="btn">
-
-							<a class="read-more" href="<?php the_permalink(); ?>"><?php _e( 'Read Article', 'molecule' ); ?></a>
-
-						</div>
-
-					</article><!-- end .post-excerpt -->
-
-				<?php endwhile; endif; ?>
-
-				<?php if( function_exists( 'wp_pagenavi' ) ) { ?>
-				<?php wp_pagenavi(); ?>   
-				<?php } else { ?>      
-				<?php posts_nav_link( '&#8734;','&laquo;&laquo; Previous Posts','Older Posts &raquo;&raquo;' ); ?>
-				<?php } ?>
-
-				</div><!-- end .post-index -->
-
-			</div><!-- end .c9 -->
-
-		<?php get_sidebar(); ?>
-
-		</div><!-- end .row -->
-
-	</div><!-- end .grid -->
+    </div><!-- end .grid -->
 
 <?php elseif ( !is_active_sidebar( 'sidebar-blog' )  ) : ?>
 
-	<div class="grid wfull">
+    <div class="grid wfull">
 
-		<div class="row">
+        <div class="row">
 
-			<div class="c12">
+            <div class="c12">
 
-				<?php $counter = 0; if ( have_posts() ) : while ( have_posts() ) : the_post(); 
+                <div class="post-index">
 
-				if(++$counter % 2 == 0) {
+                    <?php if ( have_posts() ) : ?>
 
-				if( class_exists ( 'Advads_Ad' ) ) { 
+                    <?php if ( is_home() && ! is_front_page() ) : ?>
+                        <header>
+                            <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+                        </header>
+                    <?php endif; ?>
 
-				echo 
-				'<div class="hs-ad">
-				<div class="grid">
-				<div class="row">
-				<div class="c12">';
+                    <?php
+                        // Start the loop.
+                        while ( have_posts() ) : the_post();
 
-				the_ad_placement('manual'); 
+                            /*
+                             * Include the Post-Format-specific template for the content.
+                             * If you want to override this in a child theme, then include a file
+                             * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                             */
+                            get_template_part( 'page-templates/content', get_post_format() );
 
-				echo '</div>
-				</div>
-				</div>
-				</div>'; }
+                        // End the loop.
+                        endwhile;
 
-				} ?>
+                        // Previous/next page navigation.
+                        the_posts_pagination( array(
+                            'prev_text'          => __( '', 'molecule' ),
+                            'next_text'          => __( '', 'molecule' ),
+                            'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'molecule' ) . ' </span>',
+                        ) );
 
-				<article <?php post_class( 'post-excerpt' ); ?>>
+                    // If no content, include the "No posts found" template.
+                    else :
+                        get_template_part( 'page-templates/content', 'none' );
 
-					<div class="date-stamp">
-						<div class="month updated"><?php the_time( 'M' ); ?></div>
-						<div class="date-border"></div>
-						<div class="day updated"><?php the_time( 'd' ); ?></div>
-					</div>
+                    endif;
+                    ?>
 
-				<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                </div><!-- end .post-index -->
 
-					<div class="meta-details">
+            </div><!-- end .c12 -->
 
-						<p><?php _e( '<i class="fa fa-clock-o"></i> Posted on', 'molecule' ); ?> <span class="post-date updated"><?php the_time( 'F jS Y' ); ?></span> / <?php _e( '<i class="fa fa-folder-open-o"></i> in', 'molecule' ); ?> <span><?php the_category( ' & ' ); ?></span> / <?php _e( '<i class="fa fa-comment-o"></i> with', 'molecule' ); ?> <span> <a href="<?php the_permalink(); ?>#comments"><?php $commentscount = get_comments_number(); echo $commentscount; ?> <?php _e( 'Comments', 'molecule' ); ?></a></span></p>
+        </div><!-- end .row -->
 
-					</div><!-- end .meta-details -->
+    </div><!-- end .grid .wfull -->
 
-					<div class="post-thumbnail">
-
-						<a href="<?php the_permalink(); ?>">
-						<?php
-						if ( has_post_thumbnail($post->ID) ){   
-						$image = wp_get_attachment_image_src(get_post_thumbnail_id(), 'news-large');
-						$image = $image[0];
-						$alt = get_bloginfo( 'description' );
-						echo '<img src="'.$image.'" alt="'.$alt.'" />';
-						} else {  
-						$image = get_template_directory_uri() .'/assets/img/placeholders/landscape_placeholder.jpg'; 
-						$alt = get_bloginfo( 'description' );
-						echo '<img src="'.$image.'" alt="'.$alt.'" />';
-						}
-						?>
-						</a>
-
-					</div><!-- end .post-thumbnail -->
-
-				<?php the_excerpt(); ?>
-
-					<div class="btn">
-
-						<a class="read-more" href="<?php the_permalink(); ?>"><?php _e( 'Read Article', 'molecule' ); ?></a>
-
-					</div>
-
-				</article><!-- end .post-excerpt -->
-
-				<?php endwhile; endif; ?>
-
-				<?php if( function_exists( 'wp_pagenavi' ) ) { ?>
-				<?php wp_pagenavi(); ?>   
-				<?php } else { ?>      
-				<?php posts_nav_link( '&#8734;','&laquo;&laquo; Previous Posts','Older Posts &raquo;&raquo;' ); ?>
-				<?php } ?>
-
-			</div><!-- end .c12 -->
-
-		</div><!-- end .row -->
-
-	</div><!-- end .grid -->
-
+    
 <?php endif; ?>
 
 <?php get_footer(); ?>

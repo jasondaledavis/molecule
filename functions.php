@@ -1,4 +1,30 @@
 <?php
+/**
+ * Molecule functions and definitions
+ *
+ * Set up the theme and provides some helper functions, which are used in the
+ * theme as custom template tags. Others are attached to action and filter
+ * hooks in WordPress to change core functionality.
+ *
+ * When using a child theme you can override certain functions (those wrapped
+ * in a function_exists() call) by defining them first in your child theme's
+ * functions.php file. The child theme's functions.php file is included before
+ * the parent theme's file, so the child theme functions would be used.
+ *
+ * @link https://codex.wordpress.org/Theme_Development
+ * @link https://codex.wordpress.org/Child_Themes
+ *
+ * Functions that are not pluggable (not wrapped in function_exists()) are
+ * instead attached to a filter or action hook.
+ *
+ * For more information on hooks, actions, and filters,
+ * {@link https://codex.wordpress.org/Plugin_API}
+ *
+ * @package WordPress
+ * @subpackage Molecule
+ * @since Molecule 1.0
+ */
+ 
 //================================================================================//
 // Register the themes custom functions and supporting files/directories
 //================================================================================//
@@ -38,7 +64,7 @@ function molecule_setup() {
      * If you're building a theme based on Molecule, use a find and replace
      * to change 'molecule' to the name of your theme in all the template files
      */
-    load_theme_textdomain( 'molecule', get_template_directory() .'languages' );
+    load_theme_textdomain( 'molecule' );
 
     // Add default posts and comments RSS feed links to head.
     add_theme_support( 'automatic-feed-links' );
@@ -66,14 +92,13 @@ function molecule_setup() {
      * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
      */
     add_theme_support( 'post-thumbnails' );
-    add_image_size( 'news-thumb', 600, 600, true ); // News Thumbnail
-    add_image_size( 'news-large', 1200, 360, true ); // Large Post Thumbnail (appears on single post and archive pages)
+    add_image_size( 'post-thumbnail', 1200, 360, true ); // Large Post Thumbnail (appears on single post and archive pages)
     add_image_size( 'header-image-full', 2000, 800, true); // Page Header Image
 
     // This theme uses wp_nav_menu() in two locations.
     register_nav_menus( array(
       'primary' => __( 'Primary Menu', 'molecule' ),
-      'social'  => __( 'Social Links Menu', 'molecule' ),
+      // 'social'  => __( 'Social Links Menu', 'molecule' ),
     ) );
 
     /*
@@ -86,6 +111,23 @@ function molecule_setup() {
         'comment-list',
         'gallery',
         'caption',
+    ) );
+
+    /*
+   * Enable support for Post Formats.
+   *
+   * See: https://codex.wordpress.org/Post_Formats
+   */
+    add_theme_support( 'post-formats', array(
+      'aside',
+      'image',
+      'video',
+      'quote',
+      'link',
+      'gallery',
+      'status',
+      'audio',
+      'chat',
     ) );
 
     /*
@@ -134,20 +176,53 @@ function molecule_widgets_init() {
         'after_title' => '</h4>',
       ) );
 
-    if ( class_exists( 'WooCommerce' ) ) {
-                        
       register_sidebar( array(
-        'name' => 'Shop Sidebar',
-        'id'   => 'shop-sidebar',
+        'name' => 'Page Sidebar',
+        'id' => 'sidebar-page',
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
+        'after_widget' => "</div>",
         'before_title' => '<h4 class="widget-title">',
         'after_title' => '</h4>',
       ) );
 
-    } //end woo if
+      register_sidebar( array(
+        'name' => 'Footer Sidebar 1',
+        'id' => 'sidebar-footer-1',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => "</div>",
+        'before_title' => '<h4 class="widget-title">',
+        'after_title' => '</h4>',
+      ) );
+
+      register_sidebar( array(
+        'name' => 'Footer Sidebar 2',
+        'id' => 'sidebar-footer-2',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => "</div>",
+        'before_title' => '<h4 class="widget-title">',
+        'after_title' => '</h4>',
+      ) );
+
+      register_sidebar( array(
+        'name' => 'Footer Sidebar 3',
+        'id' => 'sidebar-footer-3',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => "</div>",
+        'before_title' => '<h4 class="widget-title">',
+        'after_title' => '</h4>',
+      ) );
+
+      register_sidebar( array(
+        'name' => 'Footer Sidebar 4',
+        'id' => 'sidebar-footer-4',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => "</div>",
+        'before_title' => '<h4 class="widget-title">',
+        'after_title' => '</h4>',
+      ) );
 
 }
+
 add_action( 'widgets_init', 'molecule_widgets_init' );
 
 if ( ! function_exists( 'molecule_fonts_url' ) ) :
@@ -241,10 +316,14 @@ function molecule_scripts() {
      
     // Enqueue Styles (Global)
       wp_enqueue_style( 'molecule-style', get_stylesheet_uri() );
-      wp_enqueue_style( 'main', get_template_directory_uri() .'/assets/css/main.css' );
+      wp_enqueue_style( 'fontawesome', get_template_directory_uri() .'/assets/css/fontawesome.css' );
+    //Custom WooCommerce Styles
+      if (class_exists( 'WooCommerce') ) {
+        wp_enqueue_style( 'woo-styles', get_template_directory_uri() . '/assets/css/molecule-woo.css' );
+      }
 
 }
-
+    
 add_action( 'wp_enqueue_scripts', 'molecule_scripts' );
 
 /**
@@ -256,22 +335,27 @@ add_action( 'wp_enqueue_scripts', 'molecule_scripts' );
  * @return array (Maybe) filtered body classes.
  */
 function molecule_body_classes( $classes ) {
-    // Adds a class of custom-background-image to sites with a custom background image.
-    if ( get_background_image() ) {
-        $classes[] = 'custom-background-image';
-    }
+  // Adds a class of custom-background-image to sites with a custom background image.
+  if ( get_background_image() ) {
+    $classes[] = 'custom-background-image';
+  }
 
-    // Adds a class of group-blog to sites with more than 1 published author.
-    if ( is_multi_author() ) {
-        $classes[] = 'group-blog';
-    }
+  // Adds a class of group-blog to sites with more than 1 published author.
+  if ( is_multi_author() ) {
+    $classes[] = 'group-blog';
+  }
 
-    // Adds a class of hfeed to non-singular pages.
-    if ( ! is_singular() ) {
-        $classes[] = 'hfeed';
-    }
+  // Adds a class of no-sidebar to sites without active sidebar.
+  if ( ! is_active_sidebar( 'sidebar-blog' ) ) {
+    $classes[] = 'no-sidebar';
+  }
 
-    return $classes;
+  // Adds a class of hfeed to non-singular pages.
+  if ( ! is_singular() ) {
+    $classes[] = 'hfeed';
+  }
+
+  return $classes;
 }
 add_filter( 'body_class', 'molecule_body_classes' );
 
@@ -301,6 +385,55 @@ function molecule_hex2rgb( $color ) {
 
     return array( 'red' => $r, 'green' => $g, 'blue' => $b );
 }
+
+
+/**
+ * Add custom image sizes attribute to enhance responsive image functionality
+ * for content images
+ *
+ * @since Molecule 1.0
+ *
+ * @param string $sizes A source size value for use in a 'sizes' attribute.
+ * @param array  $size  Image size. Accepts an array of width and height
+ *                      values in pixels (in that order).
+ * @return string A source size value for use in a content image 'sizes' attribute.
+ */
+function molecule_content_image_sizes_attr( $sizes, $size ) {
+  $width = $size[0];
+
+  1200 <= $width && $sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 62vw, 1200px';
+
+  if ( 'page' === get_post_type() ) {
+    1200 > $width && $sizes = '(max-width: ' . $width . 'px) 85vw, ' . $width . 'px';
+  } else {
+    1200 > $width && 600 <= $width && $sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 984px) 61vw, (max-width: 1362px) 45vw, 600px';
+    1200 > $width && $sizes = '(max-width: ' . $width . 'px) 85vw, ' . $width . 'px';
+  }
+
+  return $sizes;
+}
+add_filter( 'wp_calculate_image_sizes', 'molecule_content_image_sizes_attr', 10 , 2 );
+
+/**
+ * Add custom image sizes attribute to enhance responsive image functionality
+ * for post thumbnails
+ *
+ * @since Molecule 1.0
+ *
+ * @param array $attr Attributes for the image markup.
+ * @param int   $attachment Image attachment ID.
+ * @param array $size Registered image size or flat array of height and width dimensions.
+ * @return string A source size value for use in a post thumbnail 'sizes' attribute.
+ */
+function molecule_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
+  if ( 'post-thumbnail' === $size ) {
+    is_active_sidebar( 'sidebar-blog' ) && $attr['sizes'] = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 984px) 60vw, (max-width: 1362px) 62vw, 840px';
+    ! is_active_sidebar( 'sidebar-blog' ) && $attr['sizes'] = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 88vw, 1200px';
+  }
+  return $attr;
+}
+add_filter( 'wp_get_attachment_image_attributes', 'molecule_post_thumbnail_sizes_attr', 10 , 3 );
+
 
 /**
  * Modifies tag cloud widget arguments to have all tags in the widget same font size.

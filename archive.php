@@ -1,63 +1,109 @@
 <?php
 /**
- * The template for displaying archive pages.
+ * The template for displaying archive pages
  *
- * @package molecule
+ * Used to display archive-type pages if nothing more specific matches a query.
+ * For example, puts together date-based pages if no date.php file exists.
+ *
+ * If you'd like to further customize these archive views, you may create a
+ * new template file for each one. For example, tag.php (Tag archives),
+ * category.php (Category archives), author.php (Author archives), etc.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package WordPress
+ * @subpackage Molecule
+ * @since Molecule 1.0
  */
-get_header( 'inner' ); ?>
 
-        <div class="grid">
+get_header(); ?>
 
-            <div class="row">
-                
-                <div class="c12">
-            
-                    <div class="post-index">
+<?php if ( is_active_sidebar( 'sidebar-blog' )  ) : ?>
 
-                    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <div class="grid">
 
-                        <article <?php post_class( 'post-excerpt' ); ?>>
+        <div class="row">
 
-                            <div class="date-stamp">
-                                <div class="month updated"><?php the_time( 'M' ); ?></div>
-                                <div class="date-border"></div>
-                                <div class="day updated"><?php the_time( 'd' ); ?></div>
-                            </div>
+            <div class="c9">
 
-                            <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                <?php if ( have_posts() ) : 
+                    // Start the Loop.
+                    while ( have_posts() ) : the_post();
 
-                            <div class="meta-details">
+                        /*
+                         * Include the Post-Format-specific template for the content.
+                         * If you want to override this in a child theme, then include a file
+                         * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                         */
+                        get_template_part( 'page-templates/content', get_post_format() );
 
-                                <p><?php _e( '<i class="fa fa-clock-o"></i> Posted on', 'molecule' ); ?> <span class="post-date updated"><?php the_time( 'F jS Y' ); ?></span> / <?php _e( '<i class="fa fa-folder-open-o"></i> in', 'molecule' ); ?> <span><?php the_category( ' & ' ); ?></span> / <?php _e( '<i class="fa fa-comment-o"></i> with', 'molecule' ); ?> <span> <a href="<?php the_permalink(); ?>#comments"><?php $commentscount = get_comments_number(); echo $commentscount; ?> <?php _e( 'Comments', 'molecule' ); ?></a></span></p>
+                    // End the loop.
+                    endwhile;
 
-                            </div><!-- end .meta-details -->
+                    // Previous/next page navigation.
+                    the_posts_pagination( array(
+                        'prev_text'          => __( '', 'molecule' ),
+                        'next_text'          => __( '', 'molecule' ),
+                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'molecule' ) . ' </span>',
+                    ) );
 
-                            <div class="post-thumbnail">
+                // If no content, include the "No posts found" template.
+                else :
+                    get_template_part( 'page-templates/content', 'none' );
 
-                                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'news-large' ); ?></a>
+                endif;
+                ?>
 
-                            </div><!-- end .post-thumbnail -->
+            </div><!-- end .c9 -->
 
-                            <?php the_excerpt(); ?>
+            <?php get_sidebar(); ?>
 
-                            <p><a class="read-more" href="<?php the_permalink(); ?>"><?php _e( 'Read Article', 'molecule' ); ?></a></p>
+        </div><!-- end .row -->
 
-                        </article><!-- end .post-excerpt -->
+    </div><!-- end .grid -->
 
-                    <?php endwhile; endif; ?>
+<?php elseif ( !is_active_sidebar( 'sidebar-blog' )  ) : ?>
 
-                    <?php if( function_exists( 'wp_pagenavi' ) ) { ?>
-                    <?php wp_pagenavi(); ?>   
-                    <?php } else { ?>      
-                        <?php posts_nav_link( '&#8734;','&laquo;&laquo; Previous Posts','Older Posts &raquo;&raquo;' ); ?>
-                    <?php } ?>
+<div class="grid wfull">
 
-                    </div><!-- end .post-index -->
-                    
-                </div><!-- end .c12 -->
-                
-            </div><!-- end .row -->
+        <div class="row">
 
-        </div><!-- end .grid -->
+            <div class="c12">
+
+                <?php if ( have_posts() ) : 
+                    // Start the Loop.
+                    while ( have_posts() ) : the_post();
+
+                        /*
+                         * Include the Post-Format-specific template for the content.
+                         * If you want to override this in a child theme, then include a file
+                         * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+                         */
+                        get_template_part( 'page-templates/content', get_post_format() );
+
+                    // End the loop.
+                    endwhile;
+
+                    // Previous/next page navigation.
+                    the_posts_pagination( array(
+                        'prev_text'          => __( 'Previous page', 'molecule' ),
+                        'next_text'          => __( 'Next page', 'molecule' ),
+                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'molecule' ) . ' </span>',
+                    ) );
+
+                // If no content, include the "No posts found" template.
+                else :
+                    get_template_part( 'page-templates/content', 'none' );
+
+                endif;
+                ?>
+
+            </div><!-- end .c12 -->
+
+        </div><!-- end .row -->
+
+    </div><!-- end .grid .wfull-->
+
+<?php endif; ?>
 
 <?php get_footer(); ?>

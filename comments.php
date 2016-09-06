@@ -1,57 +1,80 @@
 <?php
 /**
- * The template for displaying comments.
+ * The template for displaying comments
  *
  * The area of the page that contains both current comments
  * and the comment form.
  *
- * @package molecule
+ * @package WordPress
+ * @subpackage Molecule
+ * @since Molecule 1.0
  */
- 
-// Do not delete these lines
-if ( !empty( $_SERVER[ 'SCRIPT_FILENAME' ]) && 'comments.php' == basename( $_SERVER[ 'SCRIPT_FILENAME' ] ) )
-die ( 'Please do not load this page directly. Thanks!' );
- 
-if ( post_password_required() ) { ?>
-<p class="nocomments"><?php echo __( 'This post is password protected. Enter the password to view comments.', 'molecule' ); ?></p>
-<?php
-return;
+
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
+if ( post_password_required() ) {
+	return;
 }
 ?>
- 
-<!-- You can start editing here. -->
- 
-<?php if ( have_comments() ) : ?>
+
 
 <div id="comments" class="comments-area">
 
-    <p class="comments-info"><?php echo __( 'currently there\'s', 'molecule' ); ?> <span><?php $commentscount = get_comments_number(); echo $commentscount; ?> <?php echo __( 'comment(s)', 'molecule' ); ?></span> <?php echo __( 'Would you like to add', 'molecule' ); ?> <span><?php echo __( 'your thoughts?', 'molecule' ); ?></span></p>
-    
-<ul class="comments-list">
-    <?php wp_list_comments( 'callback=capstone_comments' ); ?>
-</ul>
- 
-<div class="navigation">
-    <div class="alignleft"><?php previous_comments_link() ?></div>
-    <div class="alignright"><?php next_comments_link() ?></div>
-</div>
+	<?php if ( have_comments() ) : ?>
+		<h2 class="comments-title">
+			<?php
+				$comments_number = get_comments_number();
+				if ( 1 === $comments_number ) {
+					/* translators: %s: post title */
+					printf( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'molecule' ), get_the_title() );
+				} else {
+					printf(
+						/* translators: 1: number of comments, 2: post title */
+						_nx(
+							'%1$s thought on &ldquo;%2$s&rdquo;',
+							'%1$s thoughts on &ldquo;%2$s&rdquo;',
+							$comments_number,
+							'comments title',
+							'molecule'
+						),
+						number_format_i18n( $comments_number ),
+						get_the_title()
+					);
+				}
+			?>
+		</h2>
 
-</div><!-- end #comments -->
+		<?php the_comments_navigation(); ?>
 
-<?php else : // this is displayed if there are no comments so far ?>
+		<ol class="comment-list">
+			<?php
+				wp_list_comments( array(
+					'style'       => 'ol',
+					'short_ping'  => true,
+					'avatar_size' => 42,
+				) );
+			?>
+		</ol><!-- .comment-list -->
 
-<?php if ( comments_open() ) : ?>
-    <!-- If comments are open, but there are no comments. -->
+		<?php the_comments_navigation(); ?>
 
-<?php else : // comments are closed ?>
-<!-- If comments are closed. -->
+	<?php endif; // Check for have_comments(). ?>
 
-<?php endif; ?>
+	<?php
+		// If comments are closed and there are comments, let's leave a little note, shall we?
+		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+	?>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'molecule' ); ?></p>
+	<?php endif; ?>
 
-<?php endif; ?>
+	<?php
+		comment_form( array(
+			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
+			'title_reply_after'  => '</h2>',
+		) );
+	?>
 
-<?php if ( comments_open() ) : ?>
-
-<?php comment_form(); ?>
-
-<?php endif; // if you delete this the sky will fall on your head ?>
+</div><!-- .comments-area -->

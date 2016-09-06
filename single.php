@@ -1,70 +1,110 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * The template for displaying all single posts and attachments
  *
- * @package molecule
+ * @package WordPress
+ * @subpackage Molecule
+ * @since Molecule 1.0
  */
-get_header( 'inner' ); ?>
 
-<div class="grid">
+get_header(); ?>
 
-    <div class="row">
-        
-        <div class="c12">
+<?php if ( is_active_sidebar( 'sidebar-blog' )  ) : ?>
 
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+    <div class="grid">
 
-            <article <?php post_class( 'post-single' ); ?>>
-                
-                <div class="entry">
-               
-                <?php the_content(); ?>  
+        <div class="row">
 
-                        <?php get_template_part( 'partials/social', 'share' ); ?>
+            <div class="c9">
 
-                    <div class="post-tags">
-                        
-                        <p class="tag-title">tags:</p><?php the_tags( ' ',' ' ); ?>
-                    
-                    </div>
+                <?php
+                // Start the loop.
+                while ( have_posts() ) : the_post();
 
-                </div>
+                    // Include the single post content template.
+                    get_template_part( 'page-templates/content', 'single' );
 
-                <?php wp_link_pages(); ?>
+                    // If comments are open or we have at least one comment, load up the comment template.
+                    if ( comments_open() || get_comments_number() ) {
+                        comments_template();
+                    }
 
-            </article><!-- end .post-single -->
+                    if ( is_singular( 'attachment' ) ) {
+                        // Parent post navigation.
+                        the_post_navigation( array(
+                            'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'molecule' ),
+                        ) );
+                    } elseif ( is_singular( 'post' ) ) {
+                        // Previous/next post navigation.
+                        the_post_navigation( array(
+                            'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'molecule' ) . '</span> ' .
+                                '<span class="screen-reader-text">' . __( 'Next post:', 'molecule' ) . '</span> ' .
+                                '<span class="post-title">%title</span>',
+                            'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'molecule' ) . '</span> ' .
+                                '<span class="screen-reader-text">' . __( 'Previous post:', 'molecule' ) . '</span> ' .
+                                '<span class="post-title">%title</span>',
+                        ) );
+                    }
 
-        <?php endwhile; endif; ?>
+                    // End of the loop.
+                endwhile;
+                ?>  
 
-        <?php if ( is_singular(array('post')) ) { ?>
+            </div><!-- end .c9 -->
 
-            <div class="author-bio">
+            <?php get_sidebar(); ?>
 
-                <?php echo get_avatar( get_the_author_meta( 'email' ), '200' ); ?>
+        </div><!-- end .row -->
 
-                <div class="author-info">
+    </div><!-- end .grid -->
 
-                    <p class="about-author vcard author"><?php _e( 'about the author', 'molecule' ); ?>: <span class="fn author"><?php the_author_link(); ?></span></p>
+<?php elseif ( !is_active_sidebar( 'sidebar-blog' )  ) : ?>
 
-                    <?php get_template_part( 'partials/author', 'icons' ); ?>
+    <div class="grid wfull">
 
-                    <p class="author-description author"><?php the_author_meta( 'description' ); ?></p>
+        <div class="row">
 
-                </div><!-- end .author-info -->
+            <div class="c12">
 
-            </div><!-- end .author-bio -->
+                <?php
+                    // Start the loop.
+                    while ( have_posts() ) : the_post();
 
+                    // Include the single post content template.
+                    get_template_part( 'page-templates/content', 'single' );
 
-            <?php comments_template(); ?>
+                    // If comments are open or we have at least one comment, load up the comment template.
+                    if ( comments_open() || get_comments_number() ) {
+                        comments_template();
+                    }
 
-            <?php capstone_content_nav( 'nav-below' );?>
+                    if ( is_singular( 'attachment' ) ) {
+                        // Parent post navigation.
+                        the_post_navigation( array(
+                            'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'molecule' ),
+                        ) );
+                    } elseif ( is_singular( 'post' ) ) {
+                        // Previous/next post navigation.
+                        the_post_navigation( array(
+                            'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'molecule' ) . '</span> ' .
+                                '<span class="screen-reader-text">' . __( 'Next post:', 'molecule' ) . '</span> ' .
+                                '<span class="post-title">%title</span>',
+                            'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'molecule' ) . '</span> ' .
+                                '<span class="screen-reader-text">' . __( 'Previous post:', 'molecule' ) . '</span> ' .
+                                '<span class="post-title">%title</span>',
+                        ) );
+                    }
 
-        <?php } ?>
+                    // End of the loop.
+                endwhile;
+                ?>
 
-        </div><!-- end .c12 -->
-    
-    </div><!-- end .row -->
-    
-</div><!-- end .grid -->
+            </div><!-- end .c12 -->
+
+        </div><!-- end .row -->
+
+    </div><!-- end .grid .wfull -->
+
+<?php endif; ?>
 
 <?php get_footer(); ?>

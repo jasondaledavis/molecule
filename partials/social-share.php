@@ -1,3 +1,12 @@
+<?php
+/**
+ * The template part for displaying an Social Share in posts footer
+ *
+ * @package WordPress
+ * @subpackage Molecule
+ * @since Molecule 1.0
+ */
+?>
 <div class="social-share">
 
 <h4>Spread the <i class="fa fa-heart-o"></i> with a click below:</h4>

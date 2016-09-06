@@ -1,25 +1,29 @@
 <?php
-//================================================================================//
-// Fix for Chrome password field empty bug
-//================================================================================//
-add_action("login_form", "kill_wp_attempt_focus");
-function kill_wp_attempt_focus() {
-    global $error;
-    $error = TRUE;
-}
-//================================================================================//
-// custom blog function to declare blog page
-//================================================================================//
-function is_blog() {
-  if (is_home() || is_post_type_archive( 'post' ))
-    return true;
-  else return false;
-}
+/**
+ * Molecule specific theme functions and definitions
+ *
+ * Set up the theme and provides some helper functions, which are used in the
+ * theme as custom template tags. Others are attached to action and filter
+ * hooks in WordPress to change core functionality.
+ *
+ * @link https://codex.wordpress.org/Theme_Development
+ * @link https://codex.wordpress.org/Child_Themes
+ *
+ * Functions that are not pluggable (not wrapped in function_exists()) are
+ * instead attached to a filter or action hook.
+ *
+ * For more information on hooks, actions, and filters,
+ * {@link https://codex.wordpress.org/Plugin_API}
+ *
+ * @package WordPress
+ * @subpackage Molecule
+ * @since Molecule 1.0
+ */
 //================================================================================//
 // Configure settings for Multi Post Thumbnails
 //================================================================================//
 if (class_exists('MultiPostThumbnails')) {
-    $types = array('post', 'page');
+    $types = array('post', 'page', 'jetpack-portfolio', 'jetpack-testimonials');
     foreach($types as $type) {
         new MultiPostThumbnails(array(
             'priority' => 'high',
@@ -33,50 +37,19 @@ if (class_exists('MultiPostThumbnails')) {
     }
 }
 //================================================================================//
-// Checks to see if appropriate templates are present in active template directory.
-// Otherwises uses templates present in plugin's template directory.
+// TGM Plugin Activation
 //================================================================================//
-add_filter('template_include', 'molecule_set_template');
-function molecule_set_template( $template ){
-
-    /* 
-     * Optional: Have a plug-in option to disable template handling
-     * if( get_option('wpse72544_disable_template_handling') )
-     *     return $template;
-     */
-
-    if(is_singular('lander') && 'single-lander.php' != $template ){
-        //WordPress couldn't find an 'event' template. Use plug-in instead:
-        $template = WP_PLUGIN_DIR . '/elements/single-lander.php';
+require get_template_directory() . '/inc/tgm-plugin-activation/init.php';
+//================================================================================//
+// Register WooCommerce and check if activated.
+//================================================================================//
+if ( ! function_exists( 'is_woocommerce_activated' ) ) {
+    function woocommerce_support() {
+        add_theme_support( 'woocommerce' );
     }
-
-    return $template;
-
-    if(is_singular('ty') && 'single-ty.php' != $templatety ){
-        //WordPress couldn't find an 'event' template. Use plug-in instead:
-        $templatety = WP_PLUGIN_DIR . '/elements/single-ty.php';
-    }
-
-    return $templatety;
 }
 
-add_filter('template_include', 'molecule_set_templatety');
-function molecule_set_templatety( $templatety ){
-
-    /* 
-     * Optional: Have a plug-in option to disable template handling
-     * if( get_option('wpse72544_disable_template_handling') )
-     *     return $template;
-     */
-
-    if(is_singular('ty') && 'single-ty.php' != $templatety ){
-        //WordPress couldn't find an 'event' template. Use plug-in instead:
-        $templatety = WP_PLUGIN_DIR . '/elements/single-ty.php';
-    }
-
-    return $templatety;
-}
-
+add_action( 'after_setup_theme', 'woocommerce_support' );
 //================================================================================//
 // Add Title/Subtitle Meta Box to all Pages
 //================================================================================//
@@ -228,51 +201,27 @@ function capstone_save_data_strapline($post_id) {
     }
 }
 //================================================================================//
-// Custom Navigation for Single Posts
+//Search URL Re-Write
 //================================================================================//
-if (! function_exists( 'capstone_content_nav' )):
-//Display navigation to next/previous pages when applicable
-function capstone_content_nav( $nav_id ) {
-global $wp_query;
-
-?>
-
-<?php if ( is_single() ) : // navigation links for single posts ?>
-<ul class="pager">
-    <?php previous_post_link( '<li class="previous">%link</li>', '<span class="meta-nav">' . _x('<i class="fa fa-angle-left"></i>&nbsp;&nbsp;', 'Previous post link', 'molecule') . '</span>Previous Article ' ); ?>
-    <?php next_post_link( '<li class="next">%link</li>', 'Next Article<span class="meta-nav"> ' . _x('&nbsp;&nbsp;<i class="fa fa-angle-right"></i>', 'Next post link', 'molecule') . '</span>' ); ?>
-</ul>
-
-<?php endif; ?>
-
-<?php
+function molecule_change_search_url_rewrite() {
+    if ( is_search() && ! empty( $_GET['s'] ) ) {
+        wp_redirect( home_url( "/search/" ) . urlencode( get_query_var( 's' ) ) );
+        exit();
+    }    
 }
-endif;
-
+add_action( 'template_redirect', 'molecule_change_search_url_rewrite' );
 //================================================================================//
-// Numbered Post Navigation (for Post Index, Archives, and Search Results)
+// Security Enhancements
 //================================================================================//
-function wp_pagenavi() {
-  
-  global $wp_query, $wp_rewrite;
-  $pages = '';
-  $max = $wp_query->max_num_pages;
-  if ( !$current = get_query_var( 'paged' ) ) $current = 1;
-  $args['base'] = str_replace( 999999999, '%#%', get_pagenum_link( 999999999 ) );
-  $args['total'] = $max;
-  $args['current'] = $current;
- 
-  $total = 1;
-  $args['mid_size'] = 3;
-  $args['end_size'] = 1;
-  $args['prev_text'] = '<';
-  $args['next_text'] = '>';
- 
-  if ( $max > 1 ) echo '</pre>
-    <div class="pagination">';
- echo $pages . paginate_links( $args );
- if ( $max > 1 ) echo '</div>';
+//remove wp name generator
+remove_action('wp_head', 'wp_generator');
 
+// check for Visual Composer is activated, if so then remove the meta generator tag.
+if ( class_exists( 'Vc_Manager' ) ) {
+    function myoverride() {
+        remove_action('wp_head', array(visual_composer(), 'addMetaData'));
+    }
+    add_action('init', 'myoverride', 100);
 }
 
 //================================================================================//
@@ -305,195 +254,6 @@ function wp_pagenavi() {
 // }
 
 // function custom_excerpt_length( $length ) {
-//     return 35; //change here for chanacter length of excerpt
+//     return 80; //change here for chanacter length of excerpt
 // }
 // add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
-
-//================================================================================//
-// Add custom fields to Author Bio
-//================================================================================//
-function capstone_add_to_author_profile($contactmethods) {
-    
-    $contactmethods['twitter_profile'] = 'Twitter Profile URL';
-    $contactmethods['facebook_profile'] = 'Facebook Profile URL';
-    $contactmethods['google_profile'] = 'Google Profile URL';
-    $contactmethods['linkedin_profile'] = 'Linkedin Profile URL';
-    
-    return $contactmethods;
-}
-
-add_filter( 'user_contactmethods', 'capstone_add_to_author_profile', 10, 1 );
-
-//================================================================================//
-// Custom Search Filter For Blog (Returns only Posts)
-//================================================================================//
-function capstone_search_filter($query) {
-    if ($query->is_search && !is_admin() ) {
-        $query->set( 'post_type', array( 'post' ) );
-    }
-    return $query;
-}
-add_filter( 'pre_get_posts', 'capstone_search_filter' );
-
-//================================================================================//
-//Search URL Re-Write
-//================================================================================//
-function molecule_change_search_url_rewrite() {
-    if ( is_search() && ! empty( $_GET['s'] ) ) {
-        wp_redirect( home_url( "/search/" ) . urlencode( get_query_var( 's' ) ) );
-        exit();
-    }    
-}
-add_action( 'template_redirect', 'molecule_change_search_url_rewrite' );
-
-//================================================================================//
-// SVG Upload Ability
-//================================================================================//
-// function capstone_mime_types( $mimes ){
-// $mimes['svg'] = 'image/svg+xml';
-// return $mimes;
-// }
-// add_filter( 'upload_mimes', 'capstone_mime_types' );
-
-//================================================================================//
-// Security Enhancements
-//================================================================================//
-//remove wp name generator
-remove_action('wp_head', 'wp_generator');
-
-// check for Visual Composer is activated, if so then remove the meta generator tag.
-if ( class_exists( 'Vc_Manager' ) ) {
-    function myoverride() {
-        remove_action('wp_head', array(visual_composer(), 'addMetaData'));
-    }
-    add_action('init', 'myoverride', 100);
-}
-//================================================================================//
-// Change Sub-Menu Class
-//================================================================================//
-function change_submenu_class($menu) {  
-  $menu = preg_replace('/ class="sub-menu"/',' class="dropdown"',$menu);  
-  return $menu;  
-}  
-add_filter('wp_nav_menu','change_submenu_class');
-
-//================================================================================//
-// Enable Threaded Comments
-//================================================================================//
-// function capstone_enable_threaded_comments() {
-//     if ( is_singular() AND comments_open() AND ( get_option( 'thread_comments' ) == 1 ) ) {
-//        wp_enqueue_script('comment-reply');
-//     }
-// }
-// add_action( 'get_header', 'capstone_enable_threaded_comments' );
-
-//================================================================================//
-// Custom function for the Comments
-//================================================================================//
-/* function capstone_comments( $comment, $args, $depth ) {
-    $GLOBALS[ 'comment' ] = $comment;
-?>
-    <li class="comment">
-    
-        <div>
-            
-        <?php echo get_avatar( $comment, $size = '80' ); ?>
-            
-            <div class="comment-meta">
-                <h5 class="author"><a href="<?php comment_author_url(); ?>" target="about_blank"><?php comment_author(); ?></a></h5>
-                <p class="date"><?php _e( 'commented on', 'molecule' ); ?> <span><?php printf(__( '%1$s at %2$s', 'molecule' ), get_comment_date(),  get_comment_time()) ?></span></p>
-            </div>
-            
-            <div class="comment-entry">
-            <?php comment_text() ?>
-            <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args[ 'max_depth' ] ) ) ) ?>
-            </div>
-        
-        </div>
-        
-        <?php if ( $comment->comment_approved == '0' ) : ?>
-            <em class="comment-moderate"><?php _e( 'Your comment is awaiting moderation.', 'molecule' ) ?></em>
-            <br />
-        <?php endif; ?>
-        
-        <?php edit_comment_link( __( '(Edit)', 'molecule' ),'  ','' ) ?>
-        
-<?php
-}
-*/
-//================================================================================//
-// Custom function for the Comment Form
-//================================================================================//
-// add_filter( 'comment_form_defaults', 'capstone_comment_form' );
-
-// function capstone_comment_form( $form_options ) {
-
-//     // Fields Array
-//     $fields = array(
-        
-//         'author' =>
-//         '<div class="c4">' .
-//         '<input id="author" name="author" type="text" size="30" placeholder="' . __( 'Your Name (required)', 'molecule' ) . '" />' .
-//         '</div>',
-
-//         'email' =>
-//         '<div class="c4">' .
-//         '<input id="email" name="email" type="text" size="30" placeholder="' . __( 'Your Email (will not be published)', 'molecule' ) . '" />' .
-//         '</div>',
-
-//         'url' =>
-//         '<div class="c4">'  .
-//         '<input name="url" size="30" id="url" type="text" placeholder="' . __( 'Your Website (optional)', 'molecule' ) . '" />' .
-//         '</div>',
-
-//     );
-
-//     // Form Options Array
-//     $form_options = array(
-//         // Include Fields Array
-//         'fields' => apply_filters( 'comment_form_default_fields', $fields ),
-
-//         // Template Options
-//         'comment_field' =>
-//         '<p class="comment-form-comment">' .
-//         '<textarea name="comment" id="comment" aria-required="true" rows="8" cols="45" placeholder="' . __( 'Please leave your comment...', 'molecule' ) . '"></textarea>' .
-//         '</p>',
-
-//         'must_log_in' =>
-//         '<p class="must-log-in">' .
-//         sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'molecule' ),
-//             wp_login_url( apply_filters( 'the_permalink', get_permalink() ) ) ) .
-//         '</p>',
-
-//         'logged_in_as' =>
-//         '<p class="logged-in-as">' .
-//         sprintf( __( 'You are currently logged in<a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'molecule' ),
-//             admin_url( 'profile.php' ), (isset( $user_identity )), wp_logout_url( apply_filters('the_permalink', get_permalink() ) ) ) .
-//         '</p>',
-
-//         'comment_notes_before' => '',
-
-//         'comment_notes_after' => '',
-
-//         // Rest of Options
-//         'id_form' => 'form-comment',
-//         'id_submit' => 'submit',
-//         'title_reply' => __( 'Please let us know your thoughts...', 'molecule' ),
-//         'title_reply_to' => __( 'Leave a Reply to %s', 'molecule' ),
-//         'cancel_reply_link' => __( 'Cancel reply', 'molecule' ),
-//         'label_submit' => __( 'Post Comment Here', 'molecule' ),
-//     );
-
-//     return $form_options;
-// }
-
-//================================================================================//
-// Register WooCommerce and check if activated.
-//================================================================================//
-if ( ! function_exists( 'is_woocommerce_activated' ) ) {
-    function woocommerce_support() {
-        add_theme_support( 'woocommerce' );
-    }
-}
-
-add_action( 'after_setup_theme', 'woocommerce_support' );

@@ -1,39 +1,39 @@
-<?php global $capstone_molecule; ?>
 <?php
 /**
- * The sidebar containing the main widget areas.
- * Only used on Visual Composer Pages and using the "widgetized sidebar" shortcode. 
- * See https://wpbakery.atlassian.net/wiki/display/VC/Content+Elements#ContentElements-WitgetisedSidebar 
- * for instruction.
- * 
- * @package Molecule
+ * The template for the sidebar containing the main widget area
+ *
+ * @package WordPress
+ * @subpackage Molecule
+ * @since Molecule 1.0
  */
 ?>
 
-    <?php if ( is_home() || is_single() || is_archive() || is_search() ): ?>
+<!-- Page sidebar only for pages -->
+<?php if ( is_page() ): ?>
 
+    <?php if ( is_active_sidebar( 'sidebar-page' )  ) : ?>
        
-            <aside class="sidebar c3">
+        <aside class="sidebar c3">
 
-                <?php if ( function_exists( 'dynamic_sidebar' ) && dynamic_sidebar( 'Blog Sidebar' ) ) : else : ?>
-                <?php endif; ?>
+            <?php dynamic_sidebar( 'sidebar-page' ); ?>
 
-            </aside><!-- end .sidebar -->
+        </aside><!-- end .sidebar -->
 
-    <?php endif; ?>
+    <?php endif; ?> 
 
-    <?php if ( class_exists( 'WooCommerce' ) ) { ?>
+<?php endif; ?>
 
-    <?php if ( is_shop() || is_product() || is_cart() || is_checkout() || is_account_page() ): ?>
+<!-- If is blog, search or single.php -->
+<?php if ( is_home() || is_single() || is_archive() || is_search() ): ?>
 
-       
-            <aside class="sidebar c3">
+    <?php if ( is_active_sidebar( 'sidebar-blog' )  ) : ?>
 
-                <?php if ( function_exists( 'dynamic_sidebar' ) && dynamic_sidebar( 'Shop Sidebar' ) ) : else : ?>
-                <?php endif; ?>
+        <aside class="sidebar c3">
 
-            </aside><!-- end .sidebar -->
+            <?php dynamic_sidebar( 'sidebar-blog' ); ?>
 
-    <?php endif; ?>
+        </aside><!-- end .sidebar -->
 
-    <?php }?>
+    <?php endif; ?> 
+
+<?php endif; ?>
