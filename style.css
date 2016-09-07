@@ -673,7 +673,7 @@ ol {
 }
 
 ul {
-	list-style: disc;
+	list-style: square;
 }
 
 ol {
@@ -1555,7 +1555,6 @@ blockquote:after,
 	color: #a88c5e;
 	outline: 0;
 }
-
 
 /**
  * 11.0 - Content
@@ -2808,6 +2807,7 @@ h3.sd-title {
     font-weight: bold;
     text-transform: uppercase;
 }
+
 .footer-widgets a:hover {
 	color: #ffffff;
 }
@@ -3339,7 +3339,7 @@ p > video {
 
 	.widget {
 		font-size: 10px;
-    	line-height: 14px;
+    	line-height: 22px;
     	font-size: 1rem;
     	line-height: 1.4rem;
 		margin-bottom: 3.230769231em;
