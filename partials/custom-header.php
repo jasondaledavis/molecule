@@ -89,6 +89,38 @@
 
     </div><!-- end .custom-headings -->
 
+    <?php } elseif ( class_exists( 'WooCommerce' ) && is_woocommerce() && is_shop() ) { ?>
+
+    <div class="custom-headings">
+
+        <div class="custom-headings-inner"> 
+
+        <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+
+            <h1 class="page-title entry-title"><?php woocommerce_page_title(); ?></h1>
+
+        <?php endif; ?>
+
+        </div>
+        
+    </div><!-- end .custom-headings -->
+
+    <?php } elseif ( class_exists( 'WooCommerce' ) && is_product_category() ) { ?>
+
+    <div class="custom-headings">
+
+        <div class="custom-headings-inner"> 
+
+        <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+
+            <h1 class="page-title entry-title">Product Category: <?php woocommerce_page_title(); ?></h1>
+
+        <?php endif; ?>
+
+        </div>
+        
+    </div><!-- end .custom-headings -->
+
     <?php } elseif ( is_single() ) { ?>
 
     <div class="custom-headings">
@@ -98,30 +130,6 @@
             <h1 class="page-title entry-title"><?php the_title(); ?></h1>
             
             <?php get_template_part( 'partials/single-meta', 'details' ); ?>
-
-        </div>
-        
-    </div><!-- end .custom-headings -->
-
-    <?php } elseif ( class_exists( 'WooCommerce' ) ) if ( is_shop() ) { ?>
-
-    <div class="custom-headings">
-
-        <div class="custom-headings-inner">
-
-            <h1 class="page-title entry-title"><?php woocommerce_page_title(); ?></h1>
-
-        </div>
-        
-    </div><!-- end .custom-headings -->
-
-    <?php } elseif ( class_exists( 'WooCommerce' ) ) if ( is_shop() || is_woocommerce()) { ?>
-
-    <div class="custom-headings">
-
-        <div class="custom-headings-inner">
-
-            <h1 class="page-title entry-title"><?php woocommerce_page_title(); ?></h1>
 
         </div>
         

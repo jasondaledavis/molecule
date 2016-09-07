@@ -70,7 +70,7 @@
                             <button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'molecule' ); ?></button>
 
                             <div id="site-header-menu" class="site-header-menu">
-                                    <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'molecule' ); ?>">
+                                    <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'molecule' ); ?>">
                                         <?php
                                             wp_nav_menu( array(
                                                 'theme_location' => 'primary',
@@ -110,4 +110,4 @@
 
         </header><!-- end .header-global -->
        
-        <main class="page-content" role="main">
+        <main class="page-content">

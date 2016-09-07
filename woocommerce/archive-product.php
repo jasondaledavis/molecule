@@ -39,7 +39,7 @@ get_header(); ?>
 		 */
 		do_action( 'woocommerce_before_main_content' );
 	?>
-
+	
 		<?php
 			/**
 			 * woocommerce_archive_description hook.

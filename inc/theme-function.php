@@ -20,23 +20,6 @@
  * @since Molecule 1.0
  */
 //================================================================================//
-// Configure settings for Multi Post Thumbnails
-//================================================================================//
-if (class_exists('MultiPostThumbnails')) {
-    $types = array('post', 'page', 'jetpack-portfolio', 'jetpack-testimonials');
-    foreach($types as $type) {
-        new MultiPostThumbnails(array(
-            'priority' => 'high',
-            'label' => 'Header Image',
-            'id' => 'header-image',
-            'post_type' => $type,
-            'new_width' => 254,
-            'new_height' => 254
-            )
-        );
-    }
-}
-//================================================================================//
 // TGM Plugin Activation
 //================================================================================//
 require get_template_directory() . '/inc/tgm-plugin-activation/init.php';

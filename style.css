@@ -4,7 +4,7 @@ Theme URI: http://molecule.element502.com/
 Author: Jason Davis
 Author URI: https://profiles.wordpress.org/batgeek
 Description: Molecule is a diverse theme for whatever you imagine. Molecule is fully compatible with popular plugins like WooCommerce, Gravity Forms, Contact Form 7, Jetpack, and others. The content area powers the entire sites main page area, so make it look how you want. the header and footer are customizable from the WordPress customizer for backgrounds and color options. There are 4 widget areas in the footer, and a separate page and blog sidebar. Sidebars are only activate once a widget is dragged in place and page and blog sidebar is only on the right side column. A page builder is recommended like SiteOrigin or Visual Composer to create a beautiful layout like the demo.
-Version: 0.7
+Version: 0.8.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -2807,6 +2807,9 @@ h3.sd-title {
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
+}
+.footer-widgets a:hover {
+	color: #ffffff;
 }
 .footer-widgets .widget.widget_meta ul li,
 .footer-widgets .widget.widget_categories ul li,
