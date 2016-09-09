@@ -46,6 +46,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *    14.3 - >= 910px
  *    14.4 - >= 985px
  *    14.5 - >= 1200px
+ *	  14.6 - <= 528px
  * 15.0 - Print
  */
 
@@ -1560,12 +1561,18 @@ blockquote:after,
 /**
  * 11.0 - Content
  */
-
+.home .page-content {
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin:0 auto;
+    padding:0 0 40px;
+	word-wrap: break-word;
+}
 .page-content {
     max-width: 1200px !important;
     width: 100% !important;
     margin:0 auto;
-    padding:0 0 0 40px;
+    padding:40px 0;
 	word-wrap: break-word;
 }
 .centered {
@@ -1612,6 +1619,7 @@ blockquote:after,
     padding:0;
     text-align: center;
     font-family: 'Merriweather', sans-serif;
+
 }
 .site-description {
     text-align: center;
@@ -1622,6 +1630,11 @@ blockquote:after,
 	font-weight: 400;
 	line-height: 1.0769230769;
 }
+
+.logo {
+	padding:20px 0;
+}
+
 img.custom-logo {
     -moz-transition:all 0.4s ease-in-out;
     -webkit-transition:all 0.4s ease-in-out;
@@ -1633,19 +1646,14 @@ img.custom-logo {
     margin:0 auto;
 }
 
-.header-top-dark .site-title,
-.header-top-dark .site-description,
-.header-top-dark img.custom-logo {
-    display: none;
-}
 .header-top {
     padding: 10px 0;
     width: 100%;
     top: 0;
     left: 0;
-    -moz-transition:all 0.4s ease-in-out;
-    -webkit-transition:all 0.4s ease-in-out;
-    transition:all 0.4s ease-in-out;
+    -moz-transition:all 0.6s ease-in-out;
+    -webkit-transition:all 0.6s ease-in-out;
+    transition:all 0.6s ease-in-out;
     z-index: 7000;
     overflow: visible;
    -webkit-box-shadow: 0px 1px 8px rgba(2, 2, 2, 0.2);
@@ -1657,23 +1665,23 @@ img.custom-logo {
 }
 
 .header-top .row {
-    margin-bottom: 0;
+    /*margin-bottom: 0;*/
 }
 
 .header-top-dark .row {
-    margin-bottom: -10px;
+    /*margin-bottom: -10px;*/
 }
 
 .header-top-dark {
-    padding: 10px 0;
+    padding: 0 0 10px;
     margin-bottom: 0;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    -moz-transition:all 0.4s ease-in-out;
-    -webkit-transition:all 0.4s ease-in-out;
-    transition:all 0.4s ease-in-out;
+    -moz-transition:all 0.6s ease-in-out;
+    -webkit-transition:all 0.6s ease-in-out;
+    transition:all 0.6s ease-in-out;
     z-index: 7000;
     overflow: visible;
       -webkit-box-shadow: 0px 1px 8px rgba(2, 2, 2, 0.2);
@@ -1779,7 +1787,7 @@ img.custom-logo {
 	color: #1a1a1a;
 	font-size: 13px;
 	font-size: 0.8125rem;
-	margin: 1.076923077em 0;
+	/*margin: 1.076923077em 0;*/
 	padding: 0.769230769em;
 }
 
@@ -3067,7 +3075,6 @@ p > video {
 	width: device-width;
 }
 
-
 /**
  * 14.1 - >= 710px
  */
@@ -3608,6 +3615,49 @@ p > video {
 
 @media screen and (min-width: 75em) {}
 
+/**
+ * 14.6 - <= 528px
+ */
+
+@media screen and (max-width: 33em) {
+
+	.mobile .c12 {
+		margin-bottom: 0;
+	}
+
+	.mobile .logo {
+	    padding: 10px 0;
+	}
+
+	.menu-toggle {
+	    margin: 10px auto;
+	}
+
+	.header-top-dark img.custom-logo {
+		min-width: 120px;
+	}
+
+	.custom-headings-inner h1.page-title.entry-title {
+	    font-size: 28px;
+		font-size: 1.5rem;
+		line-height: 1.7rem;
+	}
+
+	.header-top-dark .site-title {
+	    font-size: 28px;
+		font-size: 1.5rem;
+		line-height: 1.7rem;
+	}
+
+	.header-top-dark .site-description {
+	    display: none;
+	}
+
+	.custom-headings-inner .meta-details {
+		display: none;
+	}
+
+}
 
 /**
  * 15.0 - Print
