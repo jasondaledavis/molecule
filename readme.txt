@@ -2,7 +2,7 @@
 Contributors: Jason Davis
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.6+
-Version: 0.8.1
+Version: 0.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column,custom-background,custom-colors,custom-menu,custom-logo,editor-style,featured-image-header
@@ -58,5 +58,5 @@ Image used in screenshot.png: Custom art by Jason Davis
 
 == Changelog ==
 
-= 0.9 =
-* Released: September 8th, 2016
+= 0.9.1 =
+* Released: September 9th, 2016

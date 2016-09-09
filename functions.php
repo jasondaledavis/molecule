@@ -290,24 +290,24 @@ function molecule_scripts() {
     wp_enqueue_style( 'molecule-fonts', molecule_fonts_url(), array(), null );
 
     // Enqueue Scripts
-      wp_enqueue_script( 'main-js', get_template_directory_uri() .'/assets/js/min/main-min.js', array('jquery'), false, true );
-      wp_enqueue_script( 'fitvids-min-js', get_template_directory_uri() .'/assets/js/min/jquery.fitvids-min.js', array('jquery'), false, true );
+      wp_enqueue_script( 'custom-js', get_template_directory_uri() .'/assets/js/min/custom.min.js', array('jquery'), false, true );
+      wp_enqueue_script( 'fitvids-min-js', get_template_directory_uri() .'/assets/js/min/jquery.fitvids.min.js', array('jquery'), false, true );
 
       // Load the html5 shiv.
-      wp_enqueue_script( 'molecule-html5-min', get_template_directory_uri() . '/assets/js/min/html5-min.js', array(), '3.7.3' );
+      wp_enqueue_script( 'molecule-html5-min', get_template_directory_uri() . '/assets/js/min/html5.min.js', array(), '3.7.3' );
       wp_script_add_data( 'molecule-html5-min', 'conditional', 'lt IE 9' );
 
-      wp_enqueue_script( 'molecule-skip-link-focus-fix-min', get_template_directory_uri() . '/assets/js/min/skip-link-focus-fix-min.js', array(), '20160816', true );
+      wp_enqueue_script( 'molecule-skip-link-focus-fix-min', get_template_directory_uri() . '/assets/js/min/skip-link-focus-fix.min.js', array(), '20160816', true );
 
       if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
       }
 
       if ( is_singular() && wp_attachment_is_image() ) {
-        wp_enqueue_script( 'molecule-keyboard-image-navigation-min', get_template_directory_uri() . '/js/min/keyboard-image-navigation-min.js', array( 'jquery' ), '20160816' );
+        wp_enqueue_script( 'molecule-keyboard-image-navigation-min', get_template_directory_uri() . '/js/min/keyboard-image-navigation.min.js', array( 'jquery' ), '20160816' );
       }
 
-      wp_enqueue_script( 'molecule-script', get_template_directory_uri() . '/assets/js/min/functions-min.js', array( 'jquery' ), '20160816', true );
+      wp_enqueue_script( 'molecule-script', get_template_directory_uri() . '/assets/js/min/functions.min.js', array( 'jquery' ), '20160816', true );
 
       wp_localize_script( 'molecule-script', 'screenReaderText', array(
         'expand'   => __( 'expand child menu', 'molecule' ),

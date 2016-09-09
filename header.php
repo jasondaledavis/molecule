@@ -92,9 +92,8 @@
             </div>
 
             </div><!-- end .header-top -->
-
-            <!-- If an interior page -->
-            <?php if ( !is_front_page() ) : ?>
+            
+            <?php if ( !is_front_page() ) : ?><!-- if an interior page -->
 
             <div class="grid wfull">
 

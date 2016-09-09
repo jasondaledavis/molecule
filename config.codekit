@@ -388,6 +388,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/assets\/js\/custom.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/assets\/js\/custom.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/custom-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/assets\/js\/customize-preview.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -404,7 +415,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/functions.js",
-		"outputAbbreviatedPath": "\/assets\/js\/min\/functions-min.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/functions.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -415,7 +426,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/html5.js",
-		"outputAbbreviatedPath": "\/assets\/js\/min\/html5-min.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/html5.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -426,18 +437,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/keyboard-image-navigation.js",
-		"outputAbbreviatedPath": "\/assets\/js\/min\/keyboard-image-navigation-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/assets\/js\/main.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/main.js",
-		"outputAbbreviatedPath": "\/assets\/js\/min\/main-min.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/keyboard-image-navigation.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -454,6 +454,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/assets\/js\/min\/custom.min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/assets\/js\/min\/custom.min.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/custom.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/assets\/js\/min\/customize-preview-min.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -465,67 +476,56 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/js\/min\/functions-min.js": {
+	"\/assets\/js\/min\/functions.min.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/min\/functions-min.js",
-		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/functions-min-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/min\/functions.min.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/functions.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/js\/min\/html5-min.js": {
+	"\/assets\/js\/min\/html5.min.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/min\/html5-min.js",
-		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/html5-min-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/min\/html5.min.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/html5.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/js\/min\/jquery.fitvids-min.js": {
+	"\/assets\/js\/min\/jquery.fitvids.min.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/min\/jquery.fitvids-min.js",
-		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/jquery.fitvids-min-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/min\/jquery.fitvids.min.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/jquery.fitvids.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/js\/min\/keyboard-image-navigation-min.js": {
+	"\/assets\/js\/min\/keyboard-image-navigation.min.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/min\/keyboard-image-navigation-min.js",
-		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/keyboard-image-navigation-min-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/min\/keyboard-image-navigation.min.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/keyboard-image-navigation.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/js\/min\/main-min.js": {
+	"\/assets\/js\/min\/skip-link-focus-fix.min.js": {
 		"fileType": 64,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/min\/main-min.js",
-		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/main-min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/assets\/js\/min\/skip-link-focus-fix-min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/js\/min\/skip-link-focus-fix-min.js",
-		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/skip-link-focus-fix-min-min.js",
+		"inputAbbreviatedPath": "\/assets\/js\/min\/skip-link-focus-fix.min.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/min\/skip-link-focus-fix.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -536,7 +536,7 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/assets\/js\/skip-link-focus-fix.js",
-		"outputAbbreviatedPath": "\/assets\/js\/min\/skip-link-focus-fix-min.js",
+		"outputAbbreviatedPath": "\/assets\/js\/min\/skip-link-focus-fix.min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -709,15 +709,6 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/page.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/partials\/author-icons.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/partials\/author-icons.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
