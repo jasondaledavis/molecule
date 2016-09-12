@@ -58,5 +58,5 @@ Image used in screenshot.png: Custom art by Jason Davis
 
 == Changelog ==
 
-= 0.9.1 =
-* Released: September 9th, 2016
+= 1.0 =
+* First Release! September 12th, 2016

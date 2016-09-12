@@ -316,7 +316,10 @@ function molecule_scripts() {
      
     // Enqueue Styles (Global)
       wp_enqueue_style( 'molecule-style', get_stylesheet_uri() );
-      wp_enqueue_style( 'fontawesome', get_template_directory_uri() .'/assets/css/fontawesome.css' );
+
+    // Add Genericons, used in the main stylesheet.
+      wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
+      
     //Custom WooCommerce Styles
       if (class_exists( 'WooCommerce') ) {
         wp_enqueue_style( 'woo-styles', get_template_directory_uri() . '/assets/css/molecule-woo.css' );
