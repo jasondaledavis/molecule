@@ -29,7 +29,7 @@
 
                     <div class="c6">
 
-                        <p class="text-right"><a href="<?php echo esc_url( __( 'https://element502.com/', 'molecule' ) ); ?>" target="_blank" alt="A Louisville Web Design and Digital Advertising Agency" title="The stuff that makes Element 502 themes awesome."><?php printf( __( 'Also powered by %s', 'molecule' ), 'Elementium #502' ); ?></a></p>
+                        <p class="text-right"><a href="<?php echo esc_url( __( 'https://element502.com/', 'molecule' ) ); ?>" target="_blank" title="The stuff that makes Element 502 themes awesome."><?php printf( __( 'Also powered by %s', 'molecule' ), 'Elementium #502' ); ?></a></p>
 
                     </div> <!-- end .c6 -->
 
