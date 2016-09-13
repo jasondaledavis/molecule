@@ -954,35 +954,6 @@ a:active {
 	outline: 0;
 }
 
-.entry-content a,
-.entry-summary a,
-.taxonomy-description a,
-.logged-in-as a,
-.comment-content a,
-.pingback .comment-body > a,
-.textwidget a,
-.entry-footer a:hover{
-	box-shadow: 0 1px 0 0 currentColor;
-}
-
-.entry-content a:hover,
-.entry-content a:focus,
-.entry-summary a:hover,
-.entry-summary a:focus,
-.taxonomy-description a:hover,
-.taxonomy-description a:focus,
-.logged-in-as a:hover,
-.logged-in-as a:focus,
-.comment-content a:hover,
-.comment-content a:focus,
-.pingback .comment-body > a:hover,
-.pingback .comment-body > a:focus,
-.textwidget a:hover,
-.textwidget a:focus {
-	box-shadow: none;
-}
-
-
 /**
  * 6.2 - Menus
  */
