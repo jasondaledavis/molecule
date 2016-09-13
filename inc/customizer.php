@@ -78,7 +78,6 @@ function molecule_header_style() {
 	if ( display_header_text() ) {
 		return;
 	}
-
 	// If the header text has been hidden.
 	?>
 	<style type="text/css" id="molecule-header-css">
