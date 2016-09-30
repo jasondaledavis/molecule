@@ -1610,7 +1610,9 @@ blockquote:after,
 .logo {
 	padding:20px 0;
 }
-
+.header-top-dark img.custom-logo, .header-top-dark .logo {
+	display: none;
+}
 img.custom-logo {
     -moz-transition:all 0.4s ease-in-out;
     -webkit-transition:all 0.4s ease-in-out;
@@ -1646,7 +1648,7 @@ img.custom-logo {
 }
 
 .header-top-dark {
-    padding: 0 0 10px;
+    padding: 15px 0 10px;
     margin-bottom: 0;
     position: fixed;
     top: 0;
