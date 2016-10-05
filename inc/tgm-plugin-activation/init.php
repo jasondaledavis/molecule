@@ -1,4 +1,5 @@
 <?php
+include_once ( 'class-tgm-plugin-activation.php' );
 function molecule_register_required_plugins() {
 
     $plugins = array(
