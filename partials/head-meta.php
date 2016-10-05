@@ -8,8 +8,6 @@
  */
 ?>
 <!DOCTYPE html>
-<!--[if IE 9 ]><html <?php language_attributes(); ?> class="ie9"><![endif]-->
-<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 <html <?php language_attributes(); ?> class="no-js">
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">

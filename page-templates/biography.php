@@ -25,7 +25,7 @@
 	</div><!-- .author-avatar -->
 
 	<div class="author-description">
-		<h2 class="author-title"><span class="author-heading vcard"><?php _e( 'Author:', 'molecule' ); ?></span> <?php echo get_the_author(); ?></h2>
+		<h2 class="author-title"><span class="author-heading vcard author"><span class="fn"><?php _e( 'Author:', 'molecule' ); ?></span></span> <?php echo get_the_author(); ?></h2>
 
 		<p class="author-bio">
 			<?php the_author_meta( 'description' ); ?>

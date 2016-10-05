@@ -16,7 +16,7 @@
 			<span class="sticky-post"><?php _e( 'Featured', 'molecule' ); ?></span>
 		<?php endif; ?>
 
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		<?php the_title( sprintf( '<h2><span class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></span></h2>' ); ?>
 	</header><!-- .entry-header -->
 
 <?php molecule_entry_meta(); ?>

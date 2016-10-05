@@ -60,3 +60,6 @@ Image used in screenshot.png: Custom art by Jason Davis
 
 = 1.0 =
 * First Release! September 12th, 2016
+
+= 1.1 =
+* Added spans and schema.org classes for SEO

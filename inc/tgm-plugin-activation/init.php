@@ -1,5 +1,5 @@
 <?php
-function capstone_register_required_plugins() {
+function molecule_register_required_plugins() {
 
     $plugins = array(
 
@@ -11,7 +11,6 @@ function capstone_register_required_plugins() {
         array(
             'name'      => 'SVG Support',
             'slug'      => 'svg-support',
-            'force_activation'      => true,
         ),
 
     );
@@ -20,4 +19,4 @@ function capstone_register_required_plugins() {
 
 }
 
-add_action( 'tgmpa_register', 'capstone_register_required_plugins' );
+add_action( 'tgmpa_register', 'molecule_register_required_plugins' );

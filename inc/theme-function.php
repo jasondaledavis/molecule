@@ -36,7 +36,7 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 //================================================================================//
 // Add Title/Subtitle Meta Box to all Pages
 //================================================================================//
-$prefix = 'capstone_';
+$prefix = 'molecule_';
  
 $meta_box_strapline = array(
     'id' => 'strapline',
@@ -63,16 +63,16 @@ $meta_box_strapline = array(
     )
 );
 
-add_action('admin_menu', 'capstone_add_box_strapline');
+add_action('admin_menu', 'molecule_add_box_strapline');
 
 //================================================================================//
 //  Callback function to show fields in meta box
 //================================================================================//
-function capstone_show_box_strapline() {
+function molecule_show_box_strapline() {
     global $meta_box_strapline, $post;
     
     // Use nonce for verification
-    echo '<input type="hidden" name="capstone_add_box_strapline_nonce" value="', wp_create_nonce( basename( __FILE__ ) ), '" />';
+    echo '<input type="hidden" name="molecule_add_box_strapline_nonce" value="', wp_create_nonce( basename( __FILE__ ) ), '" />';
 
     echo '<table class="form-table">';
         
@@ -139,22 +139,22 @@ function capstone_show_box_strapline() {
     echo '</table>';
 }
 
-add_action( 'save_post', 'capstone_save_data_strapline' );
+add_action( 'save_post', 'molecule_save_data_strapline' );
 
 //================================================================================//
 //  Add metabox to edit page
 //================================================================================//
-function capstone_add_box_strapline() {
+function molecule_add_box_strapline() {
     global $meta_box_strapline;
     
-    add_meta_box($meta_box_strapline['id'], $meta_box_strapline['title'], 'capstone_show_box_strapline', $meta_box_strapline['page'], $meta_box_strapline['context'], $meta_box_strapline['priority']);
+    add_meta_box($meta_box_strapline['id'], $meta_box_strapline['title'], 'molecule_show_box_strapline', $meta_box_strapline['page'], $meta_box_strapline['context'], $meta_box_strapline['priority']);
 }
 // Save data from meta box
-function capstone_save_data_strapline($post_id) {
+function molecule_save_data_strapline($post_id) {
     global $meta_box_strapline;
 
     // verify nonce
-    if ( !isset($_POST['capstone_add_box_strapline_nonce']) || !wp_verify_nonce($_POST['capstone_add_box_strapline_nonce'], basename(__FILE__))) {
+    if ( !isset($_POST['molecule_add_box_strapline_nonce']) || !wp_verify_nonce($_POST['molecule_add_box_strapline_nonce'], basename(__FILE__))) {
         return $post_id;
     }
 
