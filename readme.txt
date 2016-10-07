@@ -63,3 +63,6 @@ Image used in screenshot.png: Custom art by Jason Davis
 
 = 1.1 =
 * Added spans and schema.org classes for SEO
+
+= 1.1.1 =
+* Fixed page subtitle CSS and changes text domain to molecule from capstone
