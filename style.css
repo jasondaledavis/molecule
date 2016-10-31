@@ -1561,7 +1561,7 @@ blockquote:after,
 .gform_wrapper .ginput_complex .ginput_right select, 
 .gform_wrapper .ginput_complex input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=image]):not([type=file]), 
 .gform_wrapper .ginput_complex select,.gform_wrapper textarea {
-	padding:12px 8px;
+	padding:12px 8px !important;
 }
 .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus, 
 .gform_wrapper .ginput_complex .ginput_left input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=image]):not([type=file]):focus, 
