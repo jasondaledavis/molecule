@@ -66,3 +66,6 @@ Image used in screenshot.png: Custom art by Jason Davis
 
 = 1.1.1 =
 * Fixed page subtitle CSS and changes text domain to molecule from capstone
+
+= 1.2 =
+* Added color options for header background in interior pages, and removed custom-header background jpg for transparent png to allow for custom css to style with flat color.

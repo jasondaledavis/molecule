@@ -21,7 +21,7 @@
          the_post_thumbnail( 'header-image', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); 
 
         } else {  
-            $image = get_template_directory_uri() .'/assets/img/header_placeholder.jpg'; 
+            $image = get_template_directory_uri() .'/assets/img/header_placeholder.png'; 
             $alt = get_bloginfo( 'description' );
             echo '<img src="'.$image.'" alt="'.$alt.'" />';
         }
@@ -29,14 +29,14 @@
     // If the current page is the posts index page
     } else if ( is_home() ) {
 
-        $image = get_template_directory_uri() .'/assets/img/header_placeholder.jpg'; 
+        $image = get_template_directory_uri() .'/assets/img/header_placeholder.png'; 
         $alt = get_bloginfo( 'description' );
         echo '<img src="'.$image.'" alt="'.$alt.'" />';
 
     // If the current page is the 404, archive or search results page (pulls in header image set on blog index)
     } else if ( is_404() || is_archive() || is_search() ) {
 
-        $image = get_template_directory_uri() .'/assets/img/header_placeholder.jpg'; 
+        $image = get_template_directory_uri() .'/assets/img/header_placeholder.png'; 
         $alt = get_bloginfo( 'description' );
         echo '<img src="'.$image.'" alt="'.$alt.'" />';
        

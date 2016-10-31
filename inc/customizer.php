@@ -909,7 +909,8 @@ function molecule_link_color_css() {
 		.widget_calendar tbody a,
 		.page-links a:hover,
 		.page-links a:focus,
-		.main-navigation a::before  {
+		.main-navigation a::before,
+		.header-pattern  {
 			background-color: %1$s;
 		}
 
@@ -1028,8 +1029,7 @@ function molecule_main_text_color_css() {
 		.pagination:after,
 		.pagination .prev,
 		.pagination .next,
-		.page-links a,
-		.main-navigation a::before  {
+		.page-links a {
 			background-color: %1$s;
 		}
 
