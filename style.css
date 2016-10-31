@@ -934,7 +934,7 @@ a {
     -o-transition: all .3s ease-in-out 0s;
     transition: all .3s ease-in-out 0s;
     text-decoration: none;
-    color: #1f3f4c;
+    color: #1d1d1d;
     font-weight: 400;
 }
 
@@ -1528,6 +1528,15 @@ blockquote:after,
 /**
  * 11.0 - Content
  */
+.entry-content a {
+	color: #a88c5e;
+	padding-bottom:2px;
+	border-bottom: dotted 1px #a88c5e;
+}
+.entry-content a:hover,
+.entry-content a:focus {
+	color: #1d1d1d;
+}
 .home .page-content {
     max-width: 1200px !important;
     width: 100% !important;
@@ -2627,7 +2636,7 @@ h3.sd-title {
     line-height: 21px;
     font-size: 1.5rem;
     line-height: 2.0999999999999996rem;
-    border-bottom: dotted 1px #686868;
+    border-bottom: dotted 1px #a88c5e;
 }
 
 .sidebar .widget ul {
@@ -2646,18 +2655,19 @@ h3.sd-title {
     padding-right: 0;
     font-size: 13px;
     font-family: Genericons;
+    color: #a88c5e;
 }
 
 .sidebar .widget ul li a {
-    color: #1a1a1a;
+    color: #a88c5e;
 }
 .sidebar .widget ul li a:hover{
-    opacity:.4;
+    color:#333;
 }
 
 /* Archive widget */
 .sidebar .widget_archive select {
-    background: #f8f8f8 url(assets/img/arrow.png) 97% 59% no-repeat;
+    background: #a88c5e url(assets/img/arrow.png) 97% 59% no-repeat;
     color: #686868;
     padding: 10px 4px;
     width: 100%;
