@@ -1578,7 +1578,7 @@ blockquote:after,
 
 .header-pattern {
     background-image: url(assets/img/pattern.png);
-    background-color: #eaeaea;
+    background-color: #a88c5e;
     position: absolute;
     opacity: 0.9;
     left: 0;
@@ -1701,7 +1701,6 @@ blockquote:after,
     margin: 0;
     padding: 0;
     position: relative;
-    background-color:#a88c5e;
 }
 
 .custom-header-image {
