@@ -2010,8 +2010,8 @@ span.entry-title,
 p a.read-more {
 	margin-top: 60px;
 }
-.read-more,
-.more-link {
+a.read-more,.read-more,
+.more-link, a.more-link {
 	padding: 12px 20px 12px 20px;
     border: 0;
     display: inline-block;
