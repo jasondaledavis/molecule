@@ -40,7 +40,7 @@
             
             </div>
 
-            <?php get_template_part( 'partials/social', 'share' ); ?>
+            <?php //get_template_part( 'partials/social', 'share' ); ?>
 
 			<?php
 				edit_post_link(

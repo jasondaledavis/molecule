@@ -25,13 +25,10 @@
 	</div><!-- .author-avatar -->
 
 	<div class="author-description">
-		<h2 class="author-title"><span class="author-heading vcard author"><span class="fn"><?php _e( 'Author:', 'molecule' ); ?></span></span> <?php echo get_the_author(); ?></h2>
+		<h2 class="author-title"><span class="author-heading vcard author post-author"><span class="fn"><?php the_author(); ?></span></span></h2>
 
 		<p class="author-bio">
 			<?php the_author_meta( 'description' ); ?>
-
-			<!-- for custom author bio icons -->
-			<?php //get_template_part( 'partials/author', 'icons' ); ?>
 			
 			<a class="author-link url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
 				<?php printf( __( 'View all posts by %s', 'molecule' ), get_the_author() ); ?>

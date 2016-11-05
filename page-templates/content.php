@@ -23,6 +23,8 @@
 
 <?php molecule_post_thumbnail(); ?>
 
+<h4 class="blog-author-title">Article written by: <span class="vcard author post-author"><span class="fn"><?php the_author(); ?></span></span> <span class="post_date date updated"><?php the_time('j F,Y'); ?></span></h4>
+
 	<div class="entry-content">
 
 	<?php the_excerpt ( sprintf(

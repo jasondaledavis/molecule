@@ -66,7 +66,7 @@ function molecule_entry_date() {
 		get_the_modified_date()
 	);
 
-	printf( '<span class="posted-on"><span class="screen-reader-text updated">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
+	printf( '<span class="posted-on updated"><span class="screen-reader-text updated">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
 		_x( 'Posted on', 'Used before publish date.', 'molecule' ),
 		esc_url( get_permalink() ),
 		$time_string
