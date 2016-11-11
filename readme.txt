@@ -69,3 +69,6 @@ Image used in screenshot.png: Custom art by Jason Davis
 
 = 1.2 =
 * Added color options for header background in interior pages, and removed custom-header background jpg for transparent png to allow for custom css to style with flat color.
+
+= 1.3 =
+* Removed customizer color options for main navigation.
