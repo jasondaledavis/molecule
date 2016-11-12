@@ -1997,7 +1997,7 @@ a.post-thumbnail:focus {
 .textwidget h6 {
 	font-weight: bold;
 }
-
+/*
 .post-navigation .post-title,
 span.entry-title,
 .comments-title {
@@ -2005,7 +2005,7 @@ span.entry-title,
 	-moz-hyphens: auto;
 	-ms-hyphens: auto;
 	hyphens: auto;
-}
+}*/
 
 p a.read-more {
 	margin-top: 60px;
