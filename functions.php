@@ -221,6 +221,19 @@ function molecule_widgets_init() {
         'after_title' => '</h4>',
       ) );
 
+      if ( class_exists( 'WooCommerce' ) ) {
+                         
+        register_sidebar( array(
+          'name' => 'Shop Sidebar',
+          'id'   => 'shop-sidebar',
+          'before_widget' => '<div id="%1$s" class="widget %2$s">',
+          'after_widget'  => '</div>',
+          'before_title' => '<h4 class="widget-title">',
+          'after_title' => '</h4>',
+        ) );
+ 
+      } //end woo if
+
 }
 
 add_action( 'widgets_init', 'molecule_widgets_init' );

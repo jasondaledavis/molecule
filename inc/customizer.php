@@ -503,8 +503,6 @@ function molecule_get_color_scheme_css( $colors ) {
 	.menu-toggle:hover,
 	.menu-toggle:focus,
 	a,
-	.main-navigation a:hover,
-	.main-navigation a:focus,
 	.dropdown-toggle:hover,
 	.dropdown-toggle:focus,
 	.post-navigation a:hover .post-title,
@@ -572,7 +570,6 @@ function molecule_get_color_scheme_css( $colors ) {
 	body,
 	blockquote cite,
 	blockquote small,
-	.main-navigation a,
 	.menu-toggle,
 	.dropdown-toggle,
 	.post-navigation a,
@@ -867,8 +864,6 @@ function molecule_link_color_css() {
 		.menu-toggle:hover,
 		.menu-toggle:focus,
 		a,
-		.main-navigation a:hover,
-		.main-navigation a:focus,
 		.dropdown-toggle:hover,
 		.dropdown-toggle:focus,
 		.post-navigation a:hover .post-title,
@@ -909,7 +904,6 @@ function molecule_link_color_css() {
 		.widget_calendar tbody a,
 		.page-links a:hover,
 		.page-links a:focus,
-		.main-navigation a::before,
 		.header-pattern  {
 			background-color: %1$s;
 		}

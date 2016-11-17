@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header(); ?>
 
-<?php if ( is_active_sidebar( 'sidebar-blog' )  ) : ?>
+<?php if ( is_active_sidebar( 'shop-sidebar' )  ) : ?>
 
     <div class="grid">
 
@@ -30,84 +30,87 @@ get_header(); ?>
 
             <div class="c9">
 
-	<?php
-		/**
-		 * woocommerce_before_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-		 * @hooked woocommerce_breadcrumb - 20
-		 */
-		do_action( 'woocommerce_before_main_content' );
-	?>
+				<?php
+					/**
+					 * woocommerce_before_main_content hook.
+					 *
+					 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+					 * @hooked woocommerce_breadcrumb - 20
+					 */
+					do_action( 'woocommerce_before_main_content' );
+				?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php wc_get_template_part( 'content', 'single-product' ); ?>
+					<?php wc_get_template_part( 'content', 'single-product' ); ?>
 
-		<?php endwhile; // end of the loop. ?>
+				<?php endwhile; // end of the loop. ?>
 
-	<?php
-		/**
-		 * woocommerce_after_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-		 */
-		do_action( 'woocommerce_after_main_content' );
-	?>
+				<?php
+					/**
+					 * woocommerce_after_main_content hook.
+					 *
+					 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+					 */
+					do_action( 'woocommerce_after_main_content' );
+				?>
 
-	</div><!-- end .c9 -->
+			</div><!-- end .c9 -->
 
-           <?php
-		/**
-		 * woocommerce_sidebar hook.
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
-		 */
-		do_action( 'woocommerce_sidebar' );
-	?>
+			<?php get_sidebar(); ?>
+
+				<?php
+					/**
+					 * woocommerce_sidebar hook.
+					 *
+					 * @hooked woocommerce_get_sidebar - 10
+					 */
+					//do_action( 'woocommerce_sidebar' );
+				?>
 
         </div><!-- end .row -->
 
     </div><!-- end .grid -->
 
-<?php elseif ( !is_active_sidebar( 'sidebar-blog' )  ) : ?>
 
-    <div class="grid wfull">
+<?php elseif ( !is_active_sidebar( 'shop-sidebar' )  ) : ?>
+
+    <div class="grid">
 
         <div class="row">
 
             <div class="c12">
 
-	<?php
-		/**
-		 * woocommerce_before_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-		 * @hooked woocommerce_breadcrumb - 20
-		 */
-		do_action( 'woocommerce_before_main_content' );
-	?>
+				<?php
+					/**
+					 * woocommerce_before_main_content hook.
+					 *
+					 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+					 * @hooked woocommerce_breadcrumb - 20
+					 */
+					do_action( 'woocommerce_before_main_content' );
+				?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php wc_get_template_part( 'content', 'single-product' ); ?>
+					<?php wc_get_template_part( 'content', 'single-product' ); ?>
 
-		<?php endwhile; // end of the loop. ?>
+				<?php endwhile; // end of the loop. ?>
 
-	<?php
-		/**
-		 * woocommerce_after_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-		 */
-		do_action( 'woocommerce_after_main_content' );
-	?>
+				<?php
+					/**
+					 * woocommerce_after_main_content hook.
+					 *
+					 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+					 */
+					do_action( 'woocommerce_after_main_content' );
+				?>
 
-	 </div><!-- end .c12 -->
+			</div><!-- end .c12 -->
 
         </div><!-- end .row -->
 
-    </div><!-- end .grid .wfull -->
+    </div><!-- end .grid -->
 
 <?php endif; ?>
 
