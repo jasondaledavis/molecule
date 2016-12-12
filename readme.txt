@@ -75,3 +75,9 @@ Image used in screenshot.png: Custom art by Jason Davis
 
 = 1.4 =
 * Added compatability for WooCommerce and updated templates.
+
+= 1.5 =
+* Fixed CSS on scroll with header logo
+
+= 1.6 =
+* separated nav and logo rows with HTML

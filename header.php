@@ -72,6 +72,18 @@
                                 } ?>
 
                             </div><!-- end .logo -->
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="grid wfull main-navigation-row">
+
+                    <div class="row">
+                        
+                        <div class="c12">
                     
                             <div class="site-header-main">
 
