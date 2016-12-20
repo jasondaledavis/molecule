@@ -8,7 +8,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
 
-## Description ==
+## Description
 Molecule is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar that works perfectly for blogs and websites. It has custom color options with beautiful default color schemes, a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail. Molecule will make your WordPress look beautiful everywhere.
 
 * Mobile-first, Responsive Layout
@@ -18,17 +18,17 @@ Molecule is a modernized take on an ever-popular WordPress layout — the horizo
 * Post Formats
 * The GPL v2.0 or later license. :) Use it to make something cool.
 
-For more information about Molecule please go to https://codex.wordpress.org/Twenty_Sixteen.
+For more information about Molecule please go to <a href="https://codex.wordpress.org/Twenty_Sixteen">https://codex.wordpress.org/Twenty_Sixteen</a> yep, Molecule is based on this popular theme.
 
-## Installation ==
+### Installation
 
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
 2. Type in Molecule in the search form and press the 'Enter' key on your keyboard.
 3. Click on the 'Activate' button to use your new theme right away.
-4. Go to https://codex.wordpress.org/Twenty_Sixteen for a guide on how to customize this theme.
+4. Go to <a href="https://codex.wordpress.org/Twenty_Sixteen">https://codex.wordpress.org/Twenty_Sixteen</a> for a guide on how to customize this theme.
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
-## Copyright ==
+### Copyright
 
 Molecule WordPress Theme, Copyright 2014-2015 WordPress.org
 Molecule is distributed under the terms of the GNU GPL
@@ -47,16 +47,16 @@ Molecule Theme bundles the following third-party resources:
 
 HTML5 Shiv v3.7.0, Copyright 2014 Alexander Farkas
 Licenses: MIT/GPL2
-Source: https://github.com/aFarkas/html5shiv
+Source: <a href="https://github.com/aFarkas/html5shiv">https://github.com/aFarkas/html5shiv</a>
 
 Genericons icon font, Copyright 2013-2015 Automattic.com
 License: GNU GPL, Version 2 (or later)
-Source: http://www.genericons.com
+Source: <a href="http://www.genericons.com">http://www.genericons.com</a>
 
-Image used in screenshot.png: A photo by Jason Davis (https://nerdbrand.me)
+Image used in screenshot.png: A photo by Jason Davis (<a href="https://nerdbrand.me">https://nerdbrand.me</a>)
 
 
-#### Changelog ==
+#### Changelog
 
 = 1.0 =
 * First Release! September 12th, 2016
