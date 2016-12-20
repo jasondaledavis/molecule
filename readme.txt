@@ -81,3 +81,6 @@ Image used in screenshot.png: Custom art by Jason Davis
 
 = 1.6 =
 * separated nav and logo rows with HTML
+
+= 1.7 =
+* Compatible to WordPress 4.7 removed Custom CSS plugin for customizer as it's now default in WP 4.7

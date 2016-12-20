@@ -20,11 +20,6 @@ function molecule_register_required_plugins() {
         ),
 
         array(
-            'name'      => 'Customizer Custom CSS',
-            'slug'      => 'customizer-custom-css',
-        ),
-
-        array(
             'name'      => 'Duplicate Post',
             'slug'      => 'duplicate-post',
         ),
