@@ -1,16 +1,14 @@
 === Molecule ===
 Contributors: Jason Davis
 Requires at least: WordPress 4.4
-Tested up to: WordPress 4.6+
-Version: 1.0
+Tested up to: WordPress 4.7
+Version: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column,custom-background,custom-colors,custom-menu,custom-logo,editor-style,featured-image-header
+Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
 
 == Description ==
 Molecule is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar that works perfectly for blogs and websites. It has custom color options with beautiful default color schemes, a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail. Molecule will make your WordPress look beautiful everywhere.
-
-Demo content as shown on http://molecule.element502.com is in a folder called "demo-content" with instructions in the readme.txt file.
 
 * Mobile-first, Responsive Layout
 * Custom Colors
@@ -19,19 +17,19 @@ Demo content as shown on http://molecule.element502.com is in a folder called "d
 * Post Formats
 * The GPL v2.0 or later license. :) Use it to make something cool.
 
-For more information about Molecule's base files please go to https://codex.wordpress.org/Molecule.
+For more information about Molecule please go to https://codex.wordpress.org/Twenty_Sixteen.
 
 == Installation ==
 
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
 2. Type in Molecule in the search form and press the 'Enter' key on your keyboard.
 3. Click on the 'Activate' button to use your new theme right away.
-4. Go to https://codex.wordpress.org/Molecule for a guide on how to customize this theme.
+4. Go to https://codex.wordpress.org/Twenty_Sixteen for a guide on how to customize this theme.
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Copyright ==
 
-Molecule WordPress Theme, Copyright 2016 Element502.com
+Molecule WordPress Theme, Copyright 2014-2015 WordPress.org
 Molecule is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -54,7 +52,8 @@ Genericons icon font, Copyright 2013-2015 Automattic.com
 License: GNU GPL, Version 2 (or later)
 Source: http://www.genericons.com
 
-Image used in screenshot.png: Custom art by Jason Davis
+Image used in screenshot.png: A photo by Jason Davis (https://nerdbrand.me)
+
 
 == Changelog ==
 
