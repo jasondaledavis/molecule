@@ -1,4 +1,5 @@
-=== Molecule ===
+# Molecule Theme
+
 Contributors: Jason Davis
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.7
@@ -7,7 +8,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
 
-== Description ==
+## Description ==
 Molecule is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar that works perfectly for blogs and websites. It has custom color options with beautiful default color schemes, a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail. Molecule will make your WordPress look beautiful everywhere.
 
 * Mobile-first, Responsive Layout
@@ -19,7 +20,7 @@ Molecule is a modernized take on an ever-popular WordPress layout — the horizo
 
 For more information about Molecule please go to https://codex.wordpress.org/Twenty_Sixteen.
 
-== Installation ==
+## Installation ==
 
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
 2. Type in Molecule in the search form and press the 'Enter' key on your keyboard.
@@ -27,7 +28,7 @@ For more information about Molecule please go to https://codex.wordpress.org/Twe
 4. Go to https://codex.wordpress.org/Twenty_Sixteen for a guide on how to customize this theme.
 5. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
-== Copyright ==
+## Copyright ==
 
 Molecule WordPress Theme, Copyright 2014-2015 WordPress.org
 Molecule is distributed under the terms of the GNU GPL
@@ -55,7 +56,7 @@ Source: http://www.genericons.com
 Image used in screenshot.png: A photo by Jason Davis (https://nerdbrand.me)
 
 
-== Changelog ==
+#### Changelog ==
 
 = 1.0 =
 * First Release! September 12th, 2016
