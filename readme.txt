@@ -84,3 +84,5 @@ Image used in screenshot.png: Custom art by Jason Davis
 
 = 1.7 =
 * Compatible to WordPress 4.7 removed Custom CSS plugin for customizer as it's now default in WP 4.7
+
+Only the default and dark color schemes are accessibility ready.
