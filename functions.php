@@ -118,17 +118,33 @@ function molecule_setup() {
    *
    * See: https://codex.wordpress.org/Post_Formats
    */
-    add_theme_support( 'post-formats', array(
-      'aside',
-      'image',
-      'video',
-      'quote',
-      'link',
-      'gallery',
-      'status',
-      'audio',
-      'chat',
-    ) );
+    // add_theme_support( 'post-formats', array(
+    //   'aside',
+    //   'image',
+    //   'video',
+    //   'quote',
+    //   'link',
+    //   'gallery',
+    //   'status',
+    //   'audio',
+    //   'chat',
+    // ) );
+
+    /**
+ * Hides the custom post template for pages on WordPress 4.6 and older
+ *
+ * @param array $post_templates Array of page templates. Keys are filenames, values are translated names.
+ * @return array Filtered array of page templates.
+ */
+function molecule_exclude_page_templates( $post_templates ) {
+    if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
+        unset( $post_templates['templates/my-full-width-post-template.php'] );
+    }
+ 
+    return $post_templates;
+}
+ 
+add_filter( 'theme_page_templates', 'molecule_exclude_page_templates' );
 
     /*
     * This theme styles the visual editor to resemble the theme style,

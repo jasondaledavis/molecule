@@ -86,3 +86,8 @@ Image used in screenshot.png: A photo by Jason Davis (<a href="https://nerdbrand
 * Compatible to WordPress 4.7 removed Custom CSS plugin for customizer as it's now default in WP 4.7
 
 Only the default and dark color schemes are accessibility ready.
+
+= 1.8 =
+* Added filter to remove post type templates update for posts for 4.7. Removed post formats from functions.php
+
+Only the default and dark color schemes are accessibility ready.
