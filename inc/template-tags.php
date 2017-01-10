@@ -85,7 +85,7 @@ if ( ! function_exists( 'molecule_entry_taxonomies' ) ) :
 function molecule_entry_taxonomies() {
 	$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'molecule' ) );
 	if ( $categories_list && molecule_categorized_blog() ) {
-		printf( ' / Posted in: <span class="cat-links"><span class="screen-reader-text"> %1$s </span> %2$s </span>',
+		printf( ' Posted in: <span class="cat-links"><span class="screen-reader-text"> %1$s </span> %2$s </span>',
 			_x( 'Categories', 'Used before category names.', 'molecule' ),
 			$categories_list
 		);

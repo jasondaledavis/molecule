@@ -88,4 +88,7 @@ Image used in screenshot.png: A photo by Jason Davis (<a href="https://nerdbrand
 = 1.8 =
 * Added filter to remove post type templates update for posts for 4.7. Removed post formats from functions.php
 
+= 1.8.1 =
+* Removed extra / from meta in blogs
+
 Only the default and dark color schemes are accessibility ready.
