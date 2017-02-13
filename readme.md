@@ -91,4 +91,8 @@ Image used in screenshot.png: A photo by Jason Davis (<a href="https://nerdbrand
 = 1.8.1 =
 * Removed extra / from meta in blogs
 
+= 1.8.2 =
+* Revised CSS to match DEMO on molecule.element502.com
+
+NOTE: 
 Only the default and dark color schemes are accessibility ready.
