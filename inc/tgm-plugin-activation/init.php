@@ -29,16 +29,6 @@ function molecule_register_required_plugins() {
             'slug'      => 'easy-google-fonts',
         ),
 
-        array(
-            'name'      => 'Header and Footer Scripts',
-            'slug'      => 'easy-google-fonts',
-        ),
-
-        array(
-            'name'      => 'No Page Comment',
-            'slug'      => 'no-page-comment',
-        ),
-
     );
 
     tgmpa( $plugins );

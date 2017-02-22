@@ -73,45 +73,47 @@
 
                             </div><!-- end .logo -->
 
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="grid wfull main-navigation-row">
-
-                    <div class="row">
-                        
-                        <div class="c12">
-                    
-                            <div class="site-header-main">
-
-                            <?php if ( has_nav_menu( 'primary' ) ) : ?>
-                            
-                            <button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'molecule' ); ?></button>
-
-                            <div id="site-header-menu" class="site-header-menu">
-                                    <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'molecule' ); ?>">
-                                        <?php
-                                            wp_nav_menu( array(
-                                                'theme_location' => 'primary',
-                                                'menu_class'     => 'primary-menu',
-                                             ) );
-                                        ?>
-                                    </nav><!-- .main-navigation -->
-
-                            </div><!-- .site-header-menu -->
-
-                            <?php endif; ?><!-- end has_nav_menu -->
-
                         </div><!-- end .c12 -->
 
                     </div><!-- end .row -->
 
                 </div><!-- end .grid -->
 
-            </div>
+                <div class="main-navigation-row">
+
+                    <div class="grid wfull">
+
+                        <div class="row">
+                            
+                            <div class="c12">
+                        
+                                <div class="site-header-main">
+
+                                <?php if ( has_nav_menu( 'primary' ) ) : ?>
+                                
+                                <button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'molecule' ); ?></button>
+
+                                <div id="site-header-menu" class="site-header-menu">
+                                        <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'molecule' ); ?>">
+                                            <?php
+                                                wp_nav_menu( array(
+                                                    'theme_location' => 'primary',
+                                                    'menu_class'     => 'primary-menu',
+                                                 ) );
+                                            ?>
+                                        </nav><!-- .main-navigation -->
+
+                                </div><!-- .site-header-menu -->
+
+                                <?php endif; ?><!-- end has_nav_menu -->
+
+                            </div><!-- end .c12 -->
+
+                        </div><!-- end .row -->
+
+                    </div><!-- end .grid -->
+
+                </div><!-- main nav row -->
 
             </div><!-- end .header-top -->
             
@@ -123,9 +125,9 @@
                 
                     <?php get_template_part( 'partials/custom', 'header' ); ?>               
 
-                </div>
+                </div><!-- end .row -->
 
-            </div>
+            </div><!-- end .grid -->
 
             <?php endif; ?>
 
