@@ -94,11 +94,8 @@ Image used in screenshot.png: A photo by Jason Davis (<a href="https://nerdbrand
 = 1.8.2 =
 * Revised CSS to match DEMO on molecule.element502.com
 
-<<<<<<< HEAD
 = 1.8.3 =
 * Cleaned up CSS indents and added comments. Added main-navigation-row class to nav row for better markup and style control. Removed color options in customizer (use CSS!), and removed background option. Revised TGM Plugin Activation list (init.php).
 
-=======
->>>>>>> origin/master
 NOTE: 
 Only the default and dark color schemes are accessibility ready.
