@@ -26,7 +26,7 @@
 				) );
 
 				if ( '' !== get_the_author_meta( 'description' ) ) {
-					get_template_part( 'page-templates/biography' );
+					get_template_part( 'template-parts/biography' );
 				}
 			?>
 
@@ -40,7 +40,7 @@
             
             </div>
 
-            <?php //get_template_part( 'partials/social', 'share' ); ?>
+            <?php //get_template_part( 'template-parts/social', 'share' ); ?>
 
 			<?php
 				edit_post_link(

@@ -1,10 +1,10 @@
 /*
 Theme Name: Molecule
-Theme URI: https://nerdbrand.me
+Theme URI: https://molecule.element502.com
 Author: Jason Davis
 Author URI: https://nerdbrand.me
 Description: Molecule is a diverse theme for whatever you imagine. Molecule is fully compatible with popular plugins like WooCommerce, Gravity Forms, Contact Form 7, Jetpack, and others. The content area powers the entire sites main page area, so make it look how you want. the header and footer are customizable from the WordPress customizer for backgrounds and color options. There are 4 widget areas in the footer, and a separate page and blog sidebar. Sidebars are only activate once a widget is dragged in place and page and blog sidebar is only on the right side column. A page builder is recommended like SiteOrigin or Visual Composer to create a beautiful layout like the demo.
-Version: 1.8.3
+Version: 1.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -30,6 +30,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
  * 8.0 - Alignments
  * 9.0 - Clearings
  * 10.0 - Widgets
+ *	  10.1 - Header Top Bar Widgets
  * 11.0 - Content
  *    11.1 - Header
  *    11.2 - Posts and pages
@@ -383,7 +384,7 @@ optgroup {
 
 body, button, input, select, textarea {
 	color: #1a1a1a;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.75;
@@ -394,13 +395,11 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 	text-rendering: optimizeLegibility;
 	margin-bottom: 30px;
-	font-family: 'Playfair Display', 'Open Sans', 'Arial', cursive;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 p {
 	margin: 0 0 1.75em;
-	font-weight: lighter;
-	font-family: 'Open Sans', sans-serif;
 }
 
 dfn, cite, em, i {
@@ -417,6 +416,8 @@ blockquote {
 	overflow: hidden;
 	padding: 0 0 0 1.263157895em;
 	border-left: solid 2px #686868;
+	font-family: 'Open Sans', 'Arial', sans-serif;
+	font-weight:bold;
 }
 
 blockquote, q {
@@ -521,6 +522,7 @@ html {
 
 body {
 	background: #ffffff;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	/* Fallback for when there is no custom background color defined. */
 	margin: 0;
 	min-height: 100%;
@@ -626,24 +628,24 @@ th, td {
 
 ::-webkit-input-placeholder {
 	color: #686868;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 :-moz-placeholder {
 	color: #686868;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 ::-moz-placeholder {
 	color: #686868;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	opacity: 1;
 	/* Since FF19 lowers the opacity of the placeholder by default */
 }
 
 :-ms-input-placeholder {
 	color: #686868;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 
@@ -660,7 +662,7 @@ button, button[disabled]:hover, button[disabled]:focus, input[type="button"], in
 	border: 0;
 	border-radius: 2px;
 	color: #fff;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-weight: 700;
 	letter-spacing: 0.046875em;
 	line-height: 1;
@@ -705,7 +707,7 @@ input[type="date"]:focus, input[type="time"]:focus, input[type="datetime-local"]
 .post-password-form label {
 	color: #686868;
 	display: block;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	letter-spacing: 0.076923077em;
@@ -798,15 +800,10 @@ a:hover, a:active {
 	margin: 0.875em 0;
 }
 
-.site-header-menu.toggled-on, .no-js .site-header-menu {
+/*.site-header-menu.toggled-on, .no-js .site-header-menu {
 	display: block;
 }
-
-.main-navigation {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: lighter;
-}
-
+*/
 .main-navigation ul {
 	list-style: none;
 	margin: 0;
@@ -817,8 +814,8 @@ a:hover, a:active {
 }
 
 .main-navigation a {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: lighter;
+	font-family: 'Open Sans', 'Arial', sans-serif;
+	font-weight: normal;
 	color: #1a1a1a;
 	display: block;
 	line-height: 1.3125;
@@ -892,7 +889,7 @@ a:hover, a:active {
 	border-top: 2px solid #1a1a1a;
 	border-bottom: 2px solid #1a1a1a;
 	clear: both;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+		
 	margin: 7.6923% 3.5em;
 }
 
@@ -918,7 +915,7 @@ a:hover, a:active {
 
 .post-navigation .post-title {
 	display: inline;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-size: 23px;
 	font-size: 1.4375rem;
 	font-weight: 700;
@@ -936,7 +933,7 @@ a:hover, a:active {
 
 .pagination {
 	border-top: 1px dotted #a88c5e;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-size: 19px;
 	font-size: 1.1875rem;
 	margin-top: 4px;
@@ -1067,7 +1064,7 @@ a:hover, a:active {
 	border-top: 1px solid #d1d1d1;
 	border-bottom: 1px solid #d1d1d1;
 	color: #686868;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	line-height: 1.6153846154;
@@ -1122,7 +1119,7 @@ a:hover, a:active {
 	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
 	color: #1f3f4c;
 	display: block;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-size: 14px;
 	font-weight: 700;
 	left: -9999em;
@@ -1135,7 +1132,7 @@ a:hover, a:active {
 
 .logged-in .site .skip-link {
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
-	font-family: "Open Sans", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 .site .skip-link:focus {
@@ -1209,7 +1206,7 @@ blockquote.aligncenter {
 }
 
 .widget .widget-title {
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
 	letter-spacing: 0.046875em;
@@ -1262,7 +1259,7 @@ blockquote.aligncenter {
 .widget_recent_entries .post-date {
 	color: #686868;
 	display: block;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	line-height: 1.615384615;
@@ -1283,7 +1280,7 @@ blockquote.aligncenter {
 .widget_rss .rss-date, .widget_rss cite {
 	color: #686868;
 	display: block;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	font-style: normal;
@@ -1306,7 +1303,7 @@ blockquote.aligncenter {
 	border: 1px solid #d1d1d1;
 	border-radius: 2px;
 	display: inline-block;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	line-height: 1;
 	margin: 0 0.1875em 0.4375em 0;
 	padding: 0.5625em 0.4375em 0.5em;
@@ -1318,6 +1315,221 @@ blockquote.aligncenter {
 	outline: 0;
 }
 
+ /**
+ * 10.1 - Header Top Bar Widgets
+ */
+
+.topbar-left {
+    float: left;
+    min-height: 40px;
+}
+.topbar-right {
+    float: right;
+    min-height: 40px;
+}
+#molecule-topbar {
+    background: #f5f5f5;
+    border-bottom: 1px solid #f0f0f0;
+    min-height: 40px;
+}
+#molecule-topbar .row {
+	margin-bottom: 0;
+}
+#molecule-topbar .widget {
+	padding-top: 8px;
+}
+
+#molecule-topbar .widget p {
+	margin: 0px;
+	font-family: 'Open Sans', 'Arial', sans-serif;
+    font-weight: normal;
+    color: #888;
+    display: block;
+    font-size: .8em;
+    line-height: 1.1em;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+/* molecule-topbar widget searchbar */
+#molecule-topbar .widget.widget_search {
+	padding:4px 0 0;
+}
+#molecule-topbar .searchbar input[type="text"], 
+#molecule-topbar .searchbar input[type="password"], 
+#molecule-topbar .searchbar input[type="email"], 
+#molecule-topbar .searchbar textarea, 
+#molecule-topbar .searchbar select {
+    background: #f8f8f8 url(assets/img/search.svg) 100% 49% no-repeat;
+    color: #686868;
+    box-shadow: none;
+    border: none;
+    padding: 10px 4px;
+    width: 50%;
+    height: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: solid 1px #cccccc;
+    border-radius: 3px;
+    float: right;
+}
+
+#molecule-topbar .searchbar input[type="text"] img {
+	width: 30%;
+}
+
+/* molecule-topbar widget menu dropdowns */
+#molecule-topbar ul {
+    list-style: none;
+    margin: 0;
+}
+
+#molecule-topbar li {
+    position: relative;
+    display: inline-block;
+}
+
+#molecule-topbar a {
+    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-weight: normal;
+    color: #888;
+    display: block;
+    font-size: .8em;
+    line-height: 1em;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+#molecule-topbar a:hover, #molecule-topbar a:focus {
+    color: #a88c5e;
+}
+
+#molecule-topbar .current-menu-item>a, #molecule-topbar .current-menu-ancestor>a {
+    font-weight: normal;
+}
+
+#molecule-topbar ul ul {
+    display: none;
+    margin-left: 0.875em;
+}
+
+.no-js #molecule-topbar ul ul {
+    display: block;
+}
+
+#molecule-topbar ul .toggled-on {
+    display: block;
+}
+
+#molecule-topbar .primary-menu {
+    border-bottom: 1px solid #d1d1d1;
+}
+
+#molecule-topbar .menu-item-has-children>a {
+    margin-right: 56px;
+}
+
+@media screen and (min-width: 56.875em) {
+    .site-header-main {
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+    .site-header-menu {
+        display: block;
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+    }
+    #molecule-topbar {
+        margin: 0 -0.875em;
+    }
+    #molecule-topbar .primary-menu, #molecule-topbar .primary-menu>li {
+        border: 0;
+    }
+    #molecule-topbar .primary-menu>li {
+        float: left;
+    }
+    #molecule-topbar a {
+        outline-offset: -8px;
+        padding: 0.65625em 0.875em;
+        white-space: nowrap;
+        text-transform: uppercase;
+    }
+    #molecule-topbar li:hover>a, #molecule-topbar li.focus>a {
+        color: #a88c5e;
+    }
+    #molecule-topbar ul ul {
+        border-bottom: 1px solid #d1d1d1;
+        display: block;
+        left: -999em;
+        margin: 0;
+        position: absolute;
+        z-index: 99999;
+    }
+    #molecule-topbar ul ul ul {
+        top: -1px;
+    }
+    #molecule-topbar ul ul ul:before, #molecule-topbar ul ul ul:after {
+        border: 0;
+    }
+    #molecule-topbar ul ul li {
+        background-color: #fff;
+        border: 1px solid #d1d1d1;
+        border-bottom-width: 0;
+    }
+    #molecule-topbar ul ul a {
+        white-space: normal;
+        width: 12.6875em;
+    }
+    #molecule-topbar ul ul:before, #molecule-topbar ul ul:after {
+        border-style: solid;
+        content: "";
+        position: absolute;
+    }
+    #molecule-topbar ul ul:before {
+        border-color: #d1d1d1 transparent;
+        border-width: 0 10px 10px;
+        right: 9px;
+        top: -9px;
+    }
+    #molecule-topbar ul ul:after {
+        border-color: #fff transparent;
+        border-width: 0 8px 8px;
+        right: 11px;
+        top: -7px;
+    }
+    #molecule-topbar li:hover>ul, #molecule-topbar li.focus>ul {
+        left: auto;
+        right: 0;
+    }
+    #molecule-topbar ul ul li:hover>ul, #molecule-topbar ul ul li.focus>ul {
+        left: auto;
+        right: 100%;
+    }
+    #molecule-topbar .menu-item-has-children>a {
+        margin: 0;
+        padding-right: 2.25em;
+    }
+    #molecule-topbar .menu-item-has-children>a:after {
+        content: "\f431";
+        font-family: Genericons;
+        position: absolute;
+        right: 0.625em;
+        top: 0.825em;
+    }
+    #molecule-topbar ul ul .menu-item-has-children>a {
+        padding-right: 2.0625em;
+    }
+    #molecule-topbar ul ul .menu-item-has-children>a:after {
+        right: 0.5625em;
+        top: 0.875em;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
 
 /**
  * 11.0 - Content
@@ -1407,7 +1619,7 @@ blockquote.aligncenter {
 	margin: 0 auto;
 	padding: 0;
 	text-align: center;
-	font-family: 'Merriweather', sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 .site-description {
@@ -1420,11 +1632,7 @@ blockquote.aligncenter {
 	line-height: 1.0769230769;
 }
 
-.header-top-dark .site-title {
-	font-size: 16px;
-	font-size: 1.1rem;
-}
-
+.header-top-dark .site-title,
 .header-top-dark .site-description {
 	display: none;
 }
@@ -1434,35 +1642,55 @@ blockquote.aligncenter {
 }
 
 .header-top img.custom-logo {
-	-moz-transition: all 0.4s ease-in-out;
-	-webkit-transition: all 0.4s ease-in-out;
-	transition: all 0.4s ease-in-out;
-	max-width: 180px;
+	-moz-transition: all 1s ease;
+	-webkit-transition: all 1s ease;
+	transition: all 1s ease;
+	max-width: 240px;
 	height: auto;
 	text-align: center;
-	padding: 10px 0 0;
 	z-index: 9999;
 	margin: 0 auto;
 }
 
 .header-top-dark img.custom-logo {
-	max-width: 120px;
+	max-width: 180px;
+	height: auto;
+	z-index: 9999;
+	margin: 0 auto;
+	-webkit-transition: all 0.6s ease 0s;
+	-moz-transition: all 0.6s ease 0s;
+	-ms-transition: all 0.6s ease 0s;
+	-o-transition:all 0.6s ease 0s;
+	transition: all 0.6s ease 0s;
 }
 
 .header-top {
 	width: 100%;
 	top: 0;
 	left: 0;
-	-moz-transition: all 0.6s ease-in-out;
-	-webkit-transition: all 0.6s ease-in-out;
-	transition: all 0.6s ease-in-out;
 	z-index: 7000;
 	overflow: visible;
 	background: #ffffff;
 }
 
+.header-top-dark {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 7000;
+	overflow: visible;
+	-webkit-box-shadow: 0px 1px 8px rgba(2, 2, 2, 0.2);
+	-moz-box-shadow: 0px 1px 8px rgba(2, 2, 2, 0.2);
+	-ms-box-shadow: 0px 1px 8px rgba(2, 2, 2, 0.2);
+	-o-box-shadow: 0px 1px 8px rgba(2, 2, 2, 0.2);
+	box-shadow: 0px 1px 8px rgba(2, 2, 2, 0.2);
+	background: #ffffff;
+}
+
+.header-top-dark .main-navigation,
 .header-top .main-navigation {
-	padding: 10px
+	padding: 10px 0;
 }
 
 .header-top .main-navigation-row {
@@ -1475,35 +1703,20 @@ blockquote.aligncenter {
 	background: white;
 }
 
-.header-top .row, .header-top-dark .row {
+.header-top .row, 
+.header-top-dark .row {
 	margin-bottom: 0px;
 }
 
-.header-top-dark {
-	padding: 0;
-	margin-bottom: 0;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	-moz-transition: all 0.6s ease-in-out;
-	-webkit-transition: all 0.6s ease-in-out;
-	transition: all 0.6s ease-in-out;
-	z-index: 7000;
-	overflow: visible;
-	-webkit-box-shadow: 0px 1px 8px rgba(2, 2, 2, 0.2);
-	-moz-box-shadow: 0px 1px 8px rgba(2, 2, 2, 0.2);
-	-ms-box-shadow: 0px 1px 8px rgba(2, 2, 2, 0.2);
-	-o-box-shadow: 0px 1px 8px rgba(2, 2, 2, 0.2);
-	box-shadow: 0px 1px 8px rgba(2, 2, 2, 0.2);
-	background: #ffffff;
-}
 
-.header-top-dark .main-navigation .primary-menu, .header-top-dark .main-navigation .primary-menu>li {
+.header-top-dark .main-navigation .primary-menu, 
+.header-top-dark .main-navigation .primary-menu>li {
 	border: 0;
 }
 
-.admin-bar .header-top, .admin-bar .header-top-dark {
+/*for when logged into wordpress to move admin bar out of the way*/
+.admin-bar .header-top, 
+.admin-bar .header-top-dark {
 	top: 30px;
 }
 
@@ -1513,8 +1726,8 @@ blockquote.aligncenter {
 	position: relative;
 }
 
-.custom-header-image {
-	width: 100%;
+.custom-header img {
+	max-height:300px;
 }
 
 .custom-headings {
@@ -1542,8 +1755,8 @@ blockquote.aligncenter {
 	line-height: 39.2px;
 	font-size: 2.8rem;
 	line-height: 3.9199999999999995rem;
-	font-weight: normal;
-	font-family: 'Playfair Display', 'Open Sans', 'Arial', cursive;
+	font-weight: bold;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 .page-subtitle {
@@ -1551,7 +1764,7 @@ blockquote.aligncenter {
 	padding: 0;
 	top: 70%;
 	font-weight: normal;
-	font-family: 'Abril Fatface', cursive;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-size: 22px;
 	line-height: 28px;
 	font-size: 1.375rem;
@@ -1564,29 +1777,6 @@ blockquote.aligncenter {
 	transform: translate(-50%, -50%);
 	opacity: 1;
 	text-align: center;
-}
-
-.section-background-title {
-	position: absolute;
-	padding: 0;
-	top: 30%;
-	font-weight: bold;
-	line-height: 1;
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-	color: #a88c5e !important;
-	opacity: .15;
-}
-
-.header-custom-image {
-	background-position: top left;
-	background-repeat: no-repeat;
-	background-size: contain;
-	min-height: 800px;
-	background-attachment: fixed;
 }
 
 .menu-toggle {
@@ -1622,20 +1812,6 @@ blockquote.aligncenter {
 	outline: thin dotted;
 }
 
-.header-image {
-	clear: both;
-	margin: 0.875em 0;
-}
-
-.header-image a {
-	display: block;
-}
-
-.header-image a:hover img, .header-image a:focus img {
-	opacity: 0.85;
-}
-
-
 /**
  * 11.2 - Posts and pages
  */
@@ -1664,7 +1840,7 @@ h1.entry-header {
 
 span.entry-title {
 	font-weight: normal;
-	font-family: 'Playfair Display', 'Open Sans', 'Arial', cursive;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-size: 28px;
 	font-size: 1.75rem;
 	font-weight: 700;
@@ -1703,39 +1879,46 @@ a.post-thumbnail:hover, a.post-thumbnail:focus {
 
 .entry-content h1 {
 	margin-top: 30px;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
 	margin-top: 0;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 .entry-content h1, .entry-summary h1, .comment-content h1, .textwidget h1 {
 	font-size: 28px;
 	font-size: 1.75rem;
 	line-height: 1.25;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 .entry-content h2, .entry-summary h2, .comment-content h2, .textwidget h2 {
 	font-size: 23px;
 	font-size: 1.4375rem;
 	line-height: 1.2173913043;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 .entry-content h3, .entry-summary h3, .comment-content h3, .textwidget h3 {
 	font-size: 19px;
 	font-size: 1.1875rem;
 	line-height: 1.1052631579;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 .entry-content h4, .entry-content h5, .entry-content h6, .entry-summary h4, .entry-summary h5, .entry-summary h6, .comment-content h4, .comment-content h5, .comment-content h6, .textwidget h4, .textwidget h5, .textwidget h6 {
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.3125;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 .entry-content h4, .entry-summary h4, .comment-content h4, .textwidget h4 {
 	letter-spacing: 0.140625em;
 	text-transform: uppercase;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 .entry-content h6, .entry-summary h6, .comment-content h6, .textwidget h6 {
@@ -1744,21 +1927,12 @@ a.post-thumbnail:hover, a.post-thumbnail:focus {
 
 .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6, .entry-summary h1, .entry-summary h2, .entry-summary h3, .entry-summary h4, .entry-summary h5, .entry-summary h6, .comment-content h1, .comment-content h2, .comment-content h3, .comment-content h4, .comment-content h5, .comment-content h6, .textwidget h1, .textwidget h2, .textwidget h3, .textwidget h4, .textwidget h5, .textwidget h6 {
 	font-weight: bold;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
-
-
-/*
-.post-navigation .post-title,
-span.entry-title,
-.comments-title {
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	-ms-hyphens: auto;
-	hyphens: auto;
-}*/
 
 p a.read-more {
 	margin-top: 60px;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 a.read-more, .read-more, .more-link, a.more-link {
@@ -1772,6 +1946,7 @@ a.read-more, .read-more, .more-link, a.more-link {
 	color: #ffffff;
 	border-radius: 3px;
 	white-space: nowrap;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 .read-more:hover, .more-link:hover {
@@ -1805,6 +1980,7 @@ a.read-more, .read-more, .more-link, a.more-link {
 
 .author-description> :last-child {
 	margin-bottom: 0;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 .entry-content .author-title {
@@ -1814,6 +1990,7 @@ a.read-more, .read-more, .more-link, a.more-link {
 	font-weight: 900;
 	line-height: 1.75;
 	margin: 0;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 .author-bio {
@@ -1823,6 +2000,7 @@ a.read-more, .read-more, .more-link, a.more-link {
 	line-height: 1.6153846154;
 	margin-bottom: 1.6153846154em;
 	overflow: hidden;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 .author-link {
@@ -1842,7 +2020,7 @@ img.avatar.avatar-120.photo {
 
 .entry-footer {
 	color: #686868;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	line-height: 1.6153846154;
@@ -1877,7 +2055,7 @@ img.avatar.avatar-120.photo {
 .sticky-post {
 	color: #686868;
 	display: block;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	letter-spacing: 0.076923077em;
@@ -1943,7 +2121,7 @@ body.error404 .page-header, body.search-no-results .page-header {
 
 .page-links {
 	clear: both;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	margin: 0 0 1.75em;
 }
 
@@ -2056,7 +2234,7 @@ h3.sd-title {
 	line-height: 14px;
 	font-size: 1rem;
 	line-height: 1.4rem;
-	font-family: 'Playfair Display', 'Open Sans', 'Arial', cursive;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 .social-share {
@@ -2068,7 +2246,7 @@ h3.sd-title {
 	line-height: 14px;
 	font-size: 1rem;
 	line-height: 1.4rem;
-	font-family: 'Playfair Display', 'Open Sans', 'Arial', cursive;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 .social-share ul {
@@ -2172,7 +2350,7 @@ h3.sd-title {
 
 .comments-title, .comment-reply-title {
 	border-top: 4px solid #1a1a1a;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-size: 23px;
 	font-size: 1.4375rem;
 	font-weight: 700;
@@ -2225,7 +2403,7 @@ h3.sd-title {
 
 .comment-metadata, .pingback .edit-link {
 	color: #686868;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	line-height: 1.6153846154;
@@ -2267,7 +2445,7 @@ h3.sd-title {
 	border-radius: 2px;
 	color: #a88c5e;
 	display: inline-block;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	line-height: 1;
@@ -2296,7 +2474,7 @@ h3.sd-title {
 .comment-form label {
 	color: #686868;
 	display: block;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	letter-spacing: 0.076923077em;
@@ -2319,7 +2497,7 @@ h3.sd-title {
 
 .no-comments {
 	border-top: 1px solid #d1d1d1;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-weight: 700;
 	margin: 0;
 	padding-top: 1.75em;
@@ -2331,7 +2509,7 @@ h3.sd-title {
 }
 
 .form-allowed-tags code {
-	font-family: Inconsolata, monospace;
+	font-family: monospace;
 }
 
 .form-submit {
@@ -2340,7 +2518,7 @@ h3.sd-title {
 
 .required {
 	color: #a88c5e;
-	font-family: Merriweather, Georgia, serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 }
 
 .comment-reply-title small {
@@ -2551,6 +2729,15 @@ h3.sd-title {
  * 11.6 - Footer
  */
 
+ .footer-logo {
+	filter: grayscale(100%);
+	max-width: 180px;
+	height: auto;
+	margin: 0 auto;
+	text-align: center;
+	opacity: .8;
+}
+
 .footer-global {
 	padding: 16px 0 1px;
 	/*makes the footer stick to bottom*/
@@ -2562,20 +2749,21 @@ h3.sd-title {
 	color: #1a1a1a;
 	font-size: 7px;
 	line-height: 9.8px;
-	font-size: .7rem;
-	line-height: .9799999999999999rem;
+	font-size: .6rem;
+	line-height: .7em;
 	text-transform: uppercase;
-	float: left;
+	margin-top: 30px;
 }
 
 .footer-global .text-right {
 	color: #1a1a1a;
 	font-size: 7px;
 	line-height: 9.8px;
-	font-size: .7rem;
-	line-height: .9799999999999999rem;
+	font-size: .6rem;
+	line-height: .7em;
 	text-transform: uppercase;
-	float: right;
+	margin-top: 30px;
+	text-align: right;
 }
 
 .footer-credits {
@@ -2603,7 +2791,7 @@ h3.sd-title {
 	line-height: 14px;
 	font-size: 1rem;
 	line-height: 1.4rem;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Open Sans', 'Arial', sans-serif;
 	font-weight: bold;
 	text-transform: uppercase;
 }
@@ -2848,30 +3036,36 @@ p>embed, p>iframe, p>object, p>video {
 
 
 /**
- * 14.1 - >= 710px
+ * 14.1 - 710px
  */
 
 @media screen and (min-width: 44.375em) {
+
 	.site-title {
 		font-size: 28px;
 		font-size: 1.75rem;
 		line-height: 1.25;
 	}
+
 	.wp-custom-logo .site-title {
 		margin-top: 0.5em;
 	}
+
 	.site-description {
 		display: block;
 	}
+
 	.menu-toggle {
 		font-size: 16px;
 		font-size: 1.0rem;
 		margin: 1.3125em 0;
 		padding: 0.8125em 0.875em 0.6875em;
 	}
+
 	.site-header-menu {
 		margin: 0 auto;
 	}
+
 	.post-navigation {
 		margin-bottom: 5.25em;
 	}
@@ -2928,18 +3122,11 @@ p>embed, p>iframe, p>object, p>video {
 	.comment-list+.comment-respond, .comment-navigation+.comment-respond {
 		padding-top: 3.5em;
 	}
+	
 }
 
-
 /**
- * 14.2 - >= 783px
- */
-
-@media screen and (min-width: 48.9375em) {}
-
-
-/**
- * 14.3 - >= 910px
+ * 14.2 - >= 910px
  */
 
 @media screen and (min-width: 56.875em) {
@@ -3177,10 +3364,11 @@ p>embed, p>iframe, p>object, p>video {
 
 
 /**
- * 14.4 - >= 985px
+ * 14.3 - >= 985px
  */
 
 @media screen and (min-width: 61.5625em) {
+
 	.image-navigation {
 		margin-bottom: 3.230769231em;
 	}
@@ -3214,49 +3402,63 @@ p>embed, p>iframe, p>object, p>video {
 	}
 }
 
-
 /**
- * 14.5 - >= 1200px
+ * 14.4 - iPhone (Landscape)
  */
 
-@media screen and (min-width: 75em) {}
 
-
-/**
- * 14.6 - <= 528px
- */
-
-@media screen and (max-width: 33em) {
-	.mobile .c12 {
-		margin-bottom: 0;
-	}
-	.mobile .logo {
-		padding: 10px 0;
-	}
+@media screen and (max-width: 41.688em) {
+	
 	.menu-toggle {
-		margin: 10px auto;
+		margin: 0 auto;
 	}
-	.header-top-dark img.custom-logo {
-		display: none;
+	.header-top .main-navigation-row {
+	    border-top: none;
+	    border-bottom: none;
 	}
-	.custom-headings-inner h1.page-title span.entry-title {
-		font-size: 28px;
-		font-size: 1.5rem;
-		line-height: 1.7rem;
-	}
-	.header-top-dark .site-title {
-		font-size: 28px;
-		font-size: 1.5rem;
-		line-height: 1.7rem;
-	}
-	.header-top-dark .site-description {
-		display: none;
-	}
-	.custom-headings-inner .meta-details {
-		display: none;
+	.footer-global .text-right, 
+	.footer-global .copyright-info {
+		float: none;
+		text-align: center;
 	}
 }
 
+/**
+ * 14.5 - iPad Portrait
+ */
+
+@media screen and (max-width: 48em) {
+
+	#molecule-topbar {
+		display: none;
+	}
+
+	.menu-toggle {
+		margin: 0px auto;
+	}
+
+	.header-top-dark .logo {display: none;}
+
+	.custom-headings {
+		position: absolute;
+		top: 31%;
+	}
+
+	.admin-bar .header-top, 
+	.admin-bar .header-top-dark {
+		top: 0px;
+	}
+	.header-top .main-navigation-row {
+	    border-top: none;
+	    border-bottom: none;
+	}
+	.footer-global .text-right, 
+	.footer-global .copyright-info {
+		float: none;
+		text-align: center;
+	}
+
+}
 
 /**
  * 15.0 - Print

@@ -129,7 +129,7 @@
 
             <h1 class="page-title"><span class="entry-title"><?php the_title(); ?></span></h1>
             
-            <?php get_template_part( 'partials/single-meta', 'details' ); ?>
+            <?php get_template_part( 'template-parts/single-meta', 'details' ); ?>
 
         </div>
         

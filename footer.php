@@ -21,17 +21,27 @@
 
                 <div class="footer-credits">
 
-                    <div class="c6">
+                    <div class="c4">
 
                         <p class="copyright-info"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>. &copy; <?php echo date( 'Y' ) ?> <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'molecule' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'molecule' ), 'WordPress' ); ?></a></p>
 
-                    </div><!-- end .c6 -->
+                    </div><!-- end .c4 -->
 
-                    <div class="c6">
+                    <div class="c4">
+
+                        <div class="footer-logo">
+
+                            <?php molecule_the_custom_logo(); ?>
+
+                        </div>
+
+                    </div>
+
+                    <div class="c4">
 
                         <p class="text-right"><a href="<?php echo esc_url( __( 'https://element502.com/', 'molecule' ) ); ?>" target="_blank" title="The stuff that makes Element 502 themes awesome."><?php printf( __( 'Also powered by %s', 'molecule' ), 'Elementium #502' ); ?></a></p>
 
-                    </div> <!-- end .c6 -->
+                    </div> <!-- end .c4 -->
 
                 </div>
 
