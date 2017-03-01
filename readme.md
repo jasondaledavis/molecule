@@ -101,3 +101,7 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="https://nerdbrand.m
 
 = 1.9 =
 * Revised all files to stay updated to Twenty Sixteen Theme updates. Updated Genericons to 3.4.1. Added IE7 - 10 style sheets in CSS. Added all partials in template-parts directory.
+
+= 1.9.1 =
+
+* Bug fixed in CSS in how interior page/post images were sized.

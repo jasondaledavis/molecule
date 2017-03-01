@@ -18,7 +18,7 @@
 
         if ( has_post_thumbnail() ) {
 
-         the_post_thumbnail( 'header-image', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); 
+         the_post_thumbnail( 'header-image', array( 'alt' => the_title_attribute( 'echo=0' ), 'class' => "custom-header-image" ) ); 
 
         } else {  
             $image = get_template_directory_uri() .'/assets/img/header_placeholder.png'; 
