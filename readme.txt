@@ -70,7 +70,8 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="https://nerdbrand.m
 * Fixed page subtitle CSS and changes text domain to molecule from capstone
 
 = 1.2 =
-* Added color options for header background in interior pages, and removed custom-header background jpg for transparent png to allow for custom css to style with flat color.
+* Added color options for header background in interior pages
+* Removed custom-header background jpg for transparent png to allow for custom css to style with flat color.
 
 = 1.3 =
 * Removed customizer color options for main navigation.
@@ -85,10 +86,12 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="https://nerdbrand.m
 * separated nav and logo rows with HTML
 
 = 1.7 =
-* Compatible to WordPress 4.7 removed Custom CSS plugin for customizer as it's now default in WP 4.7
+* Compatible to WordPress 4.7 
+* Removed Custom CSS plugin for customizer as it's now default in WP 4.7
 
 = 1.8 =
-* Added filter to remove post type templates update for posts for 4.7. Removed post formats from functions.php
+* Added filter to remove post type templates update for posts for 4.7. 
+* Removed post formats from functions.php
 
 = 1.8.1 =
 * Removed extra / from meta in blogs
@@ -97,11 +100,35 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="https://nerdbrand.m
 * Revised CSS to match DEMO on molecule.element502.com
 
 = 1.8.3 =
-* Cleaned up CSS indents and added comments. Added main-navigation-row class to nav row for better markup and style control. Removed color options in customizer (use CSS!), and removed background option. Revised TGM Plugin Activation list (init.php).
+* Cleaned up CSS indents and added comments. 
+* Added main-navigation-row class to nav row for better markup and style control. 
+* Removed color options in customizer (use CSS!)
+* Removed background option. 
+* Revised TGM Plugin Activation list (init.php).
 
 = 1.9 =
-* Revised all files to stay updated to Twenty Sixteen Theme updates. Updated Genericons to 3.4.1. Added IE7 - 10 style sheets in CSS. Added all partials in template-parts directory.
+* Revised all files to stay updated to Twenty Sixteen Theme updates. 
+* Updated Genericons to 3.4.1. 
+* Added IE7 - 10 style sheets in CSS. 
+* Added all partials in template-parts directory.
+* Better Reposnive behavior on phone and tablet devices
+* Animation Toggle on Mobile Menu
+* 2 column Top Bar Widget area above logo
+* Added header logo centered in footer and grayscaled with CSS
+* Fixed text positioning in copyright footer
+* Corrected HTML Markup and nesting in header.php
+* Fixed animated header scroll effect to be smooth when class is switched.
+* New screenshot.png
+* Changed interior page header image height to 300px
+* Removed color options in customizer
+* Placed all tempalte parts in new directory and removed partials directory.
+* Updated readme file for all changes and version number
+* Changed Author URI and theme URI per theme standards
+* Removed legacy files in js directory.
+* 
 
 = 1.9.1 =
 
 * Bug fixed in CSS in how interior page/post images were sized.
+* Changed thumbnail of header images to 1200 x 300px
+* Removed thumbnal re-size in functions.php
