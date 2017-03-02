@@ -13,8 +13,10 @@
 		<div class="entry-content">
 
 			<?php
-				
+
 				the_content();
+
+
 
 				wp_link_pages( array(
 					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'molecule' ) . '</span>',
@@ -39,8 +41,6 @@
                 <p class="tag-title">tags:</p><?php the_tags( ' ',' ' ); ?>
             
             </div>
-
-            <?php //get_template_part( 'template-parts/social', 'share' ); ?>
 
 			<?php
 				edit_post_link(

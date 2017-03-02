@@ -128,8 +128,8 @@
         <div class="custom-headings-inner">
 
             <h1 class="page-title"><span class="entry-title"><?php the_title(); ?></span></h1>
-            
-            <?php get_template_part( 'template-parts/single-meta', 'details' ); ?>
+
+            <h2 class="page-subtitle"><span class="posted-on"><?php molecule_posted_on(); ?></span></h2>
 
         </div>
         
@@ -154,18 +154,6 @@
         <div class="custom-headings-inner">
 
             <h1 class="page-title"><span class="entry-title"><?php _e( 'Posts by: ', 'molecule' ); ?><?php echo get_the_author(); ?></span></h1>
-
-            <?php   
-
-                $author_avatar_size = apply_filters( 'molecule_author_avatar_size', 120 );
-                printf( '<span class="byline"><span class="author vcard fn">%1$s<span class="screen-reader-text">%2$s </span> <a class="url fn n" href="%3$s">%4$s</a></span></span>',
-                get_avatar( get_the_author_meta( 'user_email' ), $author_avatar_size ),
-                _x( 'Author', 'Used before post author name.', 'molecule' ),
-                esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-                get_the_author()
-                ); 
-
-            ?>
 
         </div>
 

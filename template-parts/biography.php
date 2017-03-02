@@ -25,7 +25,7 @@
 	</div><!-- .author-avatar -->
 
 	<div class="author-description">
-		<h2 class="author-title"><span class="author-heading vcard author post-author"><span class="fn"><?php the_author(); ?></span></span></h2>
+		<h2 class="author-title"><span class="author-heading vcard author post-author"><span class="fn"><?php the_author_posts_link(); ?></span></span></h2>
 
 		<p class="author-bio">
 			<?php the_author_meta( 'description' ); ?>

@@ -18,18 +18,19 @@ if ( ! function_exists( 'molecule_entry_meta' ) ) :
  * @since Molecule 1.0
  */
 function molecule_entry_meta() {
+
+	// if ( 'post' === get_post_type() ) {
+	// 	$author_avatar_size = apply_filters( 'molecule_author_avatar_size', 80 );
+	// 	printf( '<span class="byline"><span class="author vcard">%1$s<span class="screen-reader-text">%2$s </span> <a class="url fn n" href="%3$s">%4$s</a></span></span>',
+	// 		get_avatar( get_the_author_meta( 'user_email' ), $author_avatar_size ),
+	// 		printf( '<span class="author-title">Author</span> ', 'Used before post author name.', 'molecule' ),
+	// 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+	// 		get_the_author()
+	// 	);
+	// }
 	
 	if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {
 		molecule_entry_date();
-	}
-
-	$format = get_post_format();
-	if ( current_theme_supports( 'post-formats', $format ) ) {
-		printf( '<span class="entry-format">%1$s<a href="%2$s">%3$s</a></span>',
-			sprintf( '<span class="screen-reader-text">%s </span>', _x( 'Format', 'Used before post format.', 'molecule' ) ),
-			esc_url( get_post_format_link( $format ) ),
-			get_post_format_string( $format )
-		);
 	}
 
 	if ( 'post' === get_post_type() ) {
@@ -38,7 +39,7 @@ function molecule_entry_meta() {
 
 	if ( ! is_singular() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo ' <span class="comments-link">';
-		comments_popup_link( sprintf( __( ' / Comments <span class="screen-reader-text entry-title"> on %s </span>', 'molecule' ), get_the_title() ) );
+		comments_popup_link( sprintf( __( 'Recent Comments <span class="screen-reader-text entry-title"> on %s </span>', 'molecule' ), get_the_title() ) );
 		echo '</span>';
 	}
 }
@@ -85,19 +86,63 @@ if ( ! function_exists( 'molecule_entry_taxonomies' ) ) :
 function molecule_entry_taxonomies() {
 	$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'molecule' ) );
 	if ( $categories_list && molecule_categorized_blog() ) {
-		printf( ' Posted in: <span class="cat-links"><span class="screen-reader-text"> %1$s </span> %2$s </span>',
-			_x( 'Categories', 'Used before category names.', 'molecule' ),
+		printf( '<span class="cat-links"><span class="screen-reader-text"> %1$s </span> %2$s </span>',
+			printf( '<span class="cat-title">Categories:</span> ', 'Used before category names.', 'molecule' ),
 			$categories_list
 		);
 	}
 
 	$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'molecule' ) );
 	if ( $tags_list ) {
-		printf( ' / <span class="tags-links"><span class="screen-reader-text"> %1$s </span> %2$s </span>',
-			_x( 'Tags', 'Used before tag names.', 'molecule' ),
+		printf( '<span class="tags-links"><span class="screen-reader-text"> %1$s </span> %2$s </span>',
+			printf( '<span class="tag-title">Tags:</span> ', 'Used before tag names.', 'molecule' ),
 			$tags_list
 		);
 	}
+}
+endif;
+
+
+if ( ! function_exists( 'molecule_posted_on' ) ) :
+/**
+ * Prints HTML with meta information for the current post-date/time and author.
+ */
+function molecule_posted_on() {
+	// Get the author name; wrap it in a link.
+	$byline = sprintf(
+		_x( 'by %s', 'post author', 'molecule' ),
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . get_the_author() . '</a></span>'
+	);
+	// Finally, let's write all of this to the page.
+	echo '<span class="posted-on">Posted on: ' . molecule_time_link() . '</span> <span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+}
+endif;
+
+
+
+if ( ! function_exists( 'molecule_time_link' ) ) :
+/**
+ * Gets a nicely formatted string for the published date.
+ */
+function molecule_time_link() {
+	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+	}
+
+	$time_string = sprintf( $time_string,
+		get_the_date( DATE_W3C ),
+		get_the_date(),
+		get_the_modified_date( DATE_W3C ),
+		get_the_modified_date()
+	);
+
+	// Wrap the time string in a link, and preface it with 'Posted on'.
+	return sprintf(
+		/* translators: %s: post date */
+		__( '<span class="screen-reader-text">Posted on</span> %s', 'molecule' ),
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+	);
 }
 endif;
 
@@ -152,32 +197,10 @@ if ( ! function_exists( 'molecule_excerpt' ) ) :
 		if ( has_excerpt() || is_search() ) : ?>
 			<div class="<?php echo $class; ?>">
 				<?php the_excerpt(); ?>
-			</div><!-- .<?php echo $class; ?> -->
+			</div><!-- .<?php //echo $class; ?> -->
 		<?php endif;
 	}
 endif;
-/*
-if ( ! function_exists( 'molecule_excerpt_more' ) && ! is_admin() ) :
-/**
- * Replaces "[...]" (appended to automatically generated excerpts) with ... and
- * a 'Continue reading' link.
- *
- * Create your own molecule_excerpt_more() function to override in a child theme.
- *
- * @since Molecule 1.0
- *
- * @return string 'Continue reading' link prepended with an ellipsis.
- */
-// function molecule_excerpt_more() {
-// 	$link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
-// 		esc_url( get_permalink( get_the_ID() ) ),
-// 		/* translators: %s: Name of current post */
-// 		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'molecule' ), get_the_title( get_the_ID() ) )
-// 	);
-// 	return ' &hellip; ' . $link;
-// }
-// add_filter( 'excerpt_more', 'molecule_excerpt_more' );
-// endif;
 
 if ( ! function_exists( 'molecule_categorized_blog' ) ) :
 /**

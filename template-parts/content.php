@@ -19,11 +19,15 @@
 		<?php the_title( sprintf( '<h2><span class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></span></h2>' ); ?>
 	</header><!-- .entry-header -->
 
-<?php molecule_entry_meta(); ?>
+	<div class="meta-details">
 
-<?php molecule_post_thumbnail(); ?>
+		<div><?php molecule_posted_on(); ?></div>
 
-<h4 class="blog-author-title">Article written by: <span class="vcard author post-author"><span class="fn"><?php the_author(); ?></span></span> <span class="post_date date updated"><?php the_time('j F,Y'); ?></span></h4>
+		<div><?php molecule_entry_meta(); ?></div>
+
+	</div>
+
+	<?php molecule_post_thumbnail(); ?>
 
 	<div class="entry-content">
 
