@@ -1732,10 +1732,8 @@ blockquote.aligncenter {
     width: 100%;
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 300px;
+    background-size: contain;
 }
-
 
 .custom-headings {
 	position: absolute;
@@ -3403,6 +3401,26 @@ p>embed, p>iframe, p>object, p>video {
 	.footer-global .copyright-info {
 		float: none;
 		text-align: center;
+	}
+
+}
+
+/**
+ * 14.5 - iPhone Portrait
+ */
+
+@media screen and (max-width: 33em) {
+
+	.footer-global .copyright-info {
+	    font-size: 7px;
+	    line-height: 11px;
+	    font-size: .6rem;
+	    line-height: 1.88em;
+	}
+
+	.footer-widgets .widget {
+		margin-bottom: 0; 
+		padding-top: 0; 
 	}
 
 }
