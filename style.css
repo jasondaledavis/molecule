@@ -2607,13 +2607,15 @@ a.comment-reply-link:hover {
 	font-size: 15px;
 	line-height: 18px;
 	padding: 15px 30px;
-	background-color: #ffffff;
-	color: #1a1a1a;
+	background-color: transparent;
+	color: #5EA7B1;
 	margin: 0 2px 5px 0;
 }
 
 .widget.widget_tag_cloud a:hover {
-	color: #f8f8f8;
+	color: #fff;
+	background: #5EA7B1;
+	border-color: #5EA7B1;
 }
 
 
@@ -2726,9 +2728,6 @@ a.comment-reply-link:hover {
 	border-top: solid 1px #eaeaea;
 	background: white;
 }
-.footer-widgets a, .footer-widgets p {
-	color: white;
-}
 .copyright-info {
 	color: #1a1a1a;
 	font-size: 7px;
@@ -2749,12 +2748,15 @@ a.comment-reply-link:hover {
 
 .footer-widgets {
 	background-color: #5EA7B1;
-	padding: 0px 0 40px;
+	padding: 40px 0;
 	margin-bottom: 0;
 	color: white;
 	font-family: 'Open Sans', sans-serif;
 }
 
+.footer-widgets a, .footer-widgets p {
+	color: white;
+}
 .footer-widgets .row {
 	margin-bottom: 0;
 }
