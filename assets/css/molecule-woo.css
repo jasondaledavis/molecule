@@ -80,6 +80,7 @@ tr td input.button,
     color: #fff;
     width: auto;
     -webkit-font-smoothing: antialiased;
+     padding: 14px 12px;
 }
 .woocommerce .cart input.button[name="update_cart"]:hover,
 #add_payment_method .wc-proceed-to-checkout a.checkout-button:hover, 
@@ -103,7 +104,6 @@ ul.products li.product,
 .woocommerce-page ul.products li.product {
     padding: 3px;
     border: double rgb(94, 167, 177);
-    /*width: 30.7%;*/
 }
 .woocommerce div.product form.cart .variations select,
 .woocommerce .woocommerce-ordering select {
@@ -117,4 +117,12 @@ ul.products li.product,
     border-radius:3px;
     border-color: #686868;
     cursor: pointer;
+}
+.woocommerce #respond input#submit.alt.disabled, .woocommerce #respond input#submit.alt.disabled:hover, .woocommerce #respond input#submit.alt:disabled, .woocommerce #respond input#submit.alt:disabled:hover, .woocommerce #respond input#submit.alt:disabled[disabled], .woocommerce #respond input#submit.alt:disabled[disabled]:hover, .woocommerce a.button.alt.disabled, .woocommerce a.button.alt.disabled:hover, .woocommerce a.button.alt:disabled, .woocommerce a.button.alt:disabled:hover, .woocommerce a.button.alt:disabled[disabled], .woocommerce a.button.alt:disabled[disabled]:hover, .woocommerce button.button.alt.disabled, .woocommerce button.button.alt.disabled:hover, .woocommerce button.button.alt:disabled, .woocommerce button.button.alt:disabled:hover, .woocommerce button.button.alt:disabled[disabled], .woocommerce button.button.alt:disabled[disabled]:hover, .woocommerce input.button.alt.disabled, .woocommerce input.button.alt.disabled:hover, .woocommerce input.button.alt:disabled, .woocommerce input.button.alt:disabled:hover, .woocommerce input.button.alt:disabled[disabled], .woocommerce input.button.alt:disabled[disabled]:hover {
+    background-color: #5EA7B1;
+    color: #fff;
+    padding: 14px 12px;
+}
+.single-product h2.page-subtitle {
+    display: none;
 }
