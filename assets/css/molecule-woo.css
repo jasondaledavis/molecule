@@ -6,7 +6,7 @@ Description: Used to style the WooCommerce Shop Pages.
 .woocommerce-info, 
 .woocommerce-message,
 .woocommerce-info {
-    border-top-color: #a88c5e;
+    border-top-color: rgb(94, 167, 177);
 }
 #add_payment_method table.cart td.actions .coupon .input-text, 
 .woocommerce-cart table.cart td.actions .coupon .input-text, 
@@ -16,10 +16,10 @@ Description: Used to style the WooCommerce Shop Pages.
 .woocommerce div.product p.price, 
 .woocommerce div.product span.price,
 .woocommerce-info:before {
-    color: #a88c5e;
+    color: rgb(94, 167, 177);
 }
 .woocommerce ul.products li.product .price {
-    color: #a88c5e;
+    color: rgb(94, 167, 177);
     display: block;
     font-weight: 400;
     margin-bottom: .5em;
@@ -37,7 +37,7 @@ Description: Used to style the WooCommerce Shop Pages.
     left: -.5em;
     margin: 0;
     border-radius: 100%;
-    background-color: #a88c5e;
+    background-color: rgb(94, 167, 177);
     color: #fff;
     font-size: .857em;
     -webkit-font-smoothing: antialiased;
@@ -91,18 +91,18 @@ tr td input.button,
 .woocommerce a.button:hover, 
 .woocommerce button.button:hover, 
 .woocommerce input.button:hover {
-	background:#a88c5e;
+	background:rgb(94, 167, 177);
     color: #ffffff;
 }
 .woocommerce ul.products li.product h3 {
     padding: .5em 0;
     margin: 0 0 10px;
-    border-bottom: dotted 1px #a88c5e;
+    border-bottom: dotted 1px rgb(94, 167, 177);
 }
 ul.products li.product, 
 .woocommerce-page ul.products li.product {
     padding: 3px;
-    border: double #a88c5e;
+    border: double rgb(94, 167, 177);
     /*width: 30.7%;*/
 }
 .woocommerce div.product form.cart .variations select,

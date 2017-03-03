@@ -177,7 +177,7 @@
 
         <div class="custom-headings-inner">
 
-            <h1 class="page-title"><span class="entry-title"><?php _e( 'Posts Tagged with:', 'molecule' ); ?><?php single_tag_title(); ?></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php _e( 'Posts Tagged with: ', 'molecule' ); ?><?php single_tag_title(); ?></span></h1>
 
         </div>
 
@@ -213,7 +213,7 @@
 
         <div class="custom-headings-inner">
 
-            <h1 class="page-title"><span class="entry-title"><?php _e( 'Monthly Archives:', 'molecule' ); ?><span class="updated"><?php the_time( 'F, Y' ); ?></span></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php _e( 'Monthly Archives:', 'molecule' ); ?><?php single_month_title( ' ', 'molecule' ); ?> <span class="updated"><?php the_time( 'F, Y' ); ?></span></span></h1>
 
         </div>
 

@@ -4,7 +4,7 @@ Theme URI: https://molecule.element502.com
 Author: Jason Davis
 Author URI: https://nerdbrand.me
 Description: Molecule is a diverse theme for whatever you imagine. Molecule is fully compatible with popular plugins like WooCommerce, Gravity Forms, Contact Form 7, Jetpack, and others. The content area powers the entire sites main page area, so make it look how you want. the header and footer are customizable from the WordPress customizer for backgrounds and color options. There are 4 widget areas in the footer, and a separate page and blog sidebar. Sidebars are only activate once a widget is dragged in place and page and blog sidebar is only on the right side column. A page builder is recommended like SiteOrigin or Visual Composer to create a beautiful layout like the demo.
-Version: 1.9.1
+Version: 1.9.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -658,12 +658,12 @@ input {
 }
 
 button, button[disabled]:hover, button[disabled]:focus, input[type="button"], input[type="button"][disabled]:hover, input[type="button"][disabled]:focus, input[type="reset"], input[type="reset"][disabled]:hover, input[type="reset"][disabled]:focus, input[type="submit"], input[type="submit"][disabled]:hover, input[type="submit"][disabled]:focus {
-	background: #1a1a1a;
-	border: 0;
-	border-radius: 2px;
-	color: #fff;
+	background: transparent;
+	border:solid 2px #5EA7B1;;
+	border-radius: 0px;
+	color: #5EA7B1;
 	font-family: 'Open Sans', 'Arial', sans-serif;
-	font-weight: 700;
+	font-weight: normal;
 	letter-spacing: 0.046875em;
 	line-height: 1;
 	padding: 0.84375em 0.875em 0.78125em;
@@ -676,6 +676,7 @@ button, button[disabled]:hover, button[disabled]:focus, input[type="button"], in
 
 button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
 	background: #5EA7B1;
+	color: white;
 }
 
 button:focus, input[type="button"]:focus, input[type="reset"]:focus, input[type="submit"]:focus {
@@ -1044,7 +1045,7 @@ a:hover, a:active {
 
 .pagination .prev:before {
 	font-family: Genericons;
-	content: "\f501";
+	content: "\f503";
 	left: -1px;
 	top: -1px;
 }
@@ -1373,7 +1374,10 @@ blockquote.aligncenter {
     border-radius: 3px;
     float: right;
 }
-
+#molecule-topbar .searchbar input[type="text"]:focus {
+	border:solid 2px #5EA7B1;
+	border-radius: 0;
+}
 #molecule-topbar .searchbar input[type="text"] img {
 	width: 30%;
 }
@@ -1578,10 +1582,15 @@ blockquote.aligncenter {
 }
 
 .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]):focus, .gform_wrapper .ginput_complex .ginput_left input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=image]):not([type=file]):focus, .gform_wrapper .ginput_complex .ginput_right input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=image]):not([type=file]):focus, .gform_wrapper .ginput_complex .ginput_right select:focus, .gform_wrapper .ginput_complex input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=image]):not([type=file]):focus, .gform_wrapper .ginput_complex select:focus, .gform_wrapper textarea:focus {
-	background: #333;
-	color: white;
+	background: #f7f7f7;
+	border:solid 2px #5EA7B1;
 }
-
+.gform_wrapper .top_label .gfield_label {
+	color:#5EA7B1;
+}
+.gform_wrapper .field_sublabel_below .ginput_complex.ginput_container label {
+	display: none !important;
+}
 
 /**
  * 11.1 - Header
@@ -1637,7 +1646,7 @@ blockquote.aligncenter {
 }
 
 .logo {
-	padding: 10px 0 0;
+	padding: 30px 0 20px;
 }
 
 .header-top img.custom-logo {
@@ -2063,19 +2072,18 @@ img.avatar {
 }
 
 .sticky-post {
-	color: #686868;
 	display: block;
 	font-family: 'Open Sans', 'Arial', sans-serif;
-	font-size: 13px;
-	font-size: 0.8125rem;
-	letter-spacing: 0.076923077em;
-	line-height: 1.6153846154;
+	font-size: 18px;
+	font-size: 1em;
+	letter-spacing: .4em;
+	line-height: 1.6em;
 	margin-bottom: 0.5384615385em;
 	text-transform: uppercase;
 }
 
 .post-index .sticky {
-	background: #eaeaea;
+	background: rgba(221, 238, 238, .5);
 	padding: 15px;
 }
 
@@ -2204,6 +2212,14 @@ body.error404 .page-header, body.search-no-results .page-header {
 }
 
 /*Meta Deatils Styles*/
+.tag-title {
+	color: #888;
+	text-transform: uppercase;
+	font-size: .8em;
+	letter-spacing: 2px;
+	font-weight: bold;
+	margin:0;
+}
 span.posted-on,
 span.byline,
 span.author-title,
@@ -2227,38 +2243,6 @@ span.cat-links a:hover,
 span.tags-links a:hover {
 	color: #5EA7B1;
 }
-
-/*
-.meta-details {
-	text-align: center;
-	margin: 0 auto;
-	padding: 10px 0 0;
-}
-*/
-/*.date-stamp {
-	width: 80px;
-	height: 80px;
-	margin: 0 auto 44px;
-	border-radius: 100%;
-	color: #5EA7B1;
-}
-*/
-/*.date-stamp .month {
-	text-align: left;
-}
-
-.date-stamp .day {
-	text-align: center;
-	padding-left: 29px;
-}
-
-.date-border {
-	height: 1px;
-	color: #686868;
-	background: #1a1a1a;
-	font-size: 0;
-	border: 0;
-}*/
 
 /*Post Tags*/
 
@@ -2346,6 +2330,12 @@ span.comments-link a {
 	letter-spacing: 2px;
 	padding-left: 12px;
 	font-weight: bold;
+}
+span.comments-link a::before {
+	font-family: Genericons;
+	content: "\f108";
+	font-size: 1.6em;
+	color: #5EA7B1;
 }
 span.comments-link a:hover {
 	color: #5EA7B1;
@@ -2448,14 +2438,9 @@ a.comment-reply-link:hover {
 	color: rgb(255, 255, 255);
 }
 .comment-reply-link {
-	border: 1px solid #d1d1d1;
-	border-radius: 2px;
+	border-radius: 0;
 	color: #5EA7B1;
 	display: inline-block;
-	font-family: 'Open Sans', 'Arial', sans-serif;
-	font-size: 13px;
-	font-size: 0.8125rem;
-	line-height: 1;
 	margin-top: 2.1538461538em;
 	padding: 0.5384615385em 0.5384615385em 0.4615384615em;
 }
@@ -2464,24 +2449,20 @@ a.comment-reply-link:hover {
 	padding-top: 1.75em;
 }
 
-.comment-form textarea {
-	color: #fff
-}
-
+.comment-form textarea {}
 .comment-form textarea:focus {
-	background: #333;
+	background: #f7f7f7;
+	border:solid 2px #5EA7B1;
 }
 
 .comment-form label {
-	color: #686868;
+	color: #888;
 	display: block;
-	font-family: 'Open Sans', 'Arial', sans-serif;
-	font-size: 13px;
-	font-size: 0.8125rem;
-	letter-spacing: 0.076923077em;
-	line-height: 1.6153846154;
+	letter-spacing: 0.2em;
 	margin-bottom: 0.5384615385em;
 	text-transform: uppercase;
+	font-weight: bold;
+	font-size: .9em;
 }
 
 .comment-list .comment-form {
@@ -2746,25 +2727,15 @@ a.comment-reply-link:hover {
 	background: white;
 }
 
-.footer-global .copyright-info {
+.copyright-info {
 	color: #1a1a1a;
 	font-size: 7px;
 	line-height: 9.8px;
 	font-size: .6rem;
 	line-height: .7em;
 	text-transform: uppercase;
-	margin-top: 30px;
-}
-
-.footer-global .text-right {
-	color: #1a1a1a;
-	font-size: 7px;
-	line-height: 9.8px;
-	font-size: .6rem;
-	line-height: .7em;
-	text-transform: uppercase;
-	margin-top: 30px;
-	text-align: right;
+	margin: 30px auto;
+	text-align: center;
 }
 
 .footer-credits {
@@ -3010,8 +2981,9 @@ p>embed, p>iframe, p>object, p>video {
 }
 
 .searchbar input[type="text"]:focus, .searchbar input[type="password"]:focus, .searchbar input[type="email"]:focus, .searchbar textarea:focus, .searchbar select:focus {
-	border: solid 1px #5EA7B1;
+	border: solid 2px #5EA7B1;
 	outline: 0 none;
+	border-radius: 0px;
 }
 
 

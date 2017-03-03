@@ -3,7 +3,7 @@
 * Author: Jason Davis
 * Requires at least: WordPress 4.7+
 * Tested up to: WordPress 4.7.2
-* Version: 1.9.1
+* Version: 1.9.2
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -100,8 +100,31 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="https://nerdbrand.m
 * Cleaned up CSS indents and added comments. Added main-navigation-row class to nav row for better markup and style control. Removed color options in customizer (use CSS!), and removed background option. Revised TGM Plugin Activation list (init.php).
 
 = 1.9 =
-* Revised all files to stay updated to Twenty Sixteen Theme updates. Updated Genericons to 3.4.1. Added IE7 - 10 style sheets in CSS. Added all partials in template-parts directory.
+* Revised all files to stay updated to Twenty Sixteen Theme updates. 
+* Updated Genericons to 3.4.1. 
+* Added IE7 - 10 style sheets in CSS. 
+* Added all partials in template-parts directory.
+* Better Reposnive behavior on phone and tablet devices
+* Animation Toggle on Mobile Menu
+* 2 column Top Bar Widget area above logo
+* Added header logo centered in footer and grayscaled with CSS
+* Fixed text positioning in copyright footer
+* Corrected HTML Markup and nesting in header.php
+* Fixed animated header scroll effect to be smooth when class is switched.
+* New screenshot.png
+* Changed interior page header image height to 300px
+* Removed color options in customizer
+* Placed all tempalte parts in new directory and removed partials directory.
+* Updated readme file for all changes and version number
+* Changed Author URI and theme URI per theme standards
+* Removed legacy files in js directory.
 
 = 1.9.1 =
 
 * Bug fixed in CSS in how interior page/post images were sized.
+* Changed thumbnail of header images to 1200 x 300px
+* Removed thumbnal re-size in functions.php
+
+= 1.9.2 =
+* Revised copyright footer area for wordpress.org standards
+* Changed standard color and revised logo.
