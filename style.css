@@ -3440,10 +3440,6 @@ p>embed, p>iframe, p>object, p>video {
 
 @media screen and (max-width: 33em) {
 
-	.custom-headings {
-		top: 30%;
-	}
-
 	.footer-global .copyright-info {
 	    font-size: 7px;
 	    line-height: 11px;
