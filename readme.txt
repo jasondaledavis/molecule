@@ -128,3 +128,8 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="https://nerdbrand.m
 = 1.9.2 =
 * Revised copyright footer area for wordpress.org standards
 * Changed standard color and revised logo.
+
+= 2.0 =
+* Optimized all scriptts into 1 file for performance.
+* Cleaned up functions.php
+* Added new screenshot.png file

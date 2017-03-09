@@ -3,7 +3,7 @@
 * Author: Jason Davis
 * Requires at least: WordPress 4.7+
 * Tested up to: WordPress 4.7.2
-* Version: 1.9.2
+* Version: 2.0
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -128,3 +128,8 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="https://nerdbrand.m
 = 1.9.2 =
 * Revised copyright footer area for wordpress.org standards
 * Changed standard color and revised logo.
+
+= 2.0 =
+* Optimized all scriptts into 1 file for performance.
+* Cleaned up functions.php
+* Added new screenshot.png file
