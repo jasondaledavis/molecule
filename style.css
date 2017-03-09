@@ -1604,8 +1604,7 @@ blockquote.aligncenter {
  */
 
 .header-pattern {
-	/*background-image: url(assets/img/pattern.png);*/
-	background-color: rgba(94, 167, 177, 1);
+	background-color: rgba(94, 167, 177, .7);
 	position: absolute;
 	left: 0;
 	top: 0;
