@@ -1440,108 +1440,6 @@ blockquote.aligncenter {
     margin-right: 56px;
 }
 
-@media screen and (min-width: 56.875em) {
-    .site-header-main {
-        -webkit-align-items: flex-start;
-        -ms-flex-align: start;
-        align-items: flex-start;
-    }
-    .site-header-menu {
-        display: block;
-        -webkit-flex: 0 1 auto;
-        -ms-flex: 0 1 auto;
-        flex: 0 1 auto;
-    }
-    #molecule-topbar {
-        margin: 0 -0.875em;
-    }
-    #molecule-topbar .primary-menu, #molecule-topbar .primary-menu>li {
-        border: 0;
-    }
-    #molecule-topbar .primary-menu>li {
-        float: left;
-    }
-    #molecule-topbar a {
-        outline-offset: -8px;
-        padding: 0.65625em 0.875em;
-        white-space: nowrap;
-        text-transform: uppercase;
-    }
-    #molecule-topbar li:hover>a, #molecule-topbar li.focus>a {
-        color: #5EA7B1;
-    }
-    #molecule-topbar ul ul {
-        border-bottom: 1px solid #d1d1d1;
-        display: block;
-        left: -999em;
-        margin: 0;
-        position: absolute;
-        z-index: 99999;
-    }
-    #molecule-topbar ul ul ul {
-        top: -1px;
-    }
-    #molecule-topbar ul ul ul:before, #molecule-topbar ul ul ul:after {
-        border: 0;
-    }
-    #molecule-topbar ul ul li {
-        background-color: #fff;
-        border: 1px solid #d1d1d1;
-        border-bottom-width: 0;
-    }
-    #molecule-topbar ul ul a {
-        white-space: normal;
-        width: 12.6875em;
-    }
-    #molecule-topbar ul ul:before, #molecule-topbar ul ul:after {
-        border-style: solid;
-        content: "";
-        position: absolute;
-    }
-    #molecule-topbar ul ul:before {
-        border-color: #d1d1d1 transparent;
-        border-width: 0 10px 10px;
-        right: 9px;
-        top: -9px;
-    }
-    #molecule-topbar ul ul:after {
-        border-color: #fff transparent;
-        border-width: 0 8px 8px;
-        right: 11px;
-        top: -7px;
-    }
-    #molecule-topbar li:hover>ul, #molecule-topbar li.focus>ul {
-        left: auto;
-        right: 0;
-    }
-    #molecule-topbar ul ul li:hover>ul, #molecule-topbar ul ul li.focus>ul {
-        left: auto;
-        right: 100%;
-    }
-    #molecule-topbar .menu-item-has-children>a {
-        margin: 0;
-        padding-right: 2.25em;
-    }
-    #molecule-topbar .menu-item-has-children>a:after {
-        content: "\f431";
-        font-family: Genericons;
-        position: absolute;
-        right: 0.625em;
-        top: 0.825em;
-    }
-    #molecule-topbar ul ul .menu-item-has-children>a {
-        padding-right: 2.0625em;
-    }
-    #molecule-topbar ul ul .menu-item-has-children>a:after {
-        right: 0.5625em;
-        top: 0.875em;
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-        transform: rotate(90deg);
-    }
-}
-
 /**
  * 11.0 - Content
  */
@@ -1584,6 +1482,7 @@ blockquote.aligncenter {
 	outline: 0;
 }
 
+/*If Gravity forms plugin is used*/
 .gform_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]), .gform_wrapper .ginput_complex .ginput_left input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=image]):not([type=file]), .gform_wrapper .ginput_complex .ginput_right input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=image]):not([type=file]), .gform_wrapper .ginput_complex .ginput_right select, .gform_wrapper .ginput_complex input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=image]):not([type=file]), .gform_wrapper .ginput_complex select, .gform_wrapper textarea {
 	padding: 12px 8px !important;
 }
@@ -3110,12 +3009,99 @@ p>embed, p>iframe, p>object, p>video {
 		-ms-flex-align: start;
 		align-items: flex-start;
 	}
-	.site-header-menu {
-		display: block;
-		-webkit-flex: 0 1 auto;
-		-ms-flex: 0 1 auto;
-		flex: 0 1 auto;
-	}
+	.site-header-main {
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+    #molecule-topbar {
+        margin: 0 -0.875em;
+    }
+    #molecule-topbar .primary-menu, #molecule-topbar .primary-menu>li {
+        border: 0;
+    }
+    #molecule-topbar .primary-menu>li {
+        float: left;
+    }
+    #molecule-topbar a {
+        outline-offset: -8px;
+        padding: 0.65625em 0.875em;
+        white-space: nowrap;
+        text-transform: uppercase;
+    }
+    #molecule-topbar li:hover>a, #molecule-topbar li.focus>a {
+        color: #5EA7B1;
+    }
+    #molecule-topbar ul ul {
+        border-bottom: 1px solid #d1d1d1;
+        display: block;
+        left: -999em;
+        margin: 0;
+        position: absolute;
+        z-index: 99999;
+    }
+    #molecule-topbar ul ul ul {
+        top: -1px;
+    }
+    #molecule-topbar ul ul ul:before, #molecule-topbar ul ul ul:after {
+        border: 0;
+    }
+    #molecule-topbar ul ul li {
+        background-color: #fff;
+        border: 1px solid #d1d1d1;
+        border-bottom-width: 0;
+    }
+    #molecule-topbar ul ul a {
+        white-space: normal;
+        width: 12.6875em;
+    }
+    #molecule-topbar ul ul:before, #molecule-topbar ul ul:after {
+        border-style: solid;
+        content: "";
+        position: absolute;
+    }
+    #molecule-topbar ul ul:before {
+        border-color: #d1d1d1 transparent;
+        border-width: 0 10px 10px;
+        right: 9px;
+        top: -9px;
+    }
+    #molecule-topbar ul ul:after {
+        border-color: #fff transparent;
+        border-width: 0 8px 8px;
+        right: 11px;
+        top: -7px;
+    }
+    #molecule-topbar li:hover>ul, #molecule-topbar li.focus>ul {
+        left: auto;
+        right: 0;
+    }
+    #molecule-topbar ul ul li:hover>ul, #molecule-topbar ul ul li.focus>ul {
+        left: auto;
+        right: 100%;
+    }
+    #molecule-topbar .menu-item-has-children>a {
+        margin: 0;
+        padding-right: 2.25em;
+    }
+    #molecule-topbar .menu-item-has-children>a:after {
+        content: "\f431";
+        font-family: Genericons;
+        position: absolute;
+        right: 0.625em;
+        top: 0.825em;
+    }
+    #molecule-topbar ul ul .menu-item-has-children>a {
+        padding-right: 2.0625em;
+    }
+    #molecule-topbar ul ul .menu-item-has-children>a:after {
+        right: 0.5625em;
+        top: 0.875em;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
 	.main-navigation {
 		margin: 0 -0.875em;
 	}

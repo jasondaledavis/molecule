@@ -1,8 +1,8 @@
 # Molecule Theme
 
 * Author: Jason Davis
-* Requires at least: WordPress 4.7+
-* Tested up to: WordPress 4.7.2
+* Requires at least: WordPress 4.6+
+* Tested up to: WordPress 4.7+
 * Version: 2.0
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
