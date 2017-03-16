@@ -3,7 +3,7 @@
 * Author: Jason Davis
 * Requires at least: WordPress 4.6+
 * Tested up to: WordPress 4.7+
-* Version: 2.0
+* Version: 2.1
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -133,3 +133,7 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="https://nerdbrand.m
 * Optimized all scriptts into 1 file for performance.
 * Cleaned up functions.php
 * Added new screenshot.png file
+
+= 2.1 =
+* Fixed Sidebars for WooCommerce Functionality.
+* Fixed margins in all sidebars with CSS.

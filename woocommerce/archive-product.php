@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header(); ?>
 
-<?php if ( is_active_sidebar( 'shop-sidebar' )  ) : ?>
+<?php if ( is_active_sidebar( 'sidebar-shop' )  ) : ?>
 
     <div class="grid">
 
@@ -101,16 +101,13 @@ get_header(); ?>
 
 			</div><!-- end .c9 -->
 
-
-			<?php get_sidebar(); ?>
-
 				<?php
 					/**
 					 * woocommerce_sidebar hook.
 					 *
 					 * @hooked woocommerce_get_sidebar - 10
 					 */
-					// do_action( 'woocommerce_sidebar' );
+					do_action( 'woocommerce_sidebar' );
 				?>
 
         </div><!-- end .row -->
@@ -118,7 +115,7 @@ get_header(); ?>
     </div><!-- end .grid -->
 
 
-<?php elseif ( !is_active_sidebar( 'shop-sidebar' )  ) : ?>
+<?php elseif ( !is_active_sidebar( 'sidebar-shop' )  ) : ?>
 
     <div class="grid">
 

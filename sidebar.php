@@ -8,7 +8,6 @@
  */
 ?>
 
-
 <?php if ( is_page() ): ?>
 
 <!-- Page sidebar only for pages -->
@@ -24,33 +23,27 @@
 
 <?php endif; ?>
 
-<?php if ( is_home() || is_single() || is_archive() || is_search() ): ?>
-
 <!-- If is blog, search or single.php -->
-    <?php if ( is_active_sidebar( 'sidebar-blog' )  ) : ?>
+<?php if ( ( is_active_sidebar( 'sidebar-blog' ) || is_single() || is_archive() || is_search() ) && !is_woocommerce() ) : ?>
 
-        <aside class="sidebar c3">
+    <aside class="sidebar c3">
 
-            <?php dynamic_sidebar( 'sidebar-blog' ); ?>
+        <?php dynamic_sidebar( 'sidebar-blog' ); ?>
 
-        </aside><!-- end .sidebar -->
+    </aside><!-- end .sidebar -->
 
-    <?php endif; ?> 
-
-<?php endif; ?>
+<?php endif; ?> 
 
 <?php if ( class_exists( 'WooCommerce' ) ) { ?>
  
-    <?php if ( is_shop() || is_product() || is_cart() || is_checkout() || is_account_page() ): ?>
+    <?php if ( is_active_sidebar( 'sidebar-shop' ) && is_woocommerce() ): ?>
  
-        
             <aside class="sidebar c3">
  
-                <?php if ( function_exists( 'dynamic_sidebar' ) && dynamic_sidebar( 'Shop Sidebar' ) ) : else : ?>
-                <?php endif; ?>
+                <?php dynamic_sidebar( 'sidebar-shop' ); ?>
  
             </aside><!-- end .sidebar -->
  
     <?php endif; ?>
  
-    <?php }?>
+<?php }?>
