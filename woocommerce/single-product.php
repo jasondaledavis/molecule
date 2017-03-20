@@ -57,6 +57,8 @@ get_header(); ?>
 
 			</div><!-- end .c9 -->
 
+				<?php //get_sidebar( 'sidebar-shop' ); ?>
+
 				<?php
 					/**
 					 * woocommerce_sidebar hook.

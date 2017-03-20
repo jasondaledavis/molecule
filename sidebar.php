@@ -23,8 +23,18 @@
 
 <?php endif; ?>
 
-<!-- If is blog, search or single.php -->
-<?php if ( ( is_active_sidebar( 'sidebar-blog' ) || is_single() || is_archive() || is_search() ) && !is_woocommerce() ) : ?>
+
+<?php if ( class_exists( 'WooCommerce' ) ) { 
+// Checks for WooCommerceplugin
+  $bIsWoo=is_woocommerce();
+
+} else {
+
+  $bIsWoo=false; 
+
+} ?> 
+
+<?php if ( ( is_active_sidebar( 'sidebar-blog' ) || is_single() || is_archive() || is_search() ) && !$bIsWoo ) : // If is blog, search or single.php ?>
 
     <aside class="sidebar c3">
 
