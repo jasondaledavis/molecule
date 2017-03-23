@@ -97,7 +97,7 @@ function molecule_setup() {
     * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
     */
     add_theme_support( 'post-thumbnails' );
-    add_image_size( 'post-thumbnail', 1200, 300, true ); // Post Thumbnail (appears on single post and archive pages)
+    add_image_size( 'post-thumbnail', 1200, 300, true ); // Post Thumbnail (appears on single and archives).
     add_image_size( 'header-image', 1200, 300, true ); // Interior Page Header Image
 
     // This theme uses wp_nav_menu() in two locations.
@@ -155,8 +155,9 @@ add_action( 'after_setup_theme', 'molecule_content_width', 0 );
 function molecule_widgets_init() {
 
   register_sidebar( array(
-  'name' => 'Blog Sidebar',
+  'name' => __('Blog Sidebar', 'molecule' ),
   'id' => 'sidebar-blog',
+  'description'   => __( 'Add widgets here to appear in your blog posts and page sidebar.', 'molecule' ),
   'before_widget' => '<div id="%1$s" class="widget %2$s">',
   'after_widget' => "</div>",
   'before_title' => '<h4 class="widget-title">',
@@ -164,8 +165,9 @@ function molecule_widgets_init() {
   ) );
 
   register_sidebar( array(
-  'name' => 'Page Sidebar',
+  'name' => __('Page Sidebar', 'molecule' ),
   'id' => 'sidebar-page',
+  'description'   => __( 'Add widgets here to appear in your pages sidebar.', 'molecule' ),
   'before_widget' => '<div id="%1$s" class="widget %2$s">',
   'after_widget' => "</div>",
   'before_title' => '<h4 class="widget-title">',
@@ -173,8 +175,9 @@ function molecule_widgets_init() {
   ) );
 
   register_sidebar( array(
-  'name' => 'Footer Sidebar 1',
+  'name' => __('Footer Sidebar 1', 'molecule' ),
   'id' => 'sidebar-footer-1',
+  'description'   => __( 'Add widgets here to appear in your footer sidebar column one.', 'molecule' ),
   'before_widget' => '<div id="%1$s" class="widget %2$s">',
   'after_widget' => "</div>",
   'before_title' => '<h4 class="widget-title">',
@@ -182,8 +185,9 @@ function molecule_widgets_init() {
   ) );
 
   register_sidebar( array(
-  'name' => 'Footer Sidebar 2',
+  'name' => __('Footer Sidebar 2', 'molecule' ),
   'id' => 'sidebar-footer-2',
+  'description'   => __( 'Add widgets here to appear in your footer sidebar column two.', 'molecule' ),
   'before_widget' => '<div id="%1$s" class="widget %2$s">',
   'after_widget' => "</div>",
   'before_title' => '<h4 class="widget-title">',
@@ -191,8 +195,9 @@ function molecule_widgets_init() {
   ) );
 
   register_sidebar( array(
-  'name' => 'Footer Sidebar 3',
+  'name' => __('Footer Sidebar 3', 'molecule' ),
   'id' => 'sidebar-footer-3',
+  'description'   => __( 'Add widgets here to appear in your footer sidebar column three.', 'molecule' ),
   'before_widget' => '<div id="%1$s" class="widget %2$s">',
   'after_widget' => "</div>",
   'before_title' => '<h4 class="widget-title">',
@@ -200,8 +205,9 @@ function molecule_widgets_init() {
   ) );
 
   register_sidebar( array(
-  'name' => 'Footer Sidebar 4',
+  'name' => __('Footer Sidebar 4', 'molecule' ),
   'id' => 'sidebar-footer-4',
+  'description'   => __( 'Add widgets here to appear in your footer sidebar column four.', 'molecule' ),
   'before_widget' => '<div id="%1$s" class="widget %2$s">',
   'after_widget' => "</div>",
   'before_title' => '<h4 class="widget-title">',
@@ -209,8 +215,9 @@ function molecule_widgets_init() {
   ) );
 
   register_sidebar( array(
-  'name' => 'Top Sidebar Left',
+  'name' => __('Top Sidebar Left', 'molecule' ),
   'id' => 'topbar-left',
+  'description'   => __( 'Add widgets here to appear in above your header in a sidebar on the left.', 'molecule' ),
   'before_widget' => '<div id="%1$s" class="widget %2$s">',
   'after_widget' => "</div>",
   'before_title' => '<h4 class="widget-title">',
@@ -218,8 +225,9 @@ function molecule_widgets_init() {
   ) );
 
   register_sidebar( array(
-  'name' => 'Top Sidebar Right',
+  'name' => __('Top Sidebar Right', 'molecule' ),
   'id' => 'topbar-right',
+  'description'   => __( 'Add widgets here to appear in above your header in a sidebar on the right.', 'molecule' ),
   'before_widget' => '<div id="%1$s" class="widget %2$s">',
   'after_widget' => "</div>",
   'before_title' => '<h4 class="widget-title">',
@@ -229,8 +237,9 @@ function molecule_widgets_init() {
   if ( class_exists( 'WooCommerce' ) ) {
                  
     register_sidebar( array(
-    'name' => 'Shop Sidebar',
+    'name' => __('Shop Sidebar', 'molecule' ),
     'id'   => 'sidebar-shop',
+    'description'   => __( 'Add widgets here to appear in your shop and products pages sidebar.', 'molecule' ),
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget'  => '</div>',
     'before_title' => '<h4 class="widget-title">',
@@ -381,7 +390,6 @@ $color = trim( $color, '#' );
 
 }
 
-
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
  * for content images
@@ -432,7 +440,7 @@ add_filter( 'wp_get_attachment_image_attributes', 'molecule_post_thumbnail_sizes
 /**
 * Modifies tag cloud widget arguments to have all tags in the widget same font size.
 *
-* @since Molecule 1.1
+* @since Molecule 1.0
 *
 * @param array $args Arguments for tag cloud widget.
 * @return array A new modified arguments.

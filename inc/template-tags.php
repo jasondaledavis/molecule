@@ -87,7 +87,8 @@ function molecule_entry_taxonomies() {
 	$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'molecule' ) );
 	if ( $categories_list && molecule_categorized_blog() ) {
 		printf( '<span class="cat-links"><span class="screen-reader-text"> %1$s </span> %2$s </span>',
-			printf( '<span class="cat-title">Categories:</span> ', 'Used before category names.', 'molecule' ),
+			// printf( '<span class="cat-title">Categories:</span> ', 'Used before category names.', 'molecule' ),
+			_x( 'Categories', 'Used before category names.', 'molecule' ),
 			$categories_list
 		);
 	}
@@ -95,7 +96,8 @@ function molecule_entry_taxonomies() {
 	$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'molecule' ) );
 	if ( $tags_list ) {
 		printf( '<span class="tags-links"><span class="screen-reader-text"> %1$s </span> %2$s </span>',
-			printf( '<span class="tag-title">Tags:</span> ', 'Used before tag names.', 'molecule' ),
+			// printf( '<span class="tag-title">Tags:</span> ', 'Used before tag names.', 'molecule' ),
+			_x( 'Tags', 'Used before tag names.', 'molecule' ),
 			$tags_list
 		);
 	}

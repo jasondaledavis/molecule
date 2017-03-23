@@ -22,7 +22,7 @@ get_header(); ?>
                     <?php get_search_form(); ?>
 
 
-                    <p><a class="read-more" href="<?php echo home_url(); ?>"><?php _e( 'Go to the homepage', 'molecule' ); ?></a></p>
+                    <p><a class="read-more" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'Go to the homepage', 'molecule' ); ?></a></p>
 
                 </div>
                

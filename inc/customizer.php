@@ -45,7 +45,6 @@ function molecule_custom_header_and_background() {
 	 * }
 	 */
 	add_theme_support( 'custom-header', apply_filters( 'molecule_custom_header_args', array(
-		// 'default-text-color'     => $default_text_color,
 		'width'                  => 1200,
 		'height'                 => 280,
 		'flex-height'            => true,
@@ -93,7 +92,6 @@ endif; // molecule_header_style
  * @param WP_Customize_Manager $wp_customize The Customizer object.
  */
 function molecule_customize_register( $wp_customize ) {
-	// $color_scheme = molecule_get_color_scheme();
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';

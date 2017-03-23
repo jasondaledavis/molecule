@@ -193,3 +193,16 @@ function molecule_change_search_url_rewrite() {
     }    
 }
 add_action( 'template_redirect', 'molecule_change_search_url_rewrite' );
+
+//================================================================================//
+//Add SVG to allowed file uploads
+//================================================================================//
+function molecule_add_file_types_to_uploads($file_types){
+
+    $new_filetypes = array();
+    $new_filetypes['svg'] = 'image/svg+xml';
+    $file_types = array_merge($file_types, $new_filetypes );
+
+    return $file_types;
+}
+add_action('upload_mimes', 'molecule_add_file_types_to_uploads');

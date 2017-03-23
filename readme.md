@@ -3,7 +3,7 @@
 * Author: Jason Davis
 * Requires at least: WordPress 4.6+
 * Tested up to: WordPress 4.7+
-* Version: 2.1.1
+* Version: 2.1.2
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -15,15 +15,9 @@ Molecule is a modernized take on an ever-popular WordPress layout — the horizo
 * Customizer Enabled for Background, Header, and Widgets
 * The GPL v2.0 or later license. :) Use it to make something cool.
 
-For more information about Molecule please go to <a href="https://molecule.element502.com">https://molecule.element502.com</a> Molecule is based on the popular theme Twentysixteen.
+For more information about Molecule please go to <a href="https://molecule.element502.com">https://molecule.element502.com</a> Molecule is based on the popular theme Twenty Sixteen. 
 
-### Installation
-
-1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in Molecule in the search form and press the 'Enter' key on your keyboard.
-3. Click on the 'Activate' button to use your new theme right away.
-4. Go to <a href="https://molecule.element502.com">https://molecule.element502.com</a> for a guide on how to customize this theme.
-5. Navigate to Appearance > Customize in your admin panel and customize to taste.
+For more information about Twenty Sixteen please go to https://codex.wordpress.org/Twenty_Sixteen.
 
 ### Copyright
 
@@ -100,7 +94,7 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="https://nerdbrand.m
 * Cleaned up CSS indents and added comments. Added main-navigation-row class to nav row for better markup and style control. Removed color options in customizer (use CSS!), and removed background option. Revised TGM Plugin Activation list (init.php).
 
 = 1.9 =
-* Revised all files to stay updated to Twenty Sixteen Theme updates. 
+* Revised all files to stay updated to Molecule Theme updates. 
 * Updated Genericons to 3.4.1. 
 * Added IE7 - 10 style sheets in CSS. 
 * Added all partials in template-parts directory.
@@ -140,3 +134,6 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="https://nerdbrand.m
 
 = 2.1.1 =
 * Added Github updater in style.css to update without WordPress since this is a custom WordPress theme that makes money!
+
+= 2.1.2 =
+* Fixed recommended issues found by WordPress reviewer.

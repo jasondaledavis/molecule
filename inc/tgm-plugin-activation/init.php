@@ -5,27 +5,17 @@ function molecule_register_required_plugins() {
     $plugins = array(
 
         array(
-            'name'      => 'Content Aware Sidebars',
+            'name'      => __('Content Aware Sidebars', 'molecule' ), 
             'slug'      => 'content-aware-sidebars',
         ),
 
         array(
-            'name'      => 'WP-PageNavi',
+            'name'      => __('WP-PageNavi', 'molecule' ),
             'slug'      => 'wp-pagenavi',
         ),
 
         array(
-            'name'      => 'SVG Support',
-            'slug'      => 'svg-support',
-        ),
-
-        array(
-            'name'      => 'Duplicate Post',
-            'slug'      => 'duplicate-post',
-        ),
-
-        array(
-            'name'      => 'Easy Google Fonts',
+            'name'      => __('Easy Google Fonts', 'molecule' ),
             'slug'      => 'easy-google-fonts',
         ),
 
