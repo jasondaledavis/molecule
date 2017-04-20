@@ -19,6 +19,11 @@ function molecule_register_required_plugins() {
             'slug'      => 'easy-google-fonts',
         ),
 
+        array(
+            'name'      => __('SVG Support', 'molecule' ),
+            'slug'      => 'svg-support',
+        ),
+
     );
 
     tgmpa( $plugins );
