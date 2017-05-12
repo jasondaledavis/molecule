@@ -54,7 +54,7 @@
 
             <?php endif; ?>
 
-        </div>
+        <!-- </div> stray div? -->
 
                 <?php if ( get_header_image() ) : ?>
 

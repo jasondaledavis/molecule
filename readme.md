@@ -3,7 +3,7 @@
 * Author: Jason Davis
 * Requires at least: WordPress 4.6+
 * Tested up to: WordPress 4.7+
-* Version: 2.1.3
+* Version: 2.1.4
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -140,3 +140,7 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="https://nerdbrand.m
 
 = 2.1.3 =
 * Added SVG Support plugin back for SVG's to be uploaded to customizer.
+
+= 2.1.4 =
+* Removed stray </div> in header.php
+* minified CSS in assets folder for SEO
