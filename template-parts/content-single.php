@@ -16,8 +16,6 @@
 
 				the_content();
 
-
-
 				wp_link_pages( array(
 					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'molecule' ) . '</span>',
 					'after'       => '</div>',
