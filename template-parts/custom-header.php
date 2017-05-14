@@ -129,7 +129,14 @@
 
             <h1 class="page-title"><span class="entry-title"><?php the_title(); ?></span></h1>
 
-            <h2 class="page-subtitle"><span class="posted-on"><?php molecule_posted_on(); ?></span></h2>
+
+            <?php
+            global $post;
+            $author_id=$post->post_author;
+            $username = get_userdata( $post->post_author ); 
+            ?>
+
+            <h2 class="page-subtitle"><span class="byline"><?php _e( 'Article by', 'molecule' ); ?> <span class="author vcard"><a class="url fn n" href="#"><?php echo $username->display_name; ?></a></span> on <span><span class="entry-date published updated"><?php the_time( 'F j, Y' ); ?></span></span></span></h2>
 
         </div>
         

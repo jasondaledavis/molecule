@@ -19,15 +19,11 @@
 		<?php the_title( sprintf( '<h2><span class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></span></h2>' ); ?>
 	</header><!-- .entry-header -->
 
-	<div class="meta-details">
-
-		<div><?php molecule_posted_on(); ?></div>
-
-		<div><?php molecule_entry_meta(); ?></div>
-
-	</div>
-
 	<?php molecule_post_thumbnail(); ?>
+
+	<div class="meta-details">
+		<?php molecule_entry_meta(); ?>
+	</div>
 
 	<div class="entry-content">
 
@@ -36,12 +32,6 @@
 				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'molecule' ),
 				get_the_title()
 			) ); ?>
-
-						<div class="btn">
-
-							<a class="read-more" href="<?php the_permalink(); ?>"><?php _e( 'Read Article', 'molecule' ); ?></a>
-
-						</div>
 
 		<?php
 			wp_link_pages( array(
