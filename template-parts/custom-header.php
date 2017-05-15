@@ -133,10 +133,10 @@
             <?php
             global $post;
             $author_id=$post->post_author;
-            $username = get_userdata( $post->post_author ); 
+            $username = get_userdata( $post->post_author );
             ?>
 
-            <h2 class="page-subtitle"><span class="byline"><?php _e( 'Article by', 'molecule' ); ?> <span class="author vcard"><a class="url fn n" href="#"><?php echo $username->display_name; ?></a></span> on <span><span class="entry-date published updated"><?php the_time( 'F j, Y' ); ?></span></span></span></h2>
+            <h2 class="page-subtitle"><span class="byline"><?php _e( 'Article by', 'molecule' ); ?> <span class="author vcard"><a class="url fn n" href="<?php echo get_author_posts_url( $post->post_author ); ?>"><?php echo $username->display_name; ?></a></span> on <span><span class="entry-date published updated"><?php the_time( 'F j, Y' ); ?></span></span></span></h2>
 
         </div>
         
