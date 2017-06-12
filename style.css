@@ -6,7 +6,7 @@ Author URI: https://jasondavisdesigns.com
 GitHub Theme URI: https://github.com/jasondaledavis/molecule
 GitHub Branch: master
 Description: Molecule is a diverse theme for whatever you imagine. Molecule is fully compatible with popular plugins like WooCommerce, Gravity Forms, Contact Form 7, Jetpack, and others. The content area powers the entire sites main page area, so make it look how you want. the header and footer are customizable from the WordPress customizer for backgrounds and color options. There are 4 widget areas in the footer, and a separate page and blog sidebar. Sidebars are only activate once a widget is dragged in place and page and blog sidebar is only on the right side column. A page builder is recommended like SiteOrigin or Visual Composer to create a beautiful layout like the demo.
-Version: 2.2.1
+Version: 2.3.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -102,7 +102,7 @@ abbr[title] {
 }
 b,
 strong {
-    font-weight: 700;
+    font-weight: bold;
 }
 small {
     font-size: 80%;
@@ -477,7 +477,7 @@ blockquote cite {
 }
 blockquote strong,
 blockquote b {
-    font-weight: 400;
+    font-weight: normal;
 }
 blockquote>:last-child {
     margin-bottom: 0;
@@ -591,7 +591,7 @@ dl {
     margin: 0 0 1.75em;
 }
 dt {
-    font-weight: 700;
+    font-weight: bold;
 }
 dd {
     margin: 0 0 1.75em;
@@ -631,7 +631,7 @@ td {
 }
 th {
     border-width: 0 1px 1px 0;
-    font-weight: 700;
+    font-weight: bold;
 }
 td {
     border-width: 0 1px 1px 0;
@@ -903,14 +903,16 @@ a:active {
     font-weight: normal;
     color: #1a1a1a;
     display: block;
+    font-size: 0.8em;
     line-height: 1.3125;
+    letter-spacing: 1px;
     outline-offset: -1px;
     padding: 0.84375em 0;
     text-transform: uppercase;
 }
-.main-navigation a:hover,
-.main-navigation a:focus {
-    color: #222222;
+.main-navigation li:hover>a,
+.main-navigation li.focus>a {
+    color: #888;
 }
 .main-navigation .current-menu-item>a,
 .main-navigation .current-menu-ancestor>a {
@@ -919,7 +921,7 @@ a:active {
 /*hover effect*/
 
 .main-navigation a::before {
-    background: #222222 none repeat scroll 0 0;
+    background: #cecece none repeat scroll 0 0;
     bottom: 0;
     content: "";
     height: 2px;
@@ -989,7 +991,7 @@ a:active {
     font-family: 'Open Sans', 'Arial', sans-serif;
     font-size: 23px;
     font-size: 1.4375rem;
-    font-weight: 700;
+    font-weight: bold;
     line-height: 1.2173913043;
     text-rendering: optimizeLegibility;
     -webkit-transition: all .3s ease-in-out 0s;
@@ -1070,7 +1072,7 @@ a:active {
 }
 .pagination .current {
     display: inline-block;
-    font-weight: 700;
+    font-weight: bold;
 }
 .pagination .prev,
 .pagination .next {
@@ -1179,7 +1181,7 @@ a:active {
     display: block;
     font-family: 'Open Sans', 'Arial', sans-serif;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: bold;
     left: -9999em;
     outline: none;
     padding: 15px 23px 14px;
@@ -1306,14 +1308,14 @@ blockquote:after,
     text-align: center;
 }
 .widget_calendar caption {
-    font-weight: 900;
+    font-weight: bold;
     margin-bottom: 1.75em;
 }
 .widget_calendar tbody a {
     background-color: #222222;
     color: #fff;
     display: block;
-    font-weight: 700;
+    font-weight: bold;
 }
 .widget_calendar tbody a:hover,
 .widget_calendar tbody a:focus {
@@ -1403,8 +1405,10 @@ blockquote:after,
     font-size: .8em;
     line-height: 1.1em;
     letter-spacing: .5px;
+    padding-top: 5px;
     text-transform: uppercase;
 }
+#molecule-topbar .widget a {padding:0;}
 /* molecule-topbar widget searchbar */
 
 #molecule-topbar .widget.widget_search {
@@ -1597,13 +1601,6 @@ blockquote:after,
 .entry-content a:focus {
     color: #222222;
 }
-.home .page-content {
-    max-width: 1200px !important;
-    width: 100% !important;
-    margin: 0 auto;
-    padding: 0 0 40px;
-    word-wrap: break-word;
-}
 .page-content {
     max-width: 1200px !important;
     width: 100% !important;
@@ -1644,14 +1641,24 @@ blockquote:after,
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
-.site-title {
-    font-size: 23px;
-    font-size: 1.4375rem;
-    font-weight: normal;
-    line-height: 1.2173913043;
+.header-top .site-title,
+.header-top .site-title a {
+    font-size: 1.3em;
+    line-height: 1em;
     margin: 0 auto;
     padding: 0;
     text-align: center;
+    font-weight: lighter;
+    font-family: 'Open Sans', 'Arial', sans-serif;
+}
+.header-top-dark .site-title,
+.header-top-dark .site-title a {
+    font-size: 1em;
+    line-height: 1em;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    font-weight: lighter;
     font-family: 'Open Sans', 'Arial', sans-serif;
 }
 .header-top .site-description {
@@ -1660,14 +1667,17 @@ blockquote:after,
     color: #676767;
     font-size: 13px;
     font-size: 0.8125rem;
-    font-weight: 400;
+    font-weight: normal;
     line-height: 1.0769230769;
 }
 .header-top-dark .site-description {
     display: none;
 }
-.logo {
+.header-top .logo {
     padding: 30px 0 20px;
+}
+.header-top-dark .logo {
+    padding: 20px 0 0;
 }
 .header-top img.custom-logo {
     -moz-transition: all 1s ease;
@@ -1765,6 +1775,20 @@ blockquote:after,
     transform: translateX(-50%);
     z-index: 200;
 }
+.author .custom-headings {
+    position: absolute;
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    overflow: visible;
+    top: 25%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 200;
+}
 .page-title {
     color: #ffffff;
     margin-top: 0;
@@ -1775,7 +1799,7 @@ blockquote:after,
     line-height: 39.2px;
     font-size: 2.8rem;
     line-height: 3.9199999999999995rem;
-    font-weight: bold;
+    font-weight: normal;
     font-family: 'Open Sans', 'Arial', sans-serif;
 }
 .page-subtitle {
@@ -1850,7 +1874,7 @@ span.entry-title {
     font-family: 'Open Sans', 'Arial', sans-serif;
     font-size: 28px;
     font-size: 1.75rem;
-    font-weight: 700;
+    font-weight: normal;
     line-height: 1.25;
     margin-bottom: 1em;
 }
@@ -2000,6 +2024,12 @@ a.more-link:hover {
     margin: 0 7.6923% 3.5em;
     padding: 25px 40px 40px 0;
 }
+.single .author-info .author.vcard a {
+    color:#222222;
+}
+.single .author-info .author.vcard a:hover {
+    color:#888;
+}
 .author-avatar img,
 .author-avatar .avatar {
     float: left;
@@ -2020,7 +2050,7 @@ h2.author-title a,
     clear: none;
     font-size: 16px;
     font-size: 1rem;
-    font-weight: 900;
+    font-weight: bold;
     line-height: 1.75;
     margin: 0;
     font-family: 'Open Sans', 'Arial', sans-serif;
@@ -2269,7 +2299,7 @@ span.comments-link a:hover {
     font-family: 'Open Sans', 'Arial', sans-serif;
     font-size: 23px;
     font-size: 1.4375rem;
-    font-weight: 700;
+    font-weight: bold;
     line-height: 1.3125;
     padding-top: 1.217391304em;
 }
@@ -2382,7 +2412,7 @@ span.comments-link a:hover {
 .no-comments {
     border-top: 1px solid #a0a0a0;
     font-family: 'Open Sans', 'Arial', sans-serif;
-    font-weight: 700;
+    font-weight: bold;
     margin: 0;
     padding-top: 1.75em;
 }
@@ -2608,7 +2638,7 @@ span.comments-link a:hover {
     padding: 40px 0;
     margin-bottom: 0;
     color: white;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', 'Arial', sans-serif;
 }
 .footer-widgets a,
 .footer-widgets p {
@@ -2980,10 +3010,6 @@ p>video {
         padding: 0.65625em 0.875em;
         white-space: nowrap;
         text-transform: uppercase;
-    }
-    .main-navigation li:hover>a,
-    .main-navigation li.focus>a {
-        color: #222222;
     }
     .main-navigation ul ul {
         border-bottom: 1px solid #a0a0a0;
@@ -3469,7 +3495,7 @@ p>video {
     }
     body,
     .site {
-        background: none !important;
+        background: none;
         /* Brute force since user agents all print differently. */
     }
     body,
@@ -3477,12 +3503,12 @@ p>video {
     blockquote small,
     span.entry-title a,
     .comment-author {
-        color: #1a1a1a !important;
+        color: #1a1a1a;
         /* Make sure color schemes don't affect to print */
     }
     blockquote,
     .comments-title {
-        border-color: #1a1a1a !important;
+        border-color: #1a1a1a;
         /* Make sure color schemes don't affect to print */
     }
     blockquote,
@@ -3499,12 +3525,12 @@ p>video {
     .comment-awaiting-moderation,
     .wp-caption .wp-caption-text,
     .gallery-caption {
-        color: #676767 !important;
+        color: #676767;
         /* Make sure color schemes don't affect to print */
     }
     code,
     hr {
-        background-color: #a0a0a0 !important;
+        background-color: #a0a0a0;
         /* Make sure color schemes don't affect to print */
     }
     pre,
@@ -3518,11 +3544,11 @@ p>video {
     .comment-list .pingback,
     .comment-list .trackback,
     .no-comments {
-        border-color: #a0a0a0 !important;
+        border-color: #a0a0a0;
         /* Make sure color schemes don't affect to print */
     }
     a {
-        color: #222222 !important;
+        color: #222222;
         /* Make sure color schemes don't affect to print */
     }
     .entry-content a,
@@ -3531,7 +3557,7 @@ p>video {
     .comment-content a,
     .pingback .comment-body>a {
         box-shadow: none;
-        border-bottom: 1px solid #222222 !important;
+        border-bottom: 1px solid #222222;
         /* Make sure color schemes don't affect to print */
     }
     .site-header {

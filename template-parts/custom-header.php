@@ -160,6 +160,11 @@
 
         <div class="custom-headings-inner">
 
+            <?php if ( 'post' === get_post_type() ) {
+            $author_avatar_size = apply_filters( 'molecule_author_avatar_size', 80 );
+                echo get_avatar( get_the_author_meta( 'ID' ), $author_avatar_size ); 
+            } ?>
+
             <h1 class="page-title"><span class="entry-title"><?php _e( 'Posts by: ', 'molecule' ); ?><?php echo get_the_author(); ?></span></h1>
 
         </div>

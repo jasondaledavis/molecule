@@ -1,9 +1,9 @@
 # Molecule Theme
 
 * Author: Jason Davis
-* Requires at least: WordPress 4.6+
-* Tested up to: WordPress 4.7+
-* Version: 2.2.1
+* Requires at least: WordPress 4.7+
+* Tested up to: WordPress 4.8
+* Version: 2.3.1
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -152,3 +152,12 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="http://jasondavisde
 * changed function and design of author and date post details.
 * changed function of read more link to be more inline with Twenty Sixteen and theme-ing.
 * Changed theme base colors to gray scale.
+
+= 2.3 =
+* see mac version at work
+
+= 2.3.1 =
+* Added author avatar to author archive page.
+* Changed .main-navigation anchor styles and page titles and site-title.
+* changed font weights to normal, bold from 400, 700, and 900 for Open Sans.
+* Added site name to footer when no logo is used, stopping scrolling bug.
