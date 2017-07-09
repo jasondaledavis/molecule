@@ -3,7 +3,7 @@
 * Author: Jason Davis
 * Requires at least: WordPress 4.7+
 * Tested up to: WordPress 4.8
-* Version: 2.3.1
+* Version: 2.4
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -154,10 +154,17 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="http://jasondavisde
 * Changed theme base colors to gray scale.
 
 = 2.3 =
-* see mac version at work
+* misc changes
 
 = 2.3.1 =
 * Added author avatar to author archive page.
 * Changed .main-navigation anchor styles and page titles and site-title.
 * changed font weights to normal, bold from 400, 700, and 900 for Open Sans.
 * Added site name to footer when no logo is used, stopping scrolling bug.
+
+= 2.4 =
+* removed content aware sidebars from theme install. 
+* removed woo styles for molecule theme and moved to child theme styles.
+* added breadcrumbs on page and post when Yoast option is activated.
+* added is_products statement to custom-header.php for woo products page title.
+* re-writing of molecule-woo.css and restricted to only load on woo pages.

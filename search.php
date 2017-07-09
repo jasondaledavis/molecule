@@ -16,7 +16,8 @@ get_header(); ?>
                 <div class="c12">
 
 					<?php if ( have_posts() ) : 
-			// Start the loop. 
+					
+					// Start the loop. 
 					while ( have_posts() ) : the_post();
 
 							/**

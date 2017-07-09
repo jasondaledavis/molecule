@@ -18,6 +18,14 @@ get_header(); ?>
             <div class="c9">
 
                 <?php
+                    if ( function_exists('yoast_breadcrumb') ) {
+                    yoast_breadcrumb('
+                    <p id="breadcrumbs">','</p>
+                    ');
+                    }
+                ?>
+
+                <?php
                 // Start the loop.
                 while ( have_posts() ) : the_post();
 
@@ -65,6 +73,14 @@ get_header(); ?>
         <div class="row">
 
             <div class="c12">
+
+                <?php
+                    if ( function_exists('yoast_breadcrumb') ) {
+                    yoast_breadcrumb('
+                    <p id="breadcrumbs">','</p>
+                    ');
+                    }
+                ?>
 
                 <?php
                     // Start the loop.

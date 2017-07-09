@@ -13,7 +13,7 @@ get_header(); ?>
 
             <div class="row">
 
-                <div class="c12">
+                <div class="c6">
 
                     <h1 class="entry-title"><?php _e( 'Uh Oh!!', 'molecule' ); ?></h1>
 
@@ -22,7 +22,12 @@ get_header(); ?>
                     <?php get_search_form(); ?>
 
 
-                    <p><a class="read-more" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'Go to the homepage', 'molecule' ); ?></a></p>
+                    <div class="reply homepage-btn"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'Go to the homepage', 'molecule' ); ?></a>
+                    </div>
+
+                </div>
+
+                <div class="c6">
 
                 </div>
                

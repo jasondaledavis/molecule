@@ -54,8 +54,6 @@
 
             <?php endif; ?>
 
-        <!-- </div> stray div? -->
-
                 <?php if ( get_header_image() ) : ?>
 
                 <?php
@@ -87,7 +85,7 @@
                         
                             <div class="logo">
 
-                            <?php molecule_the_custom_logo(); ?>
+                                <?php molecule_the_custom_logo(); ?>
 
                                 <?php if ( display_header_text() ) {
        
@@ -128,24 +126,28 @@
                         
                                 <div class="site-header-main">
 
-                                <?php if ( has_nav_menu( 'primary' ) ) : ?>
-                                
-                                <button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'molecule' ); ?></button>
+                                    <?php if ( has_nav_menu( 'primary' ) ) : ?>
+                                    
+                                    <button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'molecule' ); ?></button>
 
-                                <div id="site-header-menu" class="site-header-menu">
-                                
-                                    <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'molecule' ); ?>">
-                                        <?php
-                                            wp_nav_menu( array(
-                                                'theme_location' => 'primary',
-                                                'menu_class'     => 'primary-menu',
-                                             ) );
-                                        ?>
-                                    </nav><!-- .main-navigation -->
+                                    <div id="site-header-menu" class="site-header-menu">
+                                    
+                                        <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'molecule' ); ?>">
 
-                                </div><!-- .site-header-menu -->
+                                            <?php
+                                                wp_nav_menu( array(
+                                                    'theme_location' => 'primary',
+                                                    'menu_class'     => 'primary-menu',
+                                                 ) );
+                                            ?>
 
-                                <?php endif; ?><!-- end has_nav_menu -->
+                                        </nav><!-- .main-navigation -->
+
+                                    </div><!-- .site-header-menu -->
+
+                                    <?php endif; ?><!-- end has_nav_menu -->
+
+                                </div><!-- end .site-header-main -->
 
                             </div><!-- end .c12 -->
 
@@ -153,7 +155,7 @@
 
                     </div><!-- end .grid -->
 
-                </div><!-- main nav row -->
+                </div><!-- end .main-navigation-row -->
 
             </div><!-- end .header-top -->
 

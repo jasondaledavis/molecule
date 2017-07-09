@@ -155,83 +155,83 @@ add_action( 'after_setup_theme', 'molecule_content_width', 0 );
 function molecule_widgets_init() {
 
   register_sidebar( array(
-  'name' => __('Blog Sidebar', 'molecule' ),
-  'id' => 'sidebar-blog',
-  'description'   => __( 'Add widgets here to appear in your blog posts and page sidebar.', 'molecule' ),
-  'before_widget' => '<div id="%1$s" class="widget %2$s">',
-  'after_widget' => "</div>",
-  'before_title' => '<h4 class="widget-title">',
-  'after_title' => '</h4>',
+    'name' => __('Blog Sidebar', 'molecule' ),
+    'id' => 'sidebar-blog',
+    'description'   => __( 'Add widgets here to appear in your blog posts and page sidebar.', 'molecule' ),
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => "</div>",
+    'before_title' => '<h4 class="widget-title">',
+    'after_title' => '</h4>',
   ) );
 
   register_sidebar( array(
-  'name' => __('Page Sidebar', 'molecule' ),
-  'id' => 'sidebar-page',
-  'description'   => __( 'Add widgets here to appear in your pages sidebar.', 'molecule' ),
-  'before_widget' => '<div id="%1$s" class="widget %2$s">',
-  'after_widget' => "</div>",
-  'before_title' => '<h4 class="widget-title">',
-  'after_title' => '</h4>',
+    'name' => __('Page Sidebar', 'molecule' ),
+    'id' => 'sidebar-page',
+    'description'   => __( 'Add widgets here to appear in your pages sidebar.', 'molecule' ),
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => "</div>",
+    'before_title' => '<h4 class="widget-title">',
+    'after_title' => '</h4>',
   ) );
 
   register_sidebar( array(
-  'name' => __('Footer Sidebar 1', 'molecule' ),
-  'id' => 'sidebar-footer-1',
-  'description'   => __( 'Add widgets here to appear in your footer sidebar column one.', 'molecule' ),
-  'before_widget' => '<div id="%1$s" class="widget %2$s">',
-  'after_widget' => "</div>",
-  'before_title' => '<h4 class="widget-title">',
-  'after_title' => '</h4>',
+    'name' => __('Footer Sidebar 1', 'molecule' ),
+    'id' => 'sidebar-footer-1',
+    'description'   => __( 'Add widgets here to appear in your footer sidebar column one.', 'molecule' ),
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => "</div>",
+    'before_title' => '<h4 class="widget-title">',
+    'after_title' => '</h4>',
   ) );
 
   register_sidebar( array(
-  'name' => __('Footer Sidebar 2', 'molecule' ),
-  'id' => 'sidebar-footer-2',
-  'description'   => __( 'Add widgets here to appear in your footer sidebar column two.', 'molecule' ),
-  'before_widget' => '<div id="%1$s" class="widget %2$s">',
-  'after_widget' => "</div>",
-  'before_title' => '<h4 class="widget-title">',
-  'after_title' => '</h4>',
+    'name' => __('Footer Sidebar 2', 'molecule' ),
+    'id' => 'sidebar-footer-2',
+    'description'   => __( 'Add widgets here to appear in your footer sidebar column two.', 'molecule' ),
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => "</div>",
+    'before_title' => '<h4 class="widget-title">',
+    'after_title' => '</h4>',
   ) );
 
   register_sidebar( array(
-  'name' => __('Footer Sidebar 3', 'molecule' ),
-  'id' => 'sidebar-footer-3',
-  'description'   => __( 'Add widgets here to appear in your footer sidebar column three.', 'molecule' ),
-  'before_widget' => '<div id="%1$s" class="widget %2$s">',
-  'after_widget' => "</div>",
-  'before_title' => '<h4 class="widget-title">',
-  'after_title' => '</h4>',
+    'name' => __('Footer Sidebar 3', 'molecule' ),
+    'id' => 'sidebar-footer-3',
+    'description'   => __( 'Add widgets here to appear in your footer sidebar column three.', 'molecule' ),
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => "</div>",
+    'before_title' => '<h4 class="widget-title">',
+    'after_title' => '</h4>',
   ) );
 
   register_sidebar( array(
-  'name' => __('Footer Sidebar 4', 'molecule' ),
-  'id' => 'sidebar-footer-4',
-  'description'   => __( 'Add widgets here to appear in your footer sidebar column four.', 'molecule' ),
-  'before_widget' => '<div id="%1$s" class="widget %2$s">',
-  'after_widget' => "</div>",
-  'before_title' => '<h4 class="widget-title">',
-  'after_title' => '</h4>',
+    'name' => __('Footer Sidebar 4', 'molecule' ),
+    'id' => 'sidebar-footer-4',
+    'description'   => __( 'Add widgets here to appear in your footer sidebar column four.', 'molecule' ),
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => "</div>",
+    'before_title' => '<h4 class="widget-title">',
+    'after_title' => '</h4>',
   ) );
 
   register_sidebar( array(
-  'name' => __('Top Sidebar Left', 'molecule' ),
-  'id' => 'topbar-left',
-  'description'   => __( 'Add widgets here to appear in above your header in a sidebar on the left.', 'molecule' ),
-  'before_widget' => '<div id="%1$s" class="widget %2$s">',
-  'after_widget' => "</div>",
-  'before_title' => '<h4 class="widget-title">',
-  'after_title' => '</h4>',
+    'name' => __('Top Sidebar Left', 'molecule' ),
+    'id' => 'topbar-left',
+    'description'   => __( 'Add widgets here to appear in above your header in a sidebar on the left.', 'molecule' ),
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => "</div>",
+    'before_title' => '<h4 class="widget-title">',
+    'after_title' => '</h4>',
   ) );
 
   register_sidebar( array(
-  'name' => __('Top Sidebar Right', 'molecule' ),
-  'id' => 'topbar-right',
-  'description'   => __( 'Add widgets here to appear in above your header in a sidebar on the right.', 'molecule' ),
-  'before_widget' => '<div id="%1$s" class="widget %2$s">',
-  'after_widget' => "</div>",
-  'before_title' => '<h4 class="widget-title">',
-  'after_title' => '</h4>',
+    'name' => __('Top Sidebar Right', 'molecule' ),
+    'id' => 'topbar-right',
+    'description'   => __( 'Add widgets here to appear in above your header in a sidebar on the right.', 'molecule' ),
+    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'after_widget' => "</div>",
+    'before_title' => '<h4 class="widget-title">',
+    'after_title' => '</h4>',
   ) );
 
   if ( class_exists( 'WooCommerce' ) ) {
@@ -306,11 +306,6 @@ function molecule_scripts() {
     'expand'   => __( 'expand child menu', 'molecule' ),
     'collapse' => __( 'collapse child menu', 'molecule' ),
   ) );
-
-  //Custom WooCommerce Styles
-  if (class_exists( 'WooCommerce') ) {
-    wp_enqueue_style( 'woo-styles', get_template_directory_uri() . '/assets/css/molecule-woo.css' );
-  }
 
 }
 

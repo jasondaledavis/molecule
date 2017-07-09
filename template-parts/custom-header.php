@@ -14,7 +14,7 @@
     <?php 
 
         // If the current page is a static page or post
-        if ( is_page() || is_single() || is_singular( 'jetpack-portfolio' ) || is_singular( 'jetpack-testimonials' ) ) {
+        if ( is_page() || is_single() ) {
 
         if ( has_post_thumbnail() ) {
 
@@ -116,6 +116,18 @@
             <h1 class="page-title">Product Category: <span class="entry-title"><?php woocommerce_page_title(); ?></span></h1>
 
         <?php endif; ?>
+
+        </div>
+        
+    </div><!-- end .custom-headings -->
+
+    <?php } elseif ( class_exists( 'WooCommerce' ) && is_product() ) { ?>
+
+    <div class="custom-headings">
+
+        <div class="custom-headings-inner"> 
+
+            <h1 class="page-title"><span class="entry-title"><?php the_title(); ?></span></h1>
 
         </div>
         

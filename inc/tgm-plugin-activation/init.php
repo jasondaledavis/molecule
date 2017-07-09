@@ -5,11 +5,6 @@ function molecule_register_required_plugins() {
     $plugins = array(
 
         array(
-            'name'      => __('Content Aware Sidebars', 'molecule' ), 
-            'slug'      => 'content-aware-sidebars',
-        ),
-
-        array(
             'name'      => __('WP-PageNavi', 'molecule' ),
             'slug'      => 'wp-pagenavi',
         ),

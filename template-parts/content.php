@@ -42,7 +42,6 @@
 				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'molecule' ) . ' </span>%',
 				'separator'   => '<span class="screen-reader-text">, </span>',
 			) );
-
 		?>
 
 	</div><!-- .entry-content -->
