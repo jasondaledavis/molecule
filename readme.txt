@@ -2,8 +2,8 @@
 
 * Author: Jason Davis
 * Requires at least: WordPress 4.7+
-* Tested up to: WordPress 4.8
-* Version: 2.4
+* Tested up to: WordPress 4.8.1
+* Version: 2.4.1
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -168,3 +168,6 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="http://jasondavisde
 * added breadcrumbs on page and post when Yoast option is activated.
 * added is_products statement to custom-header.php for woo products page title.
 * re-writing of molecule-woo.css and restricted to only load on woo pages.
+
+= 2.4.1 =
+* updated index.php page title <h1> to <h2>.
