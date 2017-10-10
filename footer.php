@@ -5,8 +5,8 @@
  * Contains the closing of the #content div and all content after
  *
  * @package WordPress
- * @subpackage Molecule
- * @since Molecule 1.0
+ * @subpackage Woody
+ * @since Woody 1.0
  */
 ?>
 </main><!-- end .page-content -->
@@ -25,7 +25,7 @@
 
                         <div class="footer-logo">
 
-                            <?php molecule_the_custom_logo(); ?>
+                            <?php woody_the_custom_logo(); ?>
 
                                 <?php if ( display_header_text() ) {
            
@@ -45,7 +45,7 @@
 
                         <div class="copyright-info">
 
-                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>. &copy; <?php echo date( 'Y' ) ?> <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'molecule' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'molecule' ), 'WordPress' ); ?></a>
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>. &copy; <?php echo date( 'Y' ) ?> <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'woody' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'woody' ), 'WordPress' ); ?></a>
 
                         </div>
 
