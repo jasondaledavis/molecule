@@ -7,8 +7,8 @@
  * other "pages" on your WordPress site will use a different template.
  *
  * @package WordPress
- * @subpackage Woody
- * @since Woody 1.0
+ * @subpackage Molecule
+ * @since Molecule 1.0
  */
 
 get_header(); ?>

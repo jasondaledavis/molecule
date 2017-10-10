@@ -1,16 +1,16 @@
 /*
-Theme Name: Woody
-Theme URI: https://woody.element502.com
+Theme Name: Molecule
+Theme URI: https://molecule.element502.com
 Author: Jason Davis
 Author URI: https://jasondavisdesigns.com
-GitHub Theme URI: https://github.com/jasondaledavis/woody
+GitHub Theme URI: https://github.com/jasondaledavis/molecule
 GitHub Branch: master
-Description: Woody is a diverse theme for whatever you imagine. Woody is fully compatible with popular plugins like WooCommerce, Gravity Forms, Contact Form 7, Jetpack, and others. The content area powers the entire sites main page area, so make it look how you want. the header and footer are customizable from the WordPress customizer for backgrounds and color options. There are 4 widget areas in the footer, and a separate page and blog sidebar. Sidebars are only activate once a widget is dragged in place and page and blog sidebar is only on the right side column. A page builder is recommended like SiteOrigin or Visual Composer to create a beautiful layout like the demo.
+Description: Molecule is a diverse theme for whatever you imagine. Molecule is fully compatible with popular plugins like WooCommerce, Gravity Forms, Contact Form 7, Jetpack, and others. The content area powers the entire sites main page area, so make it look how you want. the header and footer are customizable from the WordPress customizer for backgrounds and color options. There are 4 widget areas in the footer, and a separate page and blog sidebar. Sidebars are only activate once a widget is dragged in place and page and blog sidebar is only on the right side column. A page builder is recommended like SiteOrigin or Visual Composer to create a beautiful layout like the demo.
 Version: 2.4.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
-Text Domain: woody
+Text Domain: molecule
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1396,18 +1396,18 @@ blockquote:after,
     float: right;
     min-height: 40px;
 }
-#woody-topbar {
+#molecule-topbar {
     background: #f5f5f5;
     border-bottom: 1px solid #f0f0f0;
     min-height: 40px;
 }
-#woody-topbar .row {
+#molecule-topbar .row {
     margin-bottom: 0;
 }
-#woody-topbar .widget {
+#molecule-topbar .widget {
     padding-top: 8px;
 }
-#woody-topbar .widget p {
+#molecule-topbar .widget p {
     margin: 0px;
     font-family: 'Open Sans', 'Arial', sans-serif;
     font-weight: normal;
@@ -1419,17 +1419,17 @@ blockquote:after,
     padding-top: 5px;
     text-transform: uppercase;
 }
-#woody-topbar .widget a {padding:0;}
-/* woody-topbar widget searchbar */
+#molecule-topbar .widget a {padding:0;}
+/* molecule-topbar widget searchbar */
 
-#woody-topbar .widget.widget_search {
+#molecule-topbar .widget.widget_search {
     padding: 4px 0 0;
 }
-#woody-topbar .searchbar input[type="text"],
-#woody-topbar .searchbar input[type="password"],
-#woody-topbar .searchbar input[type="email"],
-#woody-topbar .searchbar textarea,
-#woody-topbar .searchbar select {
+#molecule-topbar .searchbar input[type="text"],
+#molecule-topbar .searchbar input[type="password"],
+#molecule-topbar .searchbar input[type="email"],
+#molecule-topbar .searchbar textarea,
+#molecule-topbar .searchbar select {
     background: #F0F0F0 url(assets/img/search.svg) 100% 49% no-repeat;
     color: #676767;
     box-shadow: none;
@@ -1443,24 +1443,24 @@ blockquote:after,
     border-radius: 3px;
     float: right;
 }
-#woody-topbar .searchbar input[type="text"]:focus {
+#molecule-topbar .searchbar input[type="text"]:focus {
     border: solid 2px #222222;
     border-radius: 0;
 }
-#woody-topbar .searchbar input[type="text"] img {
+#molecule-topbar .searchbar input[type="text"] img {
     width: 30%;
 }
-/* woody-topbar widget menu dropdowns */
+/* molecule-topbar widget menu dropdowns */
 
-#woody-topbar ul {
+#molecule-topbar ul {
     list-style: none;
     margin: 0;
 }
-#woody-topbar li {
+#molecule-topbar li {
     position: relative;
     display: inline-block;
 }
-#woody-topbar a {
+#molecule-topbar a {
     font-family: 'Open Sans', 'Arial', sans-serif;
     font-weight: normal;
     color: #A0A0A0;
@@ -1470,28 +1470,28 @@ blockquote:after,
     letter-spacing: .5px;
     text-transform: uppercase;
 }
-#woody-topbar a:hover,
-#woody-topbar a:focus {
+#molecule-topbar a:hover,
+#molecule-topbar a:focus {
     color: #222222;
 }
-#woody-topbar .current-menu-item>a,
-#woody-topbar .current-menu-ancestor>a {
+#molecule-topbar .current-menu-item>a,
+#molecule-topbar .current-menu-ancestor>a {
     font-weight: normal;
 }
-#woody-topbar ul ul {
+#molecule-topbar ul ul {
     display: none;
     margin-left: 0.875em;
 }
-.no-js #woody-topbar ul ul {
+.no-js #molecule-topbar ul ul {
     display: block;
 }
-#woody-topbar ul .toggled-on {
+#molecule-topbar ul .toggled-on {
     display: block;
 }
-#woody-topbar .primary-menu {
+#molecule-topbar .primary-menu {
     border-bottom: 1px solid #a0a0a0;
 }
-#woody-topbar .menu-item-has-children>a {
+#molecule-topbar .menu-item-has-children>a {
     margin-right: 56px;
 }
 .site-header-main {
@@ -1505,27 +1505,27 @@ blockquote:after,
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
 }
-#woody-topbar {
+#molecule-topbar {
     margin: 0 -0.875em;
 }
-#woody-topbar .primary-menu,
-#woody-topbar .primary-menu>li {
+#molecule-topbar .primary-menu,
+#molecule-topbar .primary-menu>li {
     border: 0;
 }
-#woody-topbar .primary-menu>li {
+#molecule-topbar .primary-menu>li {
     float: left;
 }
-#woody-topbar a {
+#molecule-topbar a {
     outline-offset: -8px;
     padding: 0.65625em 0.875em;
     white-space: nowrap;
     text-transform: uppercase;
 }
-#woody-topbar li:hover>a,
-#woody-topbar li.focus>a {
+#molecule-topbar li:hover>a,
+#molecule-topbar li.focus>a {
     color: #222222;
 }
-#woody-topbar ul ul {
+#molecule-topbar ul ul {
     border-bottom: 1px solid #a0a0a0;
     display: block;
     left: -999em;
@@ -1533,65 +1533,65 @@ blockquote:after,
     position: absolute;
     z-index: 99999;
 }
-#woody-topbar ul ul ul {
+#molecule-topbar ul ul ul {
     top: -1px;
 }
-#woody-topbar ul ul ul:before,
-#woody-topbar ul ul ul:after {
+#molecule-topbar ul ul ul:before,
+#molecule-topbar ul ul ul:after {
     border: 0;
 }
-#woody-topbar ul ul li {
+#molecule-topbar ul ul li {
     background-color: #fff;
     border: 1px solid #a0a0a0;
     border-bottom-width: 0;
 }
-#woody-topbar ul ul a {
+#molecule-topbar ul ul a {
     white-space: normal;
     width: 12.6875em;
 }
-#woody-topbar ul ul:before,
-#woody-topbar ul ul:after {
+#molecule-topbar ul ul:before,
+#molecule-topbar ul ul:after {
     border-style: solid;
     content: "";
     position: absolute;
 }
-#woody-topbar ul ul:before {
+#molecule-topbar ul ul:before {
     border-color: #a0a0a0 transparent;
     border-width: 0 10px 10px;
     right: 9px;
     top: -9px;
 }
-#woody-topbar ul ul:after {
+#molecule-topbar ul ul:after {
     border-color: #fff transparent;
     border-width: 0 8px 8px;
     right: 11px;
     top: -7px;
 }
-#woody-topbar li:hover>ul,
-#woody-topbar li.focus>ul {
+#molecule-topbar li:hover>ul,
+#molecule-topbar li.focus>ul {
     left: auto;
     right: 0;
 }
-#woody-topbar ul ul li:hover>ul,
-#woody-topbar ul ul li.focus>ul {
+#molecule-topbar ul ul li:hover>ul,
+#molecule-topbar ul ul li.focus>ul {
     left: auto;
     right: 100%;
 }
-#woody-topbar .menu-item-has-children>a {
+#molecule-topbar .menu-item-has-children>a {
     margin: 0;
     padding-right: 2.25em;
 }
-#woody-topbar .menu-item-has-children>a:after {
+#molecule-topbar .menu-item-has-children>a:after {
     content: "\f431";
     font-family: Genericons;
     position: absolute;
     right: 0.625em;
     top: 0.825em;
 }
-#woody-topbar ul ul .menu-item-has-children>a {
+#molecule-topbar ul ul .menu-item-has-children>a {
     padding-right: 2.0625em;
 }
-#woody-topbar ul ul .menu-item-has-children>a:after {
+#molecule-topbar ul ul .menu-item-has-children>a:after {
     right: 0.5625em;
     top: 0.875em;
     -webkit-transform: rotate(90deg);
@@ -3348,7 +3348,7 @@ p>video {
 
 @media screen and (max-width: 48em) {
     .site-header-menu,
-    #woody-topbar {
+    #molecule-topbar {
         display: none;
     }
     .menu-toggle {

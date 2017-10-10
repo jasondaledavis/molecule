@@ -1,4 +1,4 @@
-# Woody Theme
+# Molecule Theme
 
 * Author: Jason Davis
 * Requires at least: WordPress 4.7+
@@ -9,20 +9,20 @@
 * Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
 
 ## Description
-Woody is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar and four column footer widgetized area that works perfectly for blogs and websites. It has a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail. Woody will make your WordPress look beautiful everywhere.
+Molecule is a modernized take on an ever-popular WordPress layout — the horizontal masthead with an optional right sidebar and four column footer widgetized area that works perfectly for blogs and websites. It has a harmonious fluid grid using a mobile-first approach, and impeccable polish in every detail. Molecule will make your WordPress look beautiful everywhere.
 
 * Mobile-first, Responsive Layout
 * Customizer Enabled for Background, Header, and Widgets
 * The GPL v2.0 or later license. :) Use it to make something cool.
 
-For more information about Woody please go to <a href="https://woody.element502.com">https://woody.element502.com</a> Woody is based on the popular theme Twenty Sixteen. 
+For more information about Molecule please go to <a href="https://molecule.element502.com">https://molecule.element502.com</a> Molecule is based on the popular theme Twenty Sixteen. 
 
 For more information about Twenty Sixteen please go to https://codex.wordpress.org/Twenty_Sixteen.
 
 ### Copyright
 
-Woody WordPress Theme, Copyright 2017 <a href="http://jasondavisdesigns.com">http://jasondavisdesigns.com</a>
-Woody is distributed under the terms of the GNU GPL WordPress.org
+Molecule WordPress Theme, Copyright 2017 <a href="http://jasondavisdesigns.com">http://jasondavisdesigns.com</a>
+Molecule is distributed under the terms of the GNU GPL WordPress.org
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Woody Theme bundles the following third-party resources:
+Molecule Theme bundles the following third-party resources:
 
 Genericons icon font, Copyright 2013-2015 Automattic.com<br>
 License: GNU GPL, Version 2 (or later)<br>
@@ -61,7 +61,7 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="http://jasondavisde
 * Added spans and schema.org classes for SEO
 
 = 1.1.1 =
-* Fixed page subtitle CSS and changes text domain to woody from capstone
+* Fixed page subtitle CSS and changes text domain to molecule from capstone
 
 = 1.2 =
 * Added color options for header background in interior pages, and removed custom-header background jpg for transparent png to allow for custom css to style with flat color.
@@ -88,13 +88,13 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="http://jasondavisde
 * Removed extra / from meta in blogs
 
 = 1.8.2 =
-* Revised CSS to match DEMO on woody.element502.com
+* Revised CSS to match DEMO on molecule.element502.com
 
 = 1.8.3 =
 * Cleaned up CSS indents and added comments. Added main-navigation-row class to nav row for better markup and style control. Removed color options in customizer (use CSS!), and removed background option. Revised TGM Plugin Activation list (init.php).
 
 = 1.9 =
-* Revised all files to stay updated to Woody Theme updates. 
+* Revised all files to stay updated to Molecule Theme updates. 
 * Updated Genericons to 3.4.1. 
 * Added IE7 - 10 style sheets in CSS. 
 * Added all partials in template-parts directory.
@@ -164,10 +164,10 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="http://jasondavisde
 
 = 2.4 =
 * removed content aware sidebars from theme install. 
-* removed woo styles for woody theme and moved to child theme styles.
+* removed woo styles for molecule theme and moved to child theme styles.
 * added breadcrumbs on page and post when Yoast option is activated.
 * added is_products statement to custom-header.php for woo products page title.
-* re-writing of woody-woo.css and restricted to only load on woo pages.
+* re-writing of molecule-woo.css and restricted to only load on woo pages.
 
 = 2.4.1 =
 * updated index.php page title <h1> to <h2>.
