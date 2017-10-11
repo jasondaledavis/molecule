@@ -3,8 +3,8 @@
  * The template for displaying all single posts and attachments
  *
  * @package WordPress
- * @subpackage Woody
- * @since Woody 1.0
+ * @subpackage Molecule
+ * @since Molecule 1.0
  */
 
 get_header(); ?>
@@ -40,16 +40,16 @@ get_header(); ?>
                     if ( is_singular( 'attachment' ) ) {
                         // Parent post navigation.
                         the_post_navigation( array(
-                            'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'woody' ),
+                            'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'molecule' ),
                         ) );
                     } elseif ( is_singular( 'post' ) ) {
                         // Previous/next post navigation.
                         the_post_navigation( array(
-                            'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'woody' ) . '</span> ' .
-                                '<span class="screen-reader-text">' . __( 'Previous post:', 'woody' ) . '</span> ' .
+                            'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'molecule' ) . '</span> ' .
+                                '<span class="screen-reader-text">' . __( 'Previous post:', 'molecule' ) . '</span> ' .
                                 '<span class="post-title">%title</span>',
-                            'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'woody' ) . '</span> ' .
-                                '<span class="screen-reader-text">' . __( 'Next post:', 'woody' ) . '</span> ' .
+                            'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'molecule' ) . '</span> ' .
+                                '<span class="screen-reader-text">' . __( 'Next post:', 'molecule' ) . '</span> ' .
                                 '<span class="post-title">%title</span>',
                         ) );
                     }
@@ -97,16 +97,16 @@ get_header(); ?>
                     if ( is_singular( 'attachment' ) ) {
                         // Parent post navigation.
                         the_post_navigation( array(
-                            'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'woody' ),
+                            'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'molecule' ),
                         ) );
                     } elseif ( is_singular( 'post' ) ) {
                         // Previous/next post navigation.
                         the_post_navigation( array(
-                            'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'woody' ) . '</span> ' .
-                                '<span class="screen-reader-text">' . __( 'Previous post:', 'woody' ) . '</span> ' .
+                            'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'molecule' ) . '</span> ' .
+                                '<span class="screen-reader-text">' . __( 'Previous post:', 'molecule' ) . '</span> ' .
                                 '<span class="post-title">%title</span>',
-                            'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'woody' ) . '</span> ' .
-                                '<span class="screen-reader-text">' . __( 'Next post:', 'woody' ) . '</span> ' .
+                            'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'molecule' ) . '</span> ' .
+                                '<span class="screen-reader-text">' . __( 'Next post:', 'molecule' ) . '</span> ' .
                                 '<span class="post-title">%title</span>',
                         ) );
                     }

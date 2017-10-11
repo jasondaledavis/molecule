@@ -3,8 +3,8 @@
  * The template part for displaying single posts
  *
  * @package WordPress
- * @subpackage Woody
- * @since Woody 1.0
+ * @subpackage Molecule
+ * @since Molecule 1.0
  */
 ?>
 
@@ -17,11 +17,11 @@
 				the_content();
 
 				wp_link_pages( array(
-					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'woody' ) . '</span>',
+					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'molecule' ) . '</span>',
 					'after'       => '</div>',
 					'link_before' => '<span>',
 					'link_after'  => '</span>',
-					'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'woody' ) . ' </span>%',
+					'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'molecule' ) . ' </span>%',
 					'separator'   => '<span class="screen-reader-text">, </span>',
 				) );
 
@@ -44,7 +44,7 @@
 				edit_post_link(
 					sprintf(
 						/* translators: %s: Name of current post */
-						__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'woody' ),
+						__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'molecule' ),
 						get_the_title()
 					),
 					'<span class="edit-link">',

@@ -3,8 +3,8 @@
  * The template part for displaying an Head Meta
  *
  * @package WordPress
- * @subpackage Woody
- * @since Woody 1.0
+ * @subpackage Molecule
+ * @since Molecule 1.0
  */
 ?>
 <!DOCTYPE html>

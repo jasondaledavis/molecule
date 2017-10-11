@@ -3,8 +3,8 @@
  * The template for the sidebar containing the main widget area
  *
  * @package WordPress
- * @subpackage Woody
- * @since Woody 1.0
+ * @subpackage Molecule
+ * @since Molecule 1.0
  */
 ?>
 

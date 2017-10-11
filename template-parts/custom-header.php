@@ -3,8 +3,8 @@
  * The template part for displaying an custom header thumbnail
  *
  * @package WordPress
- * @subpackage Woody
- * @since Woody 1.0
+ * @subpackage Molecule
+ * @since Molecule 1.0
  */
 ?>
 <div class="custom-header">
@@ -48,16 +48,16 @@
 
         <div class="custom-headings-inner">
 
-            <?php if ( get_post_meta( $post->ID, 'woody_page_heading', true ) ) { ?>
+            <?php if ( get_post_meta( $post->ID, 'molecule_page_heading', true ) ) { ?>
 
-            <h1 class="page-title"><span class="entry-title"><?php echo get_post_meta($post->ID, 'woody_page_heading', true) ?></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php echo get_post_meta($post->ID, 'molecule_page_heading', true) ?></span></h1>
 
             <?php } else { ?>
 
             <h1 class="page-title"><span class="entry-title"><?php the_title(); ?></span></h1>
             <?php } ?>
 
-            <h2 class="page-subtitle"><?php echo get_post_meta($post->ID, 'woody_page_subtitle', true) ?></h2>
+            <h2 class="page-subtitle"><?php echo get_post_meta($post->ID, 'molecule_page_subtitle', true) ?></h2>
             
         </div>
         
@@ -73,9 +73,9 @@
 
         <div class="custom-headings-inner">
 
-            <?php if ( get_post_meta( $page_id, 'woody_page_heading', true ) ) { ?>
+            <?php if ( get_post_meta( $page_id, 'molecule_page_heading', true ) ) { ?>
 
-            <h1 class="page-title"><span class="entry-title"><?php echo get_post_meta( $page_id, 'woody_page_heading', true ); ?></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php echo get_post_meta( $page_id, 'molecule_page_heading', true ); ?></span></h1>
             
             <?php } else { ?>
 
@@ -83,7 +83,7 @@
           
             <?php } ?>
 
-            <h2 class="page-subtitle"><?php echo get_post_meta($post->ID, 'woody_page_subtitle', true) ?></h2>
+            <h2 class="page-subtitle"><?php echo get_post_meta($post->ID, 'molecule_page_subtitle', true) ?></h2>
 
         </div>
 
@@ -148,7 +148,7 @@
             $username = get_userdata( $post->post_author );
             ?>
 
-            <h2 class="page-subtitle"><span class="byline"><?php _e( 'Article by', 'woody' ); ?> <span class="author vcard"><a class="url fn n" href="<?php echo get_author_posts_url( $post->post_author ); ?>"><?php echo $username->display_name; ?></a></span> on <span><span class="entry-date published updated"><?php the_time( 'F j, Y' ); ?></span></span></span></h2>
+            <h2 class="page-subtitle"><span class="byline"><?php _e( 'Article by', 'molecule' ); ?> <span class="author vcard"><a class="url fn n" href="<?php echo get_author_posts_url( $post->post_author ); ?>"><?php echo $username->display_name; ?></a></span> on <span><span class="entry-date published updated"><?php the_time( 'F j, Y' ); ?></span></span></span></h2>
 
         </div>
         
@@ -160,7 +160,7 @@
 
         <div class="custom-headings-inner">
 
-            <h1 class="page-title"><span class="entry-title"><?php _e( 'Posts in Category: ', 'woody' ); ?><?php single_cat_title(); ?></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php _e( 'Posts in Category: ', 'molecule' ); ?><?php single_cat_title(); ?></span></h1>
 
         </div>
 
@@ -173,11 +173,11 @@
         <div class="custom-headings-inner">
 
             <?php if ( 'post' === get_post_type() ) {
-            $author_avatar_size = apply_filters( 'woody_author_avatar_size', 80 );
+            $author_avatar_size = apply_filters( 'molecule_author_avatar_size', 80 );
                 echo get_avatar( get_the_author_meta( 'ID' ), $author_avatar_size ); 
             } ?>
 
-            <h1 class="page-title"><span class="entry-title"><?php _e( 'Posts by: ', 'woody' ); ?><?php echo get_the_author(); ?></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php _e( 'Posts by: ', 'molecule' ); ?><?php echo get_the_author(); ?></span></h1>
 
         </div>
 
@@ -189,7 +189,7 @@
 
         <div class="custom-headings-inner">
 
-            <h1 class="page-title"><span class="entry-title"><?php _e( '404 - Page not found', 'woody' ); ?></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php _e( '404 - Page not found', 'molecule' ); ?></span></h1>
            
         </div>
 
@@ -201,7 +201,7 @@
 
         <div class="custom-headings-inner">
 
-            <h1 class="page-title"><span class="entry-title"><?php _e( 'Posts Tagged with: ', 'woody' ); ?><?php single_tag_title(); ?></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php _e( 'Posts Tagged with: ', 'molecule' ); ?><?php single_tag_title(); ?></span></h1>
 
         </div>
 
@@ -213,7 +213,7 @@
 
         <div class="custom-headings-inner">
 
-            <h1 class="page-title entry-title"><span class="entry-title"><?php _e('Search Results For: ', 'woody');?><?php the_search_query() ?></span></h1>
+            <h1 class="page-title entry-title"><span class="entry-title"><?php _e('Search Results For: ', 'molecule');?><?php the_search_query() ?></span></h1>
 
         </div>
 
@@ -225,7 +225,7 @@
 
         <div class="custom-headings-inner">
 
-            <h1 class="page-title"><span class="entry-title"><?php _e( 'Daily Archives:', 'woody' ); ?><span class="updated"><?php the_time( 'F jS, Y' ); ?></span></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php _e( 'Daily Archives:', 'molecule' ); ?><span class="updated"><?php the_time( 'F jS, Y' ); ?></span></span></h1>
 
         </div>
 
@@ -237,7 +237,7 @@
 
         <div class="custom-headings-inner">
 
-            <h1 class="page-title"><span class="entry-title"><?php _e( 'Monthly Archives:', 'woody' ); ?><?php single_month_title( ' ', 'woody' ); ?> <span class="updated"><?php the_time( 'F, Y' ); ?></span></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php _e( 'Monthly Archives:', 'molecule' ); ?><?php single_month_title( ' ', 'molecule' ); ?> <span class="updated"><?php the_time( 'F, Y' ); ?></span></span></h1>
 
         </div>
 
@@ -249,7 +249,7 @@
 
         <div class="custom-headings-inner">
 
-            <h1 class="page-title"><span class="entry-title"><?php _e( 'Yearly Archives:', 'woody' ); ?><span class="updated"><?php the_time( 'Y' ); ?></span></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php _e( 'Yearly Archives:', 'molecule' ); ?><span class="updated"><?php the_time( 'Y' ); ?></span></span></h1>
 
         </div>
         
