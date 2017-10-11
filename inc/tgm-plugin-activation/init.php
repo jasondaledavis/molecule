@@ -1,21 +1,21 @@
 <?php
 include_once ( 'class-tgm-plugin-activation.php' );
-function molecule_register_required_plugins() {
+function woody_register_required_plugins() {
 
     $plugins = array(
 
         array(
-            'name'      => __('WP-PageNavi', 'molecule' ),
+            'name'      => __('WP-PageNavi', 'woody' ),
             'slug'      => 'wp-pagenavi',
         ),
 
         array(
-            'name'      => __('Easy Google Fonts', 'molecule' ),
+            'name'      => __('Easy Google Fonts', 'woody' ),
             'slug'      => 'easy-google-fonts',
         ),
 
         array(
-            'name'      => __('SVG Support', 'molecule' ),
+            'name'      => __('SVG Support', 'woody' ),
             'slug'      => 'svg-support',
         ),
 
@@ -25,4 +25,4 @@ function molecule_register_required_plugins() {
 
 }
 
-add_action( 'tgmpa_register', 'molecule_register_required_plugins' );
+add_action( 'tgmpa_register', 'woody_register_required_plugins' );

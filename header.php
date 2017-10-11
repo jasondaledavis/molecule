@@ -5,22 +5,20 @@
  * Displays all of the head element and everything up until the "page-content" div.
  *
  * @package WordPress
- * @subpackage Molecule
- * @since Molecule 1.0
+ * @subpackage Woody
+ * @since Woody 1.0
  */
-
-?>
-<?php get_template_part( 'template-parts/head', 'meta' ); ?>
+get_template_part( 'template-parts/head', 'meta' ); ?>
 
     <body <?php body_class(); ?> >
     
-    <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'molecule' ); ?></a>
+    <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'woody' ); ?></a>
 
         <header id="masthead" class="header-global">
 
             <?php if ( is_active_sidebar( 'topbar-left' ) || is_active_sidebar( 'topbar-right' ) )  : ?>
 
-            <div id="molecule-topbar">
+            <div id="woody-topbar">
                 
                 <div class="grid">
 
@@ -50,33 +48,13 @@
 
                 </div><!-- end .grid -->
 
-            </div><!-- end #molecule-topbar -->
+            </div><!-- end #woody-topbar -->
 
             <?php endif; ?>
 
-                <?php if ( get_header_image() ) : ?>
-
-                <?php
-                    /**
-                     * Filter the default molecule custom header sizes attribute.
-                     *
-                     * @since Molecule 1.0
-                     *
-                     * @param string $custom_header_sizes sizes attribute
-                     * for Custom Header. Default '(max-width: 709px) 85vw,
-                     * (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px'.
-                     */
-                    $custom_header_sizes = apply_filters( 'molecule_custom_header_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px' );
-                ?>
-
-            <div class="header-top" style="background:url('<?php header_image(); ?>')">
-
-        <?php else : ?>
-
+        
             <div class="header-top">
                         
-            <?php endif; // End header image check. ?>
-
                 <div class="grid">
 
                     <div class="row">
@@ -85,7 +63,7 @@
                         
                             <div class="logo">
 
-                                <?php molecule_the_custom_logo(); ?>
+                                <?php woody_the_custom_logo(); ?>
 
                                 <?php if ( display_header_text() ) {
        
@@ -109,30 +87,18 @@
                                 } ?>
 
                             </div><!-- end .logo -->
-
-                        </div><!-- end .c12 -->
-
-                    </div><!-- end .row -->
-
-                </div><!-- end .grid -->
-
-                <div class="main-navigation-row">
-
-                    <div class="grid wfull">
-
-                        <div class="row">
-                            
-                            <div class="c12">
+                       
+                        <div class="main-navigation-row">
                         
                                 <div class="site-header-main">
 
                                     <?php if ( has_nav_menu( 'primary' ) ) : ?>
                                     
-                                    <button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'molecule' ); ?></button>
+                                    <button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'woody' ); ?></button>
 
                                     <div id="site-header-menu" class="site-header-menu">
                                     
-                                        <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'molecule' ); ?>">
+                                        <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'woody' ); ?>">
 
                                             <?php
                                                 wp_nav_menu( array(
@@ -159,9 +125,7 @@
 
             </div><!-- end .header-top -->
 
-            </div><!-- for interior pages -->
-            
-            <?php if ( !is_front_page() ) : ?><!-- if an interior page -->
+            <?php //if ( !is_front_page() ) : ?><!-- if an interior page -->
 
             <div class="grid wfull">
 
@@ -173,7 +137,7 @@
 
             </div><!-- end .grid -->
 
-            <?php endif; ?>
+            <?php // endif; ?>
 
         </header><!-- end .header-global -->
        

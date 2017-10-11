@@ -3,10 +3,10 @@
  * The template for the content bottom widget areas on posts and pages
  *
  * @package WordPress
- * @subpackage Molecule
- * @since Molecule 1.0
+ * @subpackage Woody
+ * @since Woody 1.0
  */
-if ( ! is_active_sidebar( 'sidebar-footer-1' ) && ! is_active_sidebar( 'sidebar-footer-2' ) && ! is_active_sidebar( 'sidebar-footer-3' ) && ! is_active_sidebar( 'sidebar-footer-4' ) ) {
+if ( ! is_active_sidebar( 'sidebar-footer-1' ) && ! is_active_sidebar( 'sidebar-footer-2' ) && ! is_active_sidebar( 'sidebar-footer-3' )) {
     return;
 }
 // If we get this far, we have widgets. Let's do this.
@@ -19,7 +19,7 @@ if ( ! is_active_sidebar( 'sidebar-footer-1' ) && ! is_active_sidebar( 'sidebar-
 
                     <?php if ( is_active_sidebar( 'sidebar-footer-1' )  ) : ?>
 
-                    <div class="c3">
+                    <div class="c4">
 
                         <?php dynamic_sidebar( 'sidebar-footer-1' ); ?>
 
@@ -29,7 +29,7 @@ if ( ! is_active_sidebar( 'sidebar-footer-1' ) && ! is_active_sidebar( 'sidebar-
 
                     <?php if ( is_active_sidebar( 'sidebar-footer-2' )  ) : ?>
 
-                    <div class="c3">
+                    <div class="c4">
 
                         <?php dynamic_sidebar( 'sidebar-footer-2' ); ?>
 
@@ -39,24 +39,14 @@ if ( ! is_active_sidebar( 'sidebar-footer-1' ) && ! is_active_sidebar( 'sidebar-
 
                     <?php if ( is_active_sidebar( 'sidebar-footer-3' )  ) : ?>
 
-                    <div class="c3">
+                    <div class="c4">
 
                         <?php dynamic_sidebar( 'sidebar-footer-3' ); ?>
 
                     </div>
 
                     <?php endif; ?>
-
-                    <?php if ( is_active_sidebar( 'sidebar-footer-4' )  ) : ?>
-
-                    <div class="c3">
-
-                        <?php dynamic_sidebar( 'sidebar-footer-4' ); ?>
-
-                    </div>
-
-                    <?php endif; ?>
-
+                   
                 </div><!-- end .row -->
 
             </div><!-- end .grid -->

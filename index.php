@@ -10,11 +10,12 @@
  * @link http://codex.wordpress.org/Template_Hierarchy
  *
  * @package WordPress
- * @subpackage Molecule
- * @since Molecule 1.0
+ * @subpackage Woody
+ * @since Woody 1.0
  */
 
 get_header(); ?>
+
 
 <?php if ( is_active_sidebar( 'sidebar-blog' )  ) : ?>
 
@@ -50,9 +51,9 @@ get_header(); ?>
 
                     // Previous/next page navigation.
                     the_posts_pagination( array(
-                        'prev_text'          => __( '', 'molecule' ),
-                        'next_text'          => __( '', 'molecule' ),
-                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'molecule' ) . ' </span>',
+                        'prev_text'          => __( '', 'woody' ),
+                        'next_text'          => __( '', 'woody' ),
+                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'woody' ) . ' </span>',
                     ) );
 
                 // If no content, include the "No posts found" template.
@@ -106,9 +107,9 @@ get_header(); ?>
 
                         // Previous/next page navigation.
                         the_posts_pagination( array(
-                            'prev_text'          => __( '', 'molecule' ),
-                            'next_text'          => __( '', 'molecule' ),
-                            'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'molecule' ) . ' </span>',
+                            'prev_text'          => __( '', 'woody' ),
+                            'next_text'          => __( '', 'woody' ),
+                            'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'woody' ) . ' </span>',
                         ) );
 
                     // If no content, include the "No posts found" template.

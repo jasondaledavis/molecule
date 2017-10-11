@@ -1,25 +1,25 @@
 <?php
 /**
- * Molecule Customizer functionality
+ * Woody Customizer functionality
  *
  * @package WordPress
- * @subpackage Molecule
- * @since Molecule 1.0
+ * @subpackage Woody
+ * @since Woody 1.0
  */
 
 /**
  * Sets up the WordPress core custom header and custom background features.
  *
- * @since Molecule 1.0
+ * @since Woody 1.0
  *
- * @see molecule_header_style()
+ * @see woody_header_style()
  */
-function molecule_custom_header_and_background() {
+function woody_custom_header_and_background() {
 
 	/**
-	 * Filter the arguments used when adding 'custom-background' support in Molecule.
+	 * Filter the arguments used when adding 'custom-background' support in Woody.
 	 *
-	 * @since Molecule 1.0
+	 * @since Woody 1.0
 	 *
 	 * @param array $args {
 	 *     An array of custom-background support arguments.
@@ -29,9 +29,9 @@ function molecule_custom_header_and_background() {
 	 */
 	add_theme_support( 'custom-background' );
 	/**
-	 * Filter the arguments used when adding 'custom-header' support in Molecule.
+	 * Filter the arguments used when adding 'custom-header' support in Woody.
 	 *
-	 * @since Molecule 1.0
+	 * @since Woody 1.0
 	 *
 	 * @param array $args {
 	 *     An array of custom-header support arguments.
@@ -44,36 +44,36 @@ function molecule_custom_header_and_background() {
 	 *                                      displayed on the blog.
 	 * }
 	 */
-	add_theme_support( 'custom-header', apply_filters( 'molecule_custom_header_args', array(
+	add_theme_support( 'custom-header', apply_filters( 'woody_custom_header_args', array(
 		'width'                  => 1200,
 		'height'                 => 280,
 		'flex-height'            => true,
 		'flex-width'             => true,
-		'wp-head-callback'       => 'molecule_header_style',
+		'wp-head-callback'       => 'woody_header_style',
 		'header-selector'        => '.site-title a',
 		'header-text'            => true,
 	) ) );
 }
-add_action( 'after_setup_theme', 'molecule_custom_header_and_background' );
+add_action( 'after_setup_theme', 'woody_custom_header_and_background' );
 
-if ( ! function_exists( 'molecule_header_style' ) ) :
+if ( ! function_exists( 'woody_header_style' ) ) :
 /**
  * Styles the header text displayed on the site.
  *
- * Create your own molecule_header_style() function to override in a child theme.
+ * Create your own woody_header_style() function to override in a child theme.
  *
- * @since Molecule 1.0
+ * @since Woody 1.0
  *
- * @see molecule_custom_header_and_background().
+ * @see woody_custom_header_and_background().
  */
-function molecule_header_style() {
+function woody_header_style() {
 	// If the header text option is untouched, let's bail.
 	if ( display_header_text() ) {
 		return;
 	}
 	// If the header text has been hidden.
 	?>
-	<style type="text/css" id="molecule-header-css">
+	<style type="text/css" id="woody-header-css">
 		.site-title,
 		.site-description {
 			clip: rect(1px, 1px, 1px, 1px);
@@ -82,16 +82,16 @@ function molecule_header_style() {
 	</style>
 	<?php
 }
-endif; // molecule_header_style
+endif; // woody_header_style
 
 /**
  * Adds postMessage support for site title and description for the Customizer.
  *
- * @since Molecule 1.0
+ * @since Woody 1.0
  *
  * @param WP_Customize_Manager $wp_customize The Customizer object.
  */
-function molecule_customize_register( $wp_customize ) {
+function woody_customize_register( $wp_customize ) {
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -100,54 +100,54 @@ function molecule_customize_register( $wp_customize ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
 			'selector' => '.site-title a',
 			'container_inclusive' => false,
-			'render_callback' => 'molecule_customize_partial_blogname',
+			'render_callback' => 'woody_customize_partial_blogname',
 		) );
 		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 			'selector' => '.site-description',
 			'container_inclusive' => false,
-			'render_callback' => 'molecule_customize_partial_blogdescription',
+			'render_callback' => 'woody_customize_partial_blogdescription',
 		) );
 	}
 
 }
-add_action( 'customize_register', 'molecule_customize_register', 11 );
+add_action( 'customize_register', 'woody_customize_register', 11 );
 
 /**
  * Render the site title for the selective refresh partial.
  *
- * @since Molecule 1.2
- * @see molecule_customize_register()
+ * @since Woody 1.2
+ * @see woody_customize_register()
  *
  * @return void
  */
-function molecule_customize_partial_blogname() {
+function woody_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
 /**
  * Render the site tagline for the selective refresh partial.
  *
- * @since Molecule 1.2
- * @see molecule_customize_register()
+ * @since Woody 1.2
+ * @see woody_customize_register()
  *
  * @return void
  */
-function molecule_customize_partial_blogdescription() {
+function woody_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
 /**
  * Binds JS handlers to make the Customizer preview reload changes asynchronously.
  *
- * @since Molecule 1.0
+ * @since Woody 1.0
  */
-function molecule_customize_preview_js() {
-	wp_enqueue_script( 'molecule-customize-preview', get_template_directory_uri() . '/assets/js/min/customize-preview-min.js', array( 'customize-preview' ), '20160816', true );
+function woody_customize_preview_js() {
+	wp_enqueue_script( 'woody-customize-preview', get_template_directory_uri() . '/assets/js/min/customize-preview-min.js', array( 'customize-preview' ), '20160816', true );
 }
-add_action( 'customize_preview_init', 'molecule_customize_preview_js' );
+add_action( 'customize_preview_init', 'woody_customize_preview_js' );
 
-add_action( "customize_register", "molecule_theme_customize_register" );
-function molecule_theme_customize_register( $wp_customize ) {
+add_action( "customize_register", "woody_theme_customize_register" );
+function woody_theme_customize_register( $wp_customize ) {
 
  //=============================================================
  // Remove Colors, Background image, and Static front page 

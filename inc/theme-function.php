@@ -1,6 +1,6 @@
 <?php
 /**
- * Molecule specific theme functions and definitions
+ * Woody specific theme functions and definitions
  *
  * Set up the theme and provides some helper functions, which are used in the
  * theme as custom template tags. Others are attached to action and filter
@@ -16,8 +16,8 @@
  * {@link https://codex.wordpress.org/Plugin_API}
  *
  * @package WordPress
- * @subpackage Molecule
- * @since Molecule 1.0
+ * @subpackage Woody
+ * @since Woody 1.0
  */
 //================================================================================//
 // TGM Plugin Activation
@@ -38,25 +38,25 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 //================================================================================//
 // Add Title/Subtitle Meta Box to all Pages
 //================================================================================//
-$prefix = 'molecule_';
+$prefix = 'woody_';
  
 $meta_box_strapline = array(
     'id' => 'strapline',
-    'title' => __('Custom Header Settings', 'molecule'),
+    'title' => __('Custom Header Settings', 'woody'),
     'page' => 'page',
     'context' => 'normal',
     'priority' => 'default',
     'fields' => array(
         array(
-            'name' => __( 'Heading', 'molecule' ),
-            'desc' => __('Enter a header title to appear over your header image<br />(ie; My page title)', 'molecule'),
+            'name' => __( 'Heading', 'woody' ),
+            'desc' => __('Enter a header title to appear over your header image<br />(ie; My page title)', 'woody'),
             'id' => $prefix . 'page_heading',
             'type' => 'text',
             'std' => ''
         ),
         array(
-            'name' => __( 'Subtitle', 'molecule' ),
-            'desc' => __('Enter a subtitle to appear over your header image<br />(ie; My page subtitle)', 'molecule'),
+            'name' => __( 'Subtitle', 'woody' ),
+            'desc' => __('Enter a subtitle to appear over your header image<br />(ie; My page subtitle)', 'woody'),
             'id' => $prefix . 'page_subtitle',
             'type' => 'text',
             'std' => ''
@@ -65,16 +65,16 @@ $meta_box_strapline = array(
     )
 );
 
-add_action('admin_menu', 'molecule_add_box_strapline');
+add_action('admin_menu', 'woody_add_box_strapline');
 
 //================================================================================//
 //  Callback function to show fields in meta box
 //================================================================================//
-function molecule_show_box_strapline() {
+function woody_show_box_strapline() {
     global $meta_box_strapline, $post;
     
     // Use nonce for verification
-    echo '<input type="hidden" name="molecule_add_box_strapline_nonce" value="', wp_create_nonce( basename( __FILE__ ) ), '" />';
+    echo '<input type="hidden" name="woody_add_box_strapline_nonce" value="', wp_create_nonce( basename( __FILE__ ) ), '" />';
 
     echo '<table class="form-table">';
         
@@ -141,22 +141,22 @@ function molecule_show_box_strapline() {
     echo '</table>';
 }
 
-add_action( 'save_post', 'molecule_save_data_strapline' );
+add_action( 'save_post', 'woody_save_data_strapline' );
 
 //================================================================================//
 //  Add metabox to edit page
 //================================================================================//
-function molecule_add_box_strapline() {
+function woody_add_box_strapline() {
     global $meta_box_strapline;
     
-    add_meta_box($meta_box_strapline['id'], $meta_box_strapline['title'], 'molecule_show_box_strapline', $meta_box_strapline['page'], $meta_box_strapline['context'], $meta_box_strapline['priority']);
+    add_meta_box($meta_box_strapline['id'], $meta_box_strapline['title'], 'woody_show_box_strapline', $meta_box_strapline['page'], $meta_box_strapline['context'], $meta_box_strapline['priority']);
 }
 // Save data from meta box
-function molecule_save_data_strapline($post_id) {
+function woody_save_data_strapline($post_id) {
     global $meta_box_strapline;
 
     // verify nonce
-    if ( !isset($_POST['molecule_add_box_strapline_nonce']) || !wp_verify_nonce($_POST['molecule_add_box_strapline_nonce'], basename(__FILE__))) {
+    if ( !isset($_POST['woody_add_box_strapline_nonce']) || !wp_verify_nonce($_POST['woody_add_box_strapline_nonce'], basename(__FILE__))) {
         return $post_id;
     }
 
@@ -189,10 +189,10 @@ function molecule_save_data_strapline($post_id) {
 //================================================================================//
 //Search URL Re-Write
 //================================================================================//
-function molecule_change_search_url_rewrite() {
+function woody_change_search_url_rewrite() {
     if ( is_search() && ! empty( $_GET['s'] ) ) {
         wp_redirect( home_url( "/search/" ) . urlencode( get_query_var( 's' ) ) );
         exit();
     }    
 }
-add_action( 'template_redirect', 'molecule_change_search_url_rewrite' );
+add_action( 'template_redirect', 'woody_change_search_url_rewrite' );
