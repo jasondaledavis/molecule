@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage Twenty_Sixteen
- * @since Molecule 1.0
+ * @since Twenty Sixteen 1.4
  */
 
 if ( ! function_exists( 'molecule_entry_meta' ) ) :
@@ -97,15 +97,14 @@ if ( ! function_exists( 'molecule_entry_taxonomies' ) ) :
 function molecule_entry_taxonomies() {
 	$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'molecule' ) );
 	if ( $categories_list && molecule_categorized_blog() ) {
-		printf( '<span class="cat-links"> Posted in: <span class="screen-reader-text">%1$s </span>%2$s</span>',
+		printf( '<span class="cat-links"> Posted in: <span class="screen-reader-text">%1$s </span>%2$s</span> ',
 			_x( 'Categories', 'Used before category names.', 'molecule' ),
 			$categories_list
 		);
 	}
-
 	$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'molecule' ) );
-	if ( $tags_list ) {
-		printf( '<span class="tags-links"> Tagged: <span class="screen-reader-text">%1$s </span>%2$s</span>',
+	if ( $tags_list && ! is_wp_error( $tags_list ) ) {
+		printf( '<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
 			_x( 'Tags', 'Used before tag names.', 'molecule' ),
 			$tags_list
 		);
@@ -243,7 +242,7 @@ function molecule_categorized_blog() {
 		set_transient( 'molecule_categories', $all_the_cool_cats );
 	}
 
-	if ( $all_the_cool_cats > 1 ) {
+	if ( $all_the_cool_cats > 1 || is_preview() ) {
 		// This blog has more than 1 category so molecule_categorized_blog should return true.
 		return true;
 	} else {

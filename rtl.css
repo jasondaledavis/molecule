@@ -283,7 +283,9 @@ input[type="search"].search-field {
 	margin-right: 0;
 	margin-left: 0.1875em;
 }
-
+.tagcloud ul { 
+    margin-right: 0; 
+} 
 
 /**
  * 8.0 - Content

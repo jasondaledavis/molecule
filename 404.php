@@ -4,12 +4,12 @@
  *
  * @package WordPress
  * @subpackage Molecule
- * @since Molecule 1.0
+ * @since Molecule 2.4.3
  */
 
 get_header(); ?>
 
-        <div class="grid">
+        <div class="grid wfull">
 
             <div class="row">
 
@@ -21,17 +21,16 @@ get_header(); ?>
 
                     <?php get_search_form(); ?>
 
+                </div><!-- end .c6 -->
+
+                <div class="c6">
 
                     <div class="reply homepage-btn"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'Go to the homepage', 'molecule' ); ?></a>
                     </div>
 
-                </div>
-
-                <div class="c6">
-
-                </div>
+                </div><!-- end .c6 -->
                
-            </div>
+            </div><!-- end .row -->
 
         </div><!-- end .grid -->
 

@@ -4,53 +4,60 @@
  *
  * @package WordPress
  * @subpackage Molecule
- * @since Molecule 1.0
+ * @since Molecule 2.4.3
  */
 ?>
 
-<?php if ( is_page() ): ?>
-
-<!-- Page sidebar only for pages -->
-    <?php if ( is_active_sidebar( 'sidebar-page' )  ) : ?>
-       
-        <aside class="sidebar c3">
-
-            <?php dynamic_sidebar( 'sidebar-page' ); ?>
-
-        </aside><!-- end .sidebar -->
-
-    <?php endif; ?> 
-
-<?php endif; ?>
-
-
 <?php if ( class_exists( 'WooCommerce' ) ) { 
-// Checks for WooCommerceplugin
-  $bIsWoo=is_woocommerce();
 
-} else {
+    // Checks for WooCommerceplugin
+    $moleculeWoo=is_woocommerce();
 
-  $bIsWoo=false; 
+    } else {
+
+    $moleculeWoo=false;
 
 } ?> 
 
-<?php if ( ( is_active_sidebar( 'sidebar-blog' ) || is_single() || is_archive() || is_search() ) && !$bIsWoo ) : // If is blog, search or single.php ?>
+<?php if ( !is_page() && !$moleculeWoo && is_active_sidebar( 'sidebar-blog' ) ) { ?>
 
-    <aside class="sidebar c3">
+    <aside id="secondary" class="sidebar">
 
-        <?php dynamic_sidebar( 'sidebar-blog' ); ?>
+        <div class="c3">
+        
+            <?php dynamic_sidebar( 'sidebar-blog' ); ?>
 
-    </aside><!-- end .sidebar -->
+        </div>
+      
+    </aside><!-- .sidebar .widget-area -->
 
-<?php endif; ?> 
+<?php } ?>
+
+<?php if ( is_page() && is_active_sidebar( 'sidebar-page' )  ) { ?>
+
+    <aside id="secondary" class="sidebar page-side">
+
+        <div class="c3">
+
+            <?php dynamic_sidebar( 'sidebar-page'); ?>
+
+        </div>
+
+    </aside><!-- .sidebar .widget-area -->
+
+<?php } ?>
 
 <?php if ( class_exists( 'WooCommerce' ) ) { ?>
  
-    <?php if ( is_active_sidebar( 'sidebar-shop' ) && is_woocommerce() ): ?>
+    <?php if ( is_active_sidebar( 'sidebar-shop' ) && is_woocommerce() && !is_page() ): ?>
  
-            <aside class="sidebar c3">
+            <aside class="sidebar">
+
+                <div class="c3">
  
-                <?php dynamic_sidebar( 'sidebar-shop' ); ?>
+                    <?php dynamic_sidebar( 'sidebar-shop' ); ?>
+
+                </div>
  
             </aside><!-- end .sidebar -->
  

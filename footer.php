@@ -9,9 +9,12 @@
  * @since Molecule 1.0
  */
 ?>
+
 </main><!-- end .page-content -->
 
-<?php get_sidebar( 'footer-widgets' ); ?>
+<?php if ( ! is_active_sidebar( 'sidebar-footer-1' ) && ! is_active_sidebar( 'sidebar-footer-2' ) && ! is_active_sidebar( 'sidebar-footer-3' ) && ! is_active_sidebar( 'sidebar-footer-4' ) ) {
+    return;
+} get_template_part( 'template-parts/sidebar', 'footer' ); ?>
 
     <footer class="footer-global">
 
@@ -45,7 +48,7 @@
 
                         <div class="copyright-info">
 
-                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>. &copy; <?php echo date( 'Y' ) ?> <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'molecule' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'molecule' ), 'WordPress' ); ?></a>
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a> &copy; <?php echo date( 'Y' ) ?>
 
                         </div>
 

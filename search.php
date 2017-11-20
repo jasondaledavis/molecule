@@ -9,11 +9,20 @@
 
 get_header(); ?>
 
-        <div class="grid">
+        <div class="grid wfull">
             
             <div class="row">
                 
-                <div class="c12">
+                <?php if ( is_active_sidebar( 'sidebar-blog' )  ) {
+
+	            echo '<div class="c9">';
+
+	            } else {  
+
+	            echo '<div class="c12">';
+	            
+	            } ?> 
+
 
 					<?php if ( have_posts() ) : 
 					
@@ -45,6 +54,8 @@ get_header(); ?>
 					?>
                 
                 </div><!-- end .c12 -->
+            
+            	<?php get_sidebar(); ?>
             
             </div><!-- end .row -->
 

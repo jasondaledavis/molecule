@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage Molecule
- * @since Molecule 1.0
+ * @since Molecule 2.4.3
  */
 
 /**
@@ -146,12 +146,12 @@ function molecule_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'molecule_customize_preview_js' );
 
-add_action( "customize_register", "molecule_theme_customize_register" );
-function molecule_theme_customize_register( $wp_customize ) {
+// add_action( "customize_register", "molecule_theme_customize_register" );
+// function molecule_theme_customize_register( $wp_customize ) {
 
  //=============================================================
  // Remove Colors, Background image, and Static front page 
  // option from theme customizer     
  //=============================================================
- $wp_customize->remove_section("colors");
-}
+//  $wp_customize->remove_section("colors");
+// }

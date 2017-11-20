@@ -2,11 +2,11 @@
 Theme Name: Molecule
 Theme URI: https://molecule.element502.com
 Author: Jason Davis
-Author URI: https://jasondavisdesigns.com
+Author URI: https://github.com/jasondaledavis
 GitHub Theme URI: https://github.com/jasondaledavis/molecule
 GitHub Branch: master
 Description: Molecule is a diverse theme for whatever you imagine. Molecule is fully compatible with popular plugins like WooCommerce, Gravity Forms, Contact Form 7, Jetpack, and others. The content area powers the entire sites main page area, so make it look how you want. the header and footer are customizable from the WordPress customizer for backgrounds and color options. There are 4 widget areas in the footer, and a separate page and blog sidebar. Sidebars are only activate once a widget is dragged in place and page and blog sidebar is only on the right side column. A page builder is recommended like SiteOrigin or Visual Composer to create a beautiful layout like the demo.
-Version: 2.4.1
+Version: 2.4.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -404,7 +404,7 @@ input,
 select,
 textarea {
     color: #1a1a1a;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-size: 16px;
     font-size: 1.1em;
     line-height: 2em;
@@ -419,7 +419,7 @@ h6 {
     font-weight: normal;
     text-rendering: optimizeLegibility;
     margin-bottom: 30px;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
 }
 p {
     margin: 0 0 1.75em;
@@ -440,7 +440,7 @@ blockquote {
     overflow: hidden;
     padding: 0 0 0 1.263157895em;
     border-left: solid 2px #676767;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-weight: bold;
 }
 blockquote,
@@ -546,7 +546,7 @@ html {
 }
 body {
     background: #ffffff;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     /* Fallback for when there is no custom background color defined. */
     
     margin: 0;
@@ -644,21 +644,21 @@ td {
 
 ::-webkit-input-placeholder {
     color: #676767;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
 }
 :-moz-placeholder {
     color: #676767;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
 }
 ::-moz-placeholder {
     color: #676767;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     opacity: 1;
     /* Since FF19 lowers the opacity of the placeholder by default */
 }
 :-ms-input-placeholder {
     color: #676767;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
 }
 /**
  * 5.0 - Forms
@@ -738,7 +738,7 @@ input[type="submit"][disabled]:focus {
     border: solid 2px #222222;
     border-radius: 0px;
     color: #222222;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-weight: normal;
     letter-spacing: 0.046875em;
     line-height: 1;
@@ -813,7 +813,7 @@ textarea:focus {
 .post-password-form label {
     color: #676767;
     display: block;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-size: 13px;
     font-size: 0.8125rem;
     letter-spacing: 0.076923077em;
@@ -868,7 +868,7 @@ input[type="search"].search-field {
  * 6.1 - Links
  */
 
-a {
+a, a:visited {
     -webkit-transition: all .3s ease-in-out 0s;
     -moz-transition: all .3s ease-in-out 0s;
     -o-transition: all .3s ease-in-out 0s;
@@ -910,7 +910,7 @@ a:active {
     position: relative;
 }
 .main-navigation a {
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-weight: normal;
     color: #1a1a1a;
     display: block;
@@ -999,7 +999,7 @@ a:active {
 }
 .post-navigation .post-title {
     display: inline;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-size: 23px;
     font-size: 1.4375rem;
     font-weight: bold;
@@ -1019,7 +1019,7 @@ a:active {
 }
 .pagination {
     border-top: 1px dotted #222222;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-size: 19px;
     font-size: 1.1875rem;
     margin-top: 4px;
@@ -1139,7 +1139,7 @@ a:active {
     border-top: 1px solid #a0a0a0;
     border-bottom: 1px solid #a0a0a0;
     color: #676767;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-size: 13px;
     font-size: 0.8125rem;
     line-height: 1.6153846154;
@@ -1190,7 +1190,7 @@ a:active {
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
     color: #1f3f4c;
     display: block;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-size: 14px;
     font-weight: bold;
     left: -9999em;
@@ -1202,7 +1202,7 @@ a:active {
 }
 .logged-in .site .skip-link {
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
 }
 .site .skip-link:focus {
     clip: auto;
@@ -1293,7 +1293,7 @@ blockquote:after,
     margin-bottom: 0;
 }
 .widget .widget-title {
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-size: 16px;
     font-size: 1rem;
     letter-spacing: 0.046875em;
@@ -1338,7 +1338,7 @@ blockquote:after,
 .widget_recent_entries .post-date {
     color: #676767;
     display: block;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-size: 13px;
     font-size: 0.8125rem;
     line-height: 1.615384615;
@@ -1356,7 +1356,7 @@ blockquote:after,
 .widget_rss cite {
     color: #676767;
     display: block;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-size: 13px;
     font-size: 0.8125rem;
     font-style: normal;
@@ -1373,10 +1373,11 @@ blockquote:after,
 
 .tagcloud a {
     display: inline-block;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     line-height: 1;
     margin: 0 0.1875em 0.4375em 0;
     padding: 0.5625em 0.4375em 0.5em;
+    border:solid 1px #c2c2c2;
 }
 .tagcloud a:before {
     content: '\f302';
@@ -1384,6 +1385,13 @@ blockquote:after,
     padding-right: 2px;
     font-size: 1.4em;
 }
+.tagcloud ul { 
+   list-style-type: none; 
+    margin-left: 0; 
+}
+.tagcloud ul li { 
+    display: inline-block; 
+} 
 /**
  * 10.1 - Header Top Bar Widgets
  */
@@ -1409,7 +1417,7 @@ blockquote:after,
 }
 #molecule-topbar .widget p {
     margin: 0px;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-weight: normal;
     color: #A0A0A0;
     display: block;
@@ -1461,7 +1469,7 @@ blockquote:after,
     display: inline-block;
 }
 #molecule-topbar a {
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-weight: normal;
     color: #A0A0A0;
     display: block;
@@ -1603,7 +1611,8 @@ blockquote:after,
  * 11.0 - Content
  */
 
-.entry-content a {
+.entry-content a,
+.entry-content a:visited {
     color: #A0A0A0;
     padding-bottom: 2px;
     border-bottom: dotted 1px #222222;
@@ -1660,7 +1669,7 @@ blockquote:after,
     padding: 0;
     text-align: center;
     font-weight: lighter;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
 }
 .header-top-dark .site-title,
 .header-top-dark .site-title a {
@@ -1670,7 +1679,7 @@ blockquote:after,
     padding: 0;
     text-align: center;
     font-weight: lighter;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
 }
 .header-top .site-description {
     text-align: center;
@@ -1800,25 +1809,33 @@ blockquote:after,
     transform: translateX(-50%);
     z-index: 200;
 }
-.page-title {
-    color: #ffffff;
-    margin-top: 0;
-    text-transform: uppercase;
+.page-title,
+span.entry-title {
     text-align: center;
-    margin: 0 auto 30px;
-    font-size: 28px;
-    line-height: 39.2px;
-    font-size: 2.8rem;
-    line-height: 3.9199999999999995rem;
     font-weight: normal;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
+    font-size: 28px;
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 1.25;
+    margin-bottom: 1em;
+    color: #1a1a1a;
+}
+.page-title a,
+span.entry-title a {
+    color: #1a1a1a;
+}
+.page-title a:hover,
+span.entry-title a:hover,
+span.entry-title a:focus {
+    color: #A0A0A0;
 }
 .page-subtitle {
     position: absolute;
     padding: 0;
     top: 70%;
     font-weight: normal;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-size: .89em;
     line-height: 1em;
     color: #ffffff;
@@ -1880,22 +1897,6 @@ blockquote:after,
 h1.entry-header {
     text-align: center;
 }
-span.entry-title {
-    font-weight: normal;
-    font-family: 'Open Sans', 'Arial', sans-serif;
-    font-size: 28px;
-    font-size: 1.75rem;
-    font-weight: normal;
-    line-height: 1.25;
-    margin-bottom: 1em;
-}
-span.entry-title a {
-    color: #1a1a1a;
-}
-span.entry-title a:hover,
-span.entry-title a:focus {
-    color: #A0A0A0;
-}
 .post-thumbnail {
     display: block;
 }
@@ -1915,7 +1916,7 @@ a.post-thumbnail:focus {
 }
 .entry-content h1 {
     margin-top: 30px;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
 }
 .entry-content h2,
 .entry-content h3,
@@ -1923,7 +1924,7 @@ a.post-thumbnail:focus {
 .entry-content h5,
 .entry-content h6 {
     margin-top: 0;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
 }
 .entry-content h1,
 .entry-summary h1,
@@ -1932,7 +1933,7 @@ a.post-thumbnail:focus {
     font-size: 28px;
     font-size: 1.75rem;
     line-height: 1.25;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
 }
 .entry-content h2,
 .entry-summary h2,
@@ -1941,7 +1942,7 @@ a.post-thumbnail:focus {
     font-size: 23px;
     font-size: 1.4375rem;
     line-height: 1.2173913043;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
 }
 .entry-content h3,
 .entry-summary h3,
@@ -1950,7 +1951,7 @@ a.post-thumbnail:focus {
     font-size: 19px;
     font-size: 1.1875rem;
     line-height: 1.1052631579;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
 }
 .entry-content h4,
 .entry-content h5,
@@ -1967,7 +1968,7 @@ a.post-thumbnail:focus {
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.3125;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
 }
 .entry-content h4,
 .entry-summary h4,
@@ -1975,7 +1976,7 @@ a.post-thumbnail:focus {
 .textwidget h4 {
     letter-spacing: 0.140625em;
     text-transform: uppercase;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
 }
 .entry-content h6,
 .entry-summary h6,
@@ -2008,20 +2009,16 @@ a.post-thumbnail:focus {
 .textwidget h5,
 .textwidget h6 {
     font-weight: bold;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
 }
-a.more-link {
+.more-link {
     font-style: italic;
-    color: #A0A0A0;
     margin-left: 10px;
     text-transform: uppercase;
     -webkit-transition: all .3s ease-in-out 0s;
     -moz-transition: all .3s ease-in-out 0s;
     -o-transition: all .3s ease-in-out 0s;
     transition: all .3s ease-in-out 0s;
-}
-a.more-link:hover {
-    color: #222222;
 }
 .author-info {
     border-top: 1px dotted #222222;
@@ -2054,7 +2051,7 @@ a.more-link:hover {
 }
 .author-description>:last-child {
     margin-bottom: 0;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
 }
 h2.author-title a,
 .entry-content .author-title {
@@ -2064,7 +2061,7 @@ h2.author-title a,
     font-weight: bold;
     line-height: 1.75;
     margin: 0;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     border: none;
     color: #222222;
 }
@@ -2075,7 +2072,7 @@ h2.author-title a,
     line-height: 1.6153846154;
     margin-bottom: 1.6153846154em;
     overflow: hidden;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
 }
 .author-link {
     white-space: nowrap;
@@ -2087,7 +2084,7 @@ img.avatar {
 }
 .entry-footer {
     color: #676767;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-size: 13px;
     font-size: 0.8125rem;
     line-height: 1.6153846154;
@@ -2116,7 +2113,7 @@ img.avatar {
 }
 .sticky-post {
     display: block;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-size: 18px;
     font-size: 1em;
     letter-spacing: .4em;
@@ -2165,7 +2162,7 @@ body.search-no-results .page-header {
 }
 .page-links {
     clear: both;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     margin: 0 0 1.75em;
 }
 .page-links a,
@@ -2307,7 +2304,7 @@ span.comments-link a:hover {
 .comments-title,
 .comment-reply-title {
     border-top: 4px solid #1a1a1a;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-size: 23px;
     font-size: 1.4375rem;
     font-weight: bold;
@@ -2354,7 +2351,7 @@ span.comments-link a:hover {
 .comment-metadata,
 .pingback .edit-link {
     color: #676767;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-size: 13px;
     font-size: 0.8125rem;
     line-height: 1.6153846154;
@@ -2422,7 +2419,7 @@ span.comments-link a:hover {
 }
 .no-comments {
     border-top: 1px solid #a0a0a0;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-weight: bold;
     margin: 0;
     padding-top: 1.75em;
@@ -2439,7 +2436,7 @@ span.comments-link a:hover {
 }
 .required {
     color: #222222;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
 }
 .comment-reply-title small {
     font-size: 100%;
@@ -2649,7 +2646,7 @@ span.comments-link a:hover {
     padding: 40px 0;
     margin-bottom: 0;
     color: white;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
 }
 .footer-widgets a,
 .footer-widgets p {
@@ -2664,7 +2661,7 @@ span.comments-link a:hover {
     line-height: 14px;
     font-size: 1rem;
     line-height: 1.4rem;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -3283,20 +3280,6 @@ p>video {
         line-height: 1.225;
         margin-bottom: 1.05em;
     }
-    .format-aside span.entry-title,
-    .format-image span.entry-title,
-    .format-video span.entry-title,
-    .format-quote span.entry-title,
-    .format-gallery span.entry-title,
-    .format-status span.entry-title,
-    .format-link span.entry-title,
-    .format-audio span.entry-title,
-    .format-chat span.entry-title {
-        font-size: 23px;
-        font-size: 1.4375em;
-        line-height: 1.304347826;
-        margin-bottom: 1.826086957em;
-    }
     .post-thumbnail {
         margin-bottom: 1em;
     }
@@ -3468,19 +3451,6 @@ p>video {
         line-height: 1.2727272727;
         margin-bottom: 1.696969697em;
     }
-    .format-aside span.entry-title,
-    .format-image span.entry-title,
-    .format-video span.entry-title,
-    .format-quote span.entry-title,
-    .format-gallery span.entry-title,
-    .format-status span.entry-title,
-    .format-link span.entry-title,
-    .format-audio span.entry-title,
-    .format-chat span.entry-title {
-        font-size: 17.25pt;
-        line-height: 1.304347826;
-        margin-bottom: 1.826086957em;
-    }
     .entry-content h1,
     .entry-summary h1,
     .comment-content h1 {
@@ -3504,8 +3474,7 @@ p>video {
     .gallery-caption {
         font-size: 9.75pt;
     }
-    body,
-    .site {
+    body {
         background: none;
         /* Brute force since user agents all print differently. */
     }
@@ -3570,9 +3539,6 @@ p>video {
         box-shadow: none;
         border-bottom: 1px solid #222222;
         /* Make sure color schemes don't affect to print */
-    }
-    .site-header {
-        padding: 0 0 1.75em;
     }
     .entry-content blockquote.alignleft,
     .entry-content blockquote.alignright {

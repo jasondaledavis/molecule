@@ -18,13 +18,19 @@
 
 get_header(); ?>
 
-<?php if ( is_active_sidebar( 'sidebar-blog' )  ) : ?>
-
-    <div class="grid">
+    <div class="grid wfull">
 
         <div class="row">
 
-            <div class="c9">
+            <?php if ( is_active_sidebar( 'sidebar-blog' )  ) {
+
+            echo '<div class="c9">';
+
+            } else {  
+
+            echo '<div class="c12">';
+            
+            } ?> 
 
                 <?php if ( have_posts() ) : 
                     // Start the Loop.
@@ -54,56 +60,12 @@ get_header(); ?>
                 endif;
                 ?>
 
-            </div><!-- end .c9 -->
-
+            </div><!-- end .c9 or .c12 -->
+            
             <?php get_sidebar(); ?>
 
         </div><!-- end .row -->
 
     </div><!-- end .grid -->
-
-<?php elseif ( !is_active_sidebar( 'sidebar-blog' )  ) : ?>
-
-<div class="grid wfull">
-
-        <div class="row">
-
-            <div class="c12">
-
-                <?php if ( have_posts() ) : 
-                    // Start the Loop.
-                    while ( have_posts() ) : the_post();
-
-                        /*
-                         * Include the Post-Format-specific template for the content.
-                         * If you want to override this in a child theme, then include a file
-                         * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                         */
-                        get_template_part( 'template-parts/content' );
-
-                    // End the loop.
-                    endwhile;
-
-                    // Previous/next page navigation.
-                    the_posts_pagination( array(
-                        'prev_text'          => __( 'Previous page', 'molecule' ),
-                        'next_text'          => __( 'Next page', 'molecule' ),
-                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'molecule' ) . ' </span>',
-                    ) );
-
-                // If no content, include the "No posts found" template.
-                else :
-                    get_template_part( 'template-parts/content', 'none' );
-
-                endif;
-                ?>
-
-            </div><!-- end .c12 -->
-
-        </div><!-- end .row -->
-
-    </div><!-- end .grid .wfull-->
-
-<?php endif; ?>
 
 <?php get_footer(); ?>

@@ -22,7 +22,7 @@
 
             <div id="molecule-topbar">
                 
-                <div class="grid">
+                <div class="grid wfull">
 
                     <div class="row">
 
@@ -77,7 +77,7 @@
                         
             <?php endif; // End header image check. ?>
 
-                <div class="grid">
+                <div class="grid wfull">
 
                     <div class="row">
                         

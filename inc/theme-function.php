@@ -17,13 +17,8 @@
  *
  * @package WordPress
  * @subpackage Molecule
- * @since Molecule 1.0
+ * @since Molecule 2.4.3
  */
-//================================================================================//
-// TGM Plugin Activation
-//================================================================================//
-require get_template_directory() . '/inc/tgm-plugin-activation/init.php';
-
 //================================================================================//
 // Register WooCommerce and check if activated.
 //================================================================================//

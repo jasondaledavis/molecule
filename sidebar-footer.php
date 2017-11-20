@@ -6,14 +6,10 @@
  * @subpackage Molecule
  * @since Molecule 1.0
  */
-if ( ! is_active_sidebar( 'sidebar-footer-1' ) && ! is_active_sidebar( 'sidebar-footer-2' ) && ! is_active_sidebar( 'sidebar-footer-3' ) && ! is_active_sidebar( 'sidebar-footer-4' ) ) {
-    return;
-}
-// If we get this far, we have widgets. Let's do this.
 ?>
         <div class="footer-widgets">
 
-            <div class="grid">
+            <div class="grid wfull">
 
                 <div class="row"> 
 

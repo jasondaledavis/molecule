@@ -22,7 +22,7 @@
  *
  * @package WordPress
  * @subpackage Molecule
- * @since Molecule 1.0
+ * @since Twenty Sixteen 1.4
  */
  
 //================================================================================//
@@ -94,10 +94,10 @@ function molecule_setup() {
     /*
     * Enable support for Post Thumbnails on posts and pages.
     *
-    * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+    * @link https://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
     */
     add_theme_support( 'post-thumbnails' );
-    add_image_size( 'post-thumbnail', 1200, 300, true ); // Post Thumbnail (appears on single and archives).
+    set_post_thumbnail_size( 1200, 9999 );
     add_image_size( 'header-image', 1200, 300, true ); // Interior Page Header Image
 
     // This theme uses wp_nav_menu() in two locations.
@@ -141,7 +141,7 @@ add_action( 'after_setup_theme', 'molecule_setup' );
 * @since Molecule 1.0
 */
 function molecule_content_width() {
-    $GLOBALS['content_width'] = apply_filters( 'molecule_content_width', 1200 );
+    $GLOBALS['content_width'] = apply_filters( 'molecule_content_width', 840 );
 }
 add_action( 'after_setup_theme', 'molecule_content_width', 0 );
 
@@ -252,6 +252,47 @@ function molecule_widgets_init() {
 
 add_action( 'widgets_init', 'molecule_widgets_init' );
 
+if ( ! function_exists( 'molecule_fonts_url' ) ) :
+/**
+ * Register Google fonts for Twenty Sixteen.
+ *
+ * Create your own molecule_fonts_url() function to override in a child theme.
+ *
+ * @since Twenty Sixteen 1.0
+ *
+ * @return string Google fonts URL for the theme.
+ */
+function molecule_fonts_url() {
+  $fonts_url = '';
+  $fonts     = array();
+  $subsets   = 'latin,latin-ext';
+
+  /* translators: If there are characters in your language that are not supported by Open Sans, translate this to 'off'. Do not translate into your own language. */
+  if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'molecule' ) ) {
+    $fonts[] = 'Open Sans:400,700,900,400italic,700italic,900italic';
+  }
+
+  /* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
+  if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'molecule' ) ) {
+    $fonts[] = 'Montserrat:300,400,500,600,700';
+  }
+
+  /* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
+  if ( 'off' !== _x( 'on', 'Merriweather font: on or off', 'molecule' ) ) {
+    $fonts[] = 'Merriweather:300,400,500,600,700';
+  }
+
+  if ( $fonts ) {
+    $fonts_url = add_query_arg( array(
+      'family' => urlencode( implode( '|', $fonts ) ),
+      'subset' => urlencode( $subsets ),
+    ), '//fonts.googleapis.com/css' );
+  }
+
+  return $fonts_url;
+}
+endif;
+
 /**
 * Handles JavaScript detection.
 *
@@ -277,6 +318,9 @@ function molecule_scripts() {
 
   // Theme stylesheet.
   wp_enqueue_style( 'molecule-style', get_stylesheet_uri() );
+
+  // Add custom fonts, used in the main stylesheet.
+  wp_enqueue_style( 'molecule-fonts', molecule_fonts_url(), array(), null );
 
   // Load the Internet Explorer specific stylesheet.
   wp_enqueue_style( 'molecule-ie', get_template_directory_uri() . '/assets/css/ie.css', array( 'molecule-style' ), '20160816' );
@@ -389,48 +433,58 @@ $color = trim( $color, '#' );
  * Add custom image sizes attribute to enhance responsive image functionality
  * for content images
  *
- * @since Molecule 1.0
+ * @since Twenty Sixteen 1.0
  *
  * @param string $sizes A source size value for use in a 'sizes' attribute.
  * @param array  $size  Image size. Accepts an array of width and height
  *                      values in pixels (in that order).
  * @return string A source size value for use in a content image 'sizes' attribute.
  */
-function molecule_content_image_sizes_attr( $sizes, $size ) {
+function twentysixteen_content_image_sizes_attr( $sizes, $size ) {
   $width = $size[0];
 
-  840 <= $width && $sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 62vw, 840px';
+  if ( 840 <= $width ) {
+    $sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 62vw, 840px';
+  }
 
   if ( 'page' === get_post_type() ) {
-    840 > $width && $sizes = '(max-width: ' . $width . 'px) 85vw, ' . $width . 'px';
+    if ( 840 > $width ) {
+      $sizes = '(max-width: ' . $width . 'px) 85vw, ' . $width . 'px';
+    }
   } else {
-    840 > $width && 600 <= $width && $sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 984px) 61vw, (max-width: 1362px) 45vw, 600px';
-    600 > $width && $sizes = '(max-width: ' . $width . 'px) 85vw, ' . $width . 'px';
+    if ( 840 > $width && 600 <= $width ) {
+      $sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 984px) 61vw, (max-width: 1362px) 45vw, 600px';
+    } elseif ( 600 > $width ) {
+      $sizes = '(max-width: ' . $width . 'px) 85vw, ' . $width . 'px';
+    }
   }
 
   return $sizes;
 }
-add_filter( 'wp_calculate_image_sizes', 'molecule_content_image_sizes_attr', 10 , 2 );
+add_filter( 'wp_calculate_image_sizes', 'twentysixteen_content_image_sizes_attr', 10 , 2 );
 
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
  * for post thumbnails
  *
- * @since Molecule 1.0
+ * @since Twenty Sixteen 1.0
  *
  * @param array $attr Attributes for the image markup.
  * @param int   $attachment Image attachment ID.
  * @param array $size Registered image size or flat array of height and width dimensions.
- * @return string A source size value for use in a post thumbnail 'sizes' attribute.
+ * @return array The filtered attributes for the image markup.
  */
-function molecule_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
+function twentysixteen_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
   if ( 'post-thumbnail' === $size ) {
-    is_active_sidebar( 'sidebar-1' ) && $attr['sizes'] = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 984px) 60vw, (max-width: 1362px) 62vw, 840px';
-    ! is_active_sidebar( 'sidebar-1' ) && $attr['sizes'] = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 88vw, 1200px';
+    if ( is_active_sidebar( 'sidebar-1' ) ) {
+      $attr['sizes'] = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 984px) 60vw, (max-width: 1362px) 62vw, 840px';
+    } else {
+      $attr['sizes'] = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 88vw, 1200px';
+    }
   }
   return $attr;
 }
-add_filter( 'wp_get_attachment_image_attributes', 'molecule_post_thumbnail_sizes_attr', 10 , 3 );
+add_filter( 'wp_get_attachment_image_attributes', 'twentysixteen_post_thumbnail_sizes_attr', 10 , 3 );
 
 /**
 * Modifies tag cloud widget arguments to have all tags in the widget same font size.
@@ -442,10 +496,11 @@ add_filter( 'wp_get_attachment_image_attributes', 'molecule_post_thumbnail_sizes
 */
 function molecule_widget_tag_cloud_args( $args ) {
 
-  $args['largest'] = 1;
+  $args['largest']  = 1;
   $args['smallest'] = 1;
-  $args['unit'] = 'em';
-
+  $args['unit']     = 'em';
+  $args['format']   = 'list';
+  
   return $args;
 
 }
