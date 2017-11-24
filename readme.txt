@@ -170,10 +170,10 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="http://jasondavisde
 * re-writing of molecule-woo.css and restricted to only load on woo pages.
 
 = 2.4.1 =
-* updated index.php page title <h1> to <h2>.
+* updated index.php page title h1 tag to h2 HTML tag.
 
 = 2.4.2 =
-* added proper markup and sperated <div>'s for .c3 columns classes in sidebar.php.
+* added proper markup and sperated div for .c3 columns classes in sidebar.php.
 
 = 2.4.3 =
 * see changelog for Twentysixteen for version 1.4

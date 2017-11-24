@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage Molecule
- * @since Molecule 2.4.3
+ * @since Molecule 2.4.4
  */
 ?>
 

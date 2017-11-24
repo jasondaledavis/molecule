@@ -13,7 +13,7 @@
  *
  * @package WordPress
  * @subpackage Molecule
- * @since Molecule 1.0
+ * @since Molecule 2.4.4
  */
 
 get_header(); ?>
