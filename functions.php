@@ -98,7 +98,7 @@ function molecule_setup() {
     */
     add_theme_support( 'post-thumbnails' );
     set_post_thumbnail_size( 1200, 9999 );
-    add_image_size( 'header-image', 1200, 300, true ); // Interior Page Header Image
+    add_image_size( 'header-image', 1200, 9999 ); // Interior Page Header Image
 
     // This theme uses wp_nav_menu() in two locations.
     register_nav_menus( array(
