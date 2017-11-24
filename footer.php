@@ -12,9 +12,7 @@
 
 </main><!-- end .page-content -->
 
-<?php if ( ! is_active_sidebar( 'sidebar-footer-1' ) && ! is_active_sidebar( 'sidebar-footer-2' ) && ! is_active_sidebar( 'sidebar-footer-3' ) && ! is_active_sidebar( 'sidebar-footer-4' ) ) {
-    return;
-} get_template_part( 'template-parts/sidebar', 'footer' ); ?>
+<?php get_template_part( 'template-parts/sidebar', 'footer' ); ?>
 
     <footer class="footer-global">
 
