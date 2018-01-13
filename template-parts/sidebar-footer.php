@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage Molecule
- * @since Molecule 2.4.4
+ * @since Molecule 2.4.3
  */
 ?>
 
@@ -17,7 +17,7 @@ if ( ! is_active_sidebar( 'sidebar-footer-1' ) && ! is_active_sidebar( 'sidebar-
 
         <div class="footer-widgets">
 
-            <div class="grid wfull">
+            <div class="grid">
 
                 <div class="row"> 
 

@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage Molecule
- * @since Molecule 2.4.4
+ * @since Molecule 1.0
  */
 
 get_header(); ?>

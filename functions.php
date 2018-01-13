@@ -91,12 +91,33 @@ function molecule_setup() {
       'header-selector' => '.site-title a',
     ) );
 
+    // Gutenberg Support
+    add_theme_support( 'gutenberg', array(
+      'wide-images' => true,
+      'colors' => array(
+        '#0073aa',
+        '#229fd8',
+        '#eee',
+        '#444',
+      ), 
+
+    ) );
+
+    add_theme_support( 'editor-color-palette',
+        '#a156b4',
+        '#d0a5db',
+        '#eee',
+        '#444'
+    );
+
     /*
     * Enable support for Post Thumbnails on posts and pages.
     *
     * @link https://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
     */
     add_theme_support( 'post-thumbnails' );
+
+    add_theme_support( 'align-wide' ); // Gutenberg Support
     set_post_thumbnail_size( 1200, 9999 );
     add_image_size( 'header-image', 1200, 9999 ); // Interior Page Header Image
 
@@ -318,6 +339,9 @@ function molecule_scripts() {
 
   // Theme stylesheet.
   wp_enqueue_style( 'molecule-style', get_stylesheet_uri() );
+
+  // Gutenberg stylesheet.
+  wp_enqueue_style( 'molecule-gutes', get_template_directory_uri() . '/assets/css/gutes.css');
 
   // Add custom fonts, used in the main stylesheet.
   wp_enqueue_style( 'molecule-fonts', molecule_fonts_url(), array(), null );

@@ -1,0 +1,117 @@
+/* CSS For Guteberg Editor */
+.wp-block-image,
+.wp-block-gallery,
+.wp-block-video,
+.wp-block-quote,
+.wp-block-text-columns,
+.wp-block-cover-text,
+.wp-block-button,
+.wp-block-gallery,
+.wp-block-table,
+.wp-block-audio,
+.wp-block-pullquote,
+.wp-block-preformatted,
+.wp-block-code,
+.wp-block-verse {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.wp-block-video video {}
+
+.wp-block-cover-image.alignwide,
+.wp-block-cover-text.alignwide,
+.wp-block-image.alignwide,
+.wp-block-gallery.alignwide,
+.wp-block-text-columns.alignwide,
+.wp-block-gallery.alignwide,
+.wp-block-table.alignwide,
+.entry-content p.alignwide,
+.wp-block-audio.alignwide,
+.wp-block-pullquote.alignwide,
+.wp-block-preformatted.alignwide,
+.wp-block-code.alignwide,
+.wp-block-verse.alignwide {}
+
+.wp-block-cover-image.alignfull,
+.wp-block-cover-text.alignfull,
+.wp-block-image.alignfull,
+.wp-block-gallery.alignfull,
+.wp-block-text-columns.alignfull
+.wp-block-gallery.alignfull,
+.wp-block-table.alignfull,
+.entry-content p.alignfull,
+.wp-block-audio.alignefull,
+.wp-block-pullquote.alignefull,
+.wp-block-preformatted.alignefull,
+.wp-block-code.alignefull,
+.wp-block-verse.alignefull {
+    width: 100vw;
+    left: calc(-50vw + 50%);
+    background-position: center;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; 
+}
+
+.wp-block-gallery:not(.components-placeholder) {}
+
+.wp-block-cover-text p {
+    padding: 1.5em 20px;
+}
+
+ul.wp-block-latest-posts.alignwide,
+ul.wp-block-latest-posts.alignfull,
+ul.wp-block-latest-posts.is-grid.alignwide,
+ul.wp-block-latest-posts.is-grid.alignwide {
+    padding: 0 20px;
+}
+
+.wp-block-table {
+    display: block;
+    overflow-x: auto;
+}
+
+.wp-block-table table {
+    border-collapse: collapse;
+    width: 100%
+}
+
+.wp-block-table td, .wp-block-table th {
+    padding: .5em;
+}
+
+@media screen and (min-width: 768px) {
+    .wp-block-cover-text p {
+        padding: 1.5em 0;
+    }
+
+    .wp-block-image,
+    .wp-block-gallery,
+    .wp-block-video,
+    .wp-block-quote,
+    .wp-block-text-columns,
+    .wp-block-cover-text,
+    .wp-block-button,
+    .wp-block-gallery,
+    .wp-block-table,
+    .wp-block-audio,
+    .wp-block-pullquote {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+
+/* POSTIONS */
+blockquote[class^="wp-block-"], 
+div[class^="wp-block-"], 
+figure[class^="wp-block-"], 
+section[class^="wp-block-"] {
+     margin-top:4em;
+     margin-bottom:4em;
+}
+.wp-block-cover-image h2 {
+     text-align:center;
+}

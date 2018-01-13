@@ -3,7 +3,7 @@
 * Author: Jason Davis
 * Requires at least: WordPress 4.7+
 * Tested up to: WordPress 4.9+
-* Version: 2.4.4
+* Version: 2.4.4.2
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -170,10 +170,10 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="http://jasondavisde
 * re-writing of molecule-woo.css and restricted to only load on woo pages.
 
 = 2.4.1 =
-* updated index.php page title h1 tag to h2 HTML tag.
+* updated index.php page title <h1> to <h2>.
 
 = 2.4.2 =
-* added proper markup and sperated div for .c3 columns classes in sidebar.php.
+* added proper markup and sperated <div>'s for .c3 columns classes in sidebar.php.
 
 = 2.4.3 =
 * see changelog for Twentysixteen for version 1.4
@@ -185,3 +185,8 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="http://jasondavisde
 * corrected footer widgets not displaying on home in sidebar-footer.php
 * cleaned up css for responsive
 * deleted depricated sidebar-footer.php in main theme dir and moved to templates dir.
+
+= 2.4.4.2 = 
+* updates to CSS for better UX.
+* removed wfull from footer widget template.
+* updates to CSS and function.php for Gutenberg Editor compatibility.
