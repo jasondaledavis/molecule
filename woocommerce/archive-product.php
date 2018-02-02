@@ -22,8 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header(); ?> 
 
+<?php do_action( 'woocommerce_before_main_content' ); ?>
 
-    <div class="grid">
+    <div class="grid wfull">
 
         <div class="row">
 
@@ -37,10 +38,7 @@ get_header(); ?>
             
             } ?> 
 
-<?php do_action( 'woocommerce_before_main_content' ); ?>
-
-
-	<?php
+	<?php 
 	/**
 	 * Hook: woocommerce_archive_description.
 	 *
@@ -48,9 +46,7 @@ get_header(); ?>
 	 * @hooked woocommerce_product_archive_description - 10
 	 */
 	do_action( 'woocommerce_archive_description' );
-	?>
-
-<?php
+	
 
 if ( have_posts() ) {
 
@@ -98,20 +94,16 @@ if ( have_posts() ) {
 	do_action( 'woocommerce_no_products_found' );
 }
 
-/**
- * Hook: woocommerce_after_main_content.
- *
- * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
- */
-do_action( 'woocommerce_after_main_content' ); ?> 
+?>
 
 </div><!-- end .c9 or .c12 -->
 
 <?php do_action( 'woocommerce_sidebar' ); ?>
 
-
     </div><!-- end .row -->
 
 </div><!-- end .grid -->
+
+<?php do_action( 'woocommerce_after_main_content' ); ?>
 
 <?php get_footer(); ?>
