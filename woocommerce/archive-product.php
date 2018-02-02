@@ -105,8 +105,13 @@ if ( have_posts() ) {
  */
 do_action( 'woocommerce_after_main_content' ); ?> 
 
-</div><!-- end .c9 -->
+</div><!-- end .c9 or .c12 -->
 
-<?php //do_action( 'woocommerce_sidebar' ); ?>
+<?php do_action( 'woocommerce_sidebar' ); ?>
+
+
+    </div><!-- end .row -->
+
+</div><!-- end .grid -->
 
 <?php get_footer(); ?>
