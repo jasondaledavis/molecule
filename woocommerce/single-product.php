@@ -22,6 +22,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header(); ?>
 
+<?php do_action( 'woocommerce_before_main_content' ); ?>
+
     <div class="grid wfull">
 
         <div class="row">
@@ -34,17 +36,7 @@ get_header(); ?>
 
             echo '<div class="c12">';
             
-            } ?> 
-
-				<?php
-					/**
-					 * woocommerce_before_main_content hook.
-					 *
-					 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-					 * @hooked woocommerce_breadcrumb - 20
-					 */
-					do_action( 'woocommerce_before_main_content' );
-				?>
+            } ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -52,14 +44,7 @@ get_header(); ?>
 
 				<?php endwhile; // end of the loop. ?>
 
-				<?php
-					/**
-					 * woocommerce_after_main_content hook.
-					 *
-					 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-					 */
-					do_action( 'woocommerce_after_main_content' );
-				?>
+				
 
 			</div><!-- end .c9 or .c12 -->
 
@@ -75,5 +60,7 @@ get_header(); ?>
         </div><!-- end .row -->
 
     </div><!-- end .grid -->
+
+<?php do_action( 'woocommerce_after_main_content' ); ?>
 
 <?php get_footer(); ?>
