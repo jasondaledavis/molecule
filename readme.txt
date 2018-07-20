@@ -3,7 +3,7 @@
 * Author: Jason Davis
 * Requires at least: WordPress 4.7+
 * Tested up to: WordPress 4.9+
-* Version: 2.5.2
+* Version: 2.5.3
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -21,7 +21,7 @@ For more information about Twenty Sixteen please go to https://codex.wordpress.o
 
 ### Copyright
 
-Molecule WordPress Theme, Copyright 2017 <a href="http://jasondavisdesigns.com">http://jasondavisdesigns.com</a>
+Molecule WordPress Theme, Copyright 2017 <a href="https://iamjasondavis.com">https://iamjasondavis.com</a>
 Molecule is distributed under the terms of the GNU GPL WordPress.org
 
 This program is free software: you can redistribute it and/or modify
@@ -50,7 +50,7 @@ Source: <a href="https://github.com/TGMPA/TGM-Plugin-Activation">https://github.
 Lead Developers: Thomas Griffin (@jthomasgriffin), Gary Jones (@GaryJ), Juliette Reinders Folmer (@jrf_nl)<br>
 Version: 2.6.1 Requires at least: 3.7.0 Tested up to: 4.5.2
 
-Image used in screenshot.png: Photo by Jason Davis (<a href="http://jasondavisdesigns.com">http://jasondavisdesigns.com</a>)
+Image used in screenshot.png: Photo by Jason Davis (<a href="https://iamjasondavis.com">https://iamjasondavis.com</a>)
 
 #### Changelog
 
@@ -199,3 +199,6 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="http://jasondavisde
 
 = 2.5.2 = 
 * updated version of file in archive-products.php for 3.4
+
+= 2.5.3 = 
+* Future proofed CSS for WooCommerce Forms checkboxes and radio buttons.

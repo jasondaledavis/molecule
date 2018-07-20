@@ -341,7 +341,7 @@ function molecule_scripts() {
   wp_enqueue_style( 'molecule-style', get_stylesheet_uri() );
 
   // Gutenberg stylesheet.
-  wp_enqueue_style( 'molecule-gutes', get_template_directory_uri() . '/assets/css/gutes.css');
+  // wp_enqueue_style( 'molecule-gutes', get_template_directory_uri() . '/assets/css/gutes.css');
 
   // Add custom fonts, used in the main stylesheet.
   wp_enqueue_style( 'molecule-fonts', molecule_fonts_url(), array(), null );

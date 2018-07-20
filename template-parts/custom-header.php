@@ -113,7 +113,7 @@
 
         <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 
-            <h1 class="page-title">Product Category: <span class="entry-title"><?php woocommerce_page_title(); ?></span></h1>
+            <h1 class="page-title"><span class="entry-title"><?php woocommerce_page_title(); ?></span></h1>
 
         <?php endif; ?>
 
