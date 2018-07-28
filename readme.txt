@@ -3,7 +3,7 @@
 * Author: Jason Davis
 * Requires at least: WordPress 4.7+
 * Tested up to: WordPress 4.9+
-* Version: 2.5.3
+* Version: 2.5.4
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -202,3 +202,6 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="https://iamjasondav
 
 = 2.5.3 = 
 * Future proofed CSS for WooCommerce Forms checkboxes and radio buttons.
+
+= 2.5.4 = 
+* Added Media Queries for iPhone X and fixed tabel of contents on style.css

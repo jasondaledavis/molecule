@@ -6,7 +6,7 @@ Author URI: https://iamjasondavis.com
 GitHub Theme URI: https://github.com/jasondaledavis/molecule
 GitHub Branch: master
 Description: Molecule is a diverse theme for whatever you imagine. Molecule is fully compatible with popular plugins like WooCommerce, Gravity Forms, Contact Form 7, Jetpack, and others. The content area powers the entire sites main page area, so make it look how you want. the header and footer are customizable from the WordPress customizer for backgrounds and color options. There are 4 widget areas in the footer, and a separate page and blog sidebar. Sidebars are only activate once a widget is dragged in place and page and blog sidebar is only on the right side column. A page builder is recommended like SiteOrigin or Visual Composer to create a beautiful layout like the demo.
-Version: 2.5.3
+Version: 2.5.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -23,9 +23,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
  * 3.0 - Typography
  * 4.0 - Elements
  * 5.0 - Forms
+ *   5.1 - Woocommerce Forms
+ *   5.2 - Buttons
+ *   5.3 - Breadcrumbs (Yoast)
  * 6.0 - Navigation
  *   6.1 - Links
  *   6.2 - Menus
+ *   6.3 - Pagination
  * 7.0 - Accessibility
  * 8.0 - Alignments
  * 9.0 - Clearings
@@ -43,11 +47,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *    12.2 - Galleries
  * 13.0 - Search
  * 14.0 - Media Queries
- *    14.1 - 710px
- *    14.2 - >= 910px
- *    14.3 - >= 985px
- *    14.4 - iPhone (Landscape)
- *    14.5 - iPhone Portrait
+ *    14.1 - Pixel 2 and iPhone Plus 6/7/8 and other large devices
+ *    14.2 - Laptop and larger devices
+ *    14.3 - Tablets
+ *    14.4 - iPhone 6/7/8 Landscape
+ *    14.5 - All Phones Landscape Only and Tablets Portrait
+ *    14.6 - All Phones Portrait Only
+ *    14.7 - iPhone X Landscape
  * 15.0 - Print
  */
 /**
@@ -717,69 +723,6 @@ input[type=checkbox]:checked + label:before {
 select option:focus {
     background-color: #A0A0A0;
 }
-
-/*woo forms*/
-.woocommerce form .form-row .input-checkbox {
-    display: inline !important;
-}
-.woocommerce input[type=radio] + label:before,
-.woocommerce input[type=checkbox] + label:before,
-.woocommerce input[type=radio]:checked + label:before,
-.woocommerce input[type=checkbox]:checked + label:before {
-    display:none;
-}
-
-/*404 page button*/
-.homepage-btn {
-    margin-top: 40px;
-}
-.reply a,
-button,
-button[disabled]:hover,
-button[disabled]:focus,
-input[type="button"],
-input[type="button"][disabled]:hover,
-input[type="button"][disabled]:focus,
-input[type="reset"],
-input[type="reset"][disabled]:hover,
-input[type="reset"][disabled]:focus,
-input[type="submit"],
-input[type="submit"][disabled]:hover,
-input[type="submit"][disabled]:focus {
-    background: transparent;
-    border: solid 2px #222222;
-    border-radius: 0px;
-    color: #222222;
-    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
-    font-weight: normal;
-    letter-spacing: 0.046875em;
-    line-height: 1;
-    padding: .6em .9em;
-    text-transform: uppercase;
-    -webkit-transition: all .3s ease-in-out 0s;
-    -moz-transition: all .3s ease-in-out 0s;
-    -o-transition: all .3s ease-in-out 0s;
-    transition: all .3s ease-in-out 0s;
-}
-.reply a:hover,
-button:hover,
-button:focus,
-input[type="button"]:hover,
-input[type="button"]:focus,
-input[type="reset"]:hover,
-input[type="reset"]:focus,
-input[type="submit"]:hover,
-input[type="submit"]:focus {
-    background: #222222;
-    color: white;
-}
-button:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus {
-    outline: thin dotted;
-    outline-offset: -4px;
-}
 input[type="date"],
 input[type="time"],
 input[type="datetime-local"],
@@ -867,7 +810,75 @@ input[type="search"].search-field {
     width: 42px;
 }
 
-/*Breadcrumbs (Yoast)*/
+/**
+ * 5.1 - Woocommerce Forms
+ */
+.woocommerce form .form-row .input-checkbox {
+    display: inline !important;
+}
+.woocommerce input[type=radio] + label:before,
+.woocommerce input[type=checkbox] + label:before,
+.woocommerce input[type=radio]:checked + label:before,
+.woocommerce input[type=checkbox]:checked + label:before {
+    display:none;
+}
+
+/**
+ * 5.2 - Buttons
+ */
+.homepage-btn {
+    margin-top: 40px;
+}
+.reply a,
+button,
+button[disabled]:hover,
+button[disabled]:focus,
+input[type="button"],
+input[type="button"][disabled]:hover,
+input[type="button"][disabled]:focus,
+input[type="reset"],
+input[type="reset"][disabled]:hover,
+input[type="reset"][disabled]:focus,
+input[type="submit"],
+input[type="submit"][disabled]:hover,
+input[type="submit"][disabled]:focus {
+    background: transparent;
+    border: solid 2px #222222;
+    border-radius: 0px;
+    color: #222222;
+    font-family: 'Montserrat', 'Open Sans', 'Arial', sans-serif;
+    font-weight: normal;
+    letter-spacing: 0.046875em;
+    line-height: 1;
+    padding: .6em .9em;
+    text-transform: uppercase;
+    -webkit-transition: all .3s ease-in-out 0s;
+    -moz-transition: all .3s ease-in-out 0s;
+    -o-transition: all .3s ease-in-out 0s;
+    transition: all .3s ease-in-out 0s;
+}
+.reply a:hover,
+button:hover,
+button:focus,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+    background: #222222;
+    color: white;
+}
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus {
+    outline: thin dotted;
+    outline-offset: -4px;
+}
+/**
+ * 5.3 -  Breadcrumbs (Yoast)
+ */
 #breadcrumbs > span {
     background-color: #eee;
     padding:4px 8px;
@@ -914,6 +925,31 @@ a:active {
 .no-js .site-header-menu .main-navigation .menu-item-has-children>a {
     margin-right: 0;
 }
+.menu-toggle {
+    background-color: transparent;
+    border: 1px solid #a0a0a0;
+    color: #1a1a1a;
+    font-size: 13px;
+    font-size: 0.8125rem;
+    padding: 0.769230769em;
+}
+.no-js .menu-toggle {
+    display: none;
+}
+.menu-toggle.toggled-on {
+    background-color: #222222;
+    border-color: #222222;
+    color: #ffffff;
+}
+.menu-toggle.toggled-on:hover,
+.menu-toggle.toggled-on:focus,
+.menu-toggle:hover,
+.menu-toggle:focus {
+    background-color: #222222;
+    border-color: #222222;
+    color: #ffffff;
+    outline: 0;
+}
 .main-navigation ul {
     list-style: none;
     margin: 0;
@@ -941,8 +977,8 @@ a:active {
 .main-navigation .current-menu-ancestor>a {
     font-weight: normal;
 }
-/*hover effect*/
 
+/*hover effect*/
 .main-navigation a::before {
     background: #cecece none repeat scroll 0 0;
     bottom: 0;
@@ -986,6 +1022,10 @@ a:active {
 .dropdown-toggle {
     display: none !important;
 }
+
+/**
+ * 6.3 - Pagination
+ */
 .post-navigation {
     border-top: 2px solid #1a1a1a;
     border-bottom: 2px solid #1a1a1a;
@@ -1082,7 +1122,6 @@ a:active {
     right: 55px;
 }
 /* reset screen-reader-text */
-
 .pagination .current .screen-reader-text {
     position: static !important;
 }
@@ -1858,31 +1897,6 @@ span.entry-title a:focus {
     transform: translate(-50%, -50%);
     text-align: center;
     text-transform: uppercase;
-}
-.menu-toggle {
-    background-color: transparent;
-    border: 1px solid #a0a0a0;
-    color: #1a1a1a;
-    font-size: 13px;
-    font-size: 0.8125rem;
-    padding: 0.769230769em;
-}
-.no-js .menu-toggle {
-    display: none;
-}
-.menu-toggle.toggled-on {
-    background-color: #222222;
-    border-color: #222222;
-    color: #ffffff;
-}
-.menu-toggle.toggled-on:hover,
-.menu-toggle.toggled-on:focus,
-.menu-toggle:hover,
-.menu-toggle:focus {
-    background-color: #222222;
-    border-color: #222222;
-    color: #ffffff;
-    outline: 0;
 }
 /**
  * 11.2 - Posts and pages
@@ -2899,7 +2913,7 @@ p>video {
     width: device-width;
 }
 /**
- * 14.1 - 710px
+ * 14.1 - iPhone Plus 6/7/8 and other large devices
  */
 
 @media screen and (min-width: 44.375em) {
@@ -3000,7 +3014,7 @@ p>video {
     }
 }
 /**
- * 14.2 - >= 910px
+ * 14.2 - Laptop and larger devices
  */
 
 @media screen and (min-width: 56.875em) {
@@ -3273,7 +3287,7 @@ p>video {
     }
 }
 /**
- * 14.3 - >= 985px
+ * 14.3 - Tablets
  */
 
 @media screen and (min-width: 61.5625em) {
@@ -3305,8 +3319,9 @@ p>video {
         margin-bottom: 0.5384615385em;
     }
 }
+
 /**
- * 14.4 - iPhone (Landscape)
+ * 14.4 - iPhone 6/7/8 Landscape
  */
 
 @media screen and (max-width: 41.688em) {
@@ -3338,8 +3353,9 @@ p>video {
     }
 }
 /**
- * 14.5 - iPad Portrait
- */
+ * 14.5 - All Phones Landscape Only and Tablets Portrait
+
+*/
 
 @media screen and (max-width: 48em) {
     .site-header-menu,
@@ -3372,7 +3388,7 @@ p>video {
     }
 }
 /**
- * 14.5 - iPhone Portrait
+ * 14.6 - All Phones Portrait Only
  */
 
 @media screen and (max-width: 33em) {
@@ -3402,6 +3418,26 @@ p>video {
         padding-top: 0;
     }
 }
+
+/**
+ *  14.7 - iPhone X Landscape
+*/
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px) 
+and (-webkit-device-pixel-ratio : 3)
+and (orientation : landscape) { 
+
+    .site-header-menu {
+        display: none;
+    }
+    .main-navigation .primary-menu {
+        border-bottom: none;
+    }
+
+}
+
 /**
  * 15.0 - Print
  */
