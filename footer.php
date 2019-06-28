@@ -42,6 +42,12 @@
 
                                 } ?>
 
+                                <?php
+                                    if ( $url = get_privacy_policy_url() ) {
+                                    echo '<span class="privacy-policy-page-link"><a href="' . esc_attr( $url ) . '" title="' . esc_html( 'Privacy Policy', 'molecule' ) . '">' . esc_html( 'Privacy Policy', 'molecule' ) . '</a></span>';
+                                    }
+                                ?>
+
                         </div>
 
                         <div class="copyright-info">

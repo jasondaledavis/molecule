@@ -12,7 +12,7 @@
  * the parent theme's file, so the child theme functions would be used.
  *
  * @link https://codex.wordpress.org/Theme_Development
- * @link https://codex.wordpress.org/Child_Themes
+ * @link https://developer.wordpress.org/themes/advanced-topics/child-themes
  *
  * Functions that are not pluggable (not wrapped in function_exists()) are
  * instead attached to a filter or action hook.
@@ -22,7 +22,7 @@
  *
  * @package WordPress
  * @subpackage Molecule
- * @since Twenty Sixteen 1.4
+ * @since Molecule 3.0
  */
  
 //================================================================================//
@@ -81,43 +81,25 @@ function molecule_setup() {
     /*
     * Enable support for custom logo.
     *
-    * @since Molecule 1.0
+    * @since Twenty Sixteen 1.2 and Molecule 1.0
     */
-    add_theme_support( 'custom-logo', array(
-      'height'      => 240,
-      'width'       => 240,
-      'flex-height' => true,
-      'flex-width' => true,
-      'header-selector' => '.site-title a',
-    ) );
-
-    // Gutenberg Support
-    add_theme_support( 'gutenberg', array(
-      'wide-images' => true,
-      'colors' => array(
-        '#0073aa',
-        '#229fd8',
-        '#eee',
-        '#444',
-      ), 
-
-    ) );
-
-    add_theme_support( 'editor-color-palette',
-        '#a156b4',
-        '#d0a5db',
-        '#eee',
-        '#444'
+    add_theme_support(
+      'custom-logo', 
+      array(
+          'height'      => 240,
+          'width'       => 240,
+          'flex-height' => true,
+          'flex-width' => true,
+          'header-selector' => '.site-title a',
+      ) 
     );
 
     /*
     * Enable support for Post Thumbnails on posts and pages.
     *
-    * @link https://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+    * @link https://developer.wordpress.org/reference/functions/add_theme_support/#Post_Thumbnails
     */
     add_theme_support( 'post-thumbnails' );
-
-    add_theme_support( 'align-wide' ); // Gutenberg Support
     set_post_thumbnail_size( 1200, 9999 );
     add_image_size( 'header-image', 1200, 9999 ); // Interior Page Header Image
 
@@ -138,14 +120,26 @@ function molecule_setup() {
         'caption',
     ) );
 
-  /*
-  * This theme styles the visual editor to resemble the theme style,
-  * specifically font, colors, icons, and column width.
-  */
-  add_editor_style( array( 'assets/css/editor-style.css' ) );
+    /*
+    * This theme styles the visual editor to resemble the theme style,
+    * specifically font, colors, icons, and column width.
+    */
+    add_editor_style( array( 'assets/css/editor-style.css', molecule_fonts_url() ) );
 
-  // Indicate widget sidebars can use selective refresh in the Customizer.
-  add_theme_support( 'customize-selective-refresh-widgets' );
+    // Add support for full and wide align images.
+    add_theme_support( 'align-wide' );
+    
+    // Load regular editor styles into the new block-based editor.
+    add_theme_support( 'editor-styles' );
+
+    // Load default block styles.
+    add_theme_support( 'wp-block-styles' );
+
+    // Add support for responsive embeds.
+    add_theme_support( 'responsive-embeds' );
+
+    // Indicate widget sidebars can use selective refresh in the Customizer.
+    add_theme_support( 'customize-selective-refresh-widgets' );
 
 }
 endif; // molecule_setup
@@ -165,6 +159,27 @@ function molecule_content_width() {
     $GLOBALS['content_width'] = apply_filters( 'molecule_content_width', 840 );
 }
 add_action( 'after_setup_theme', 'molecule_content_width', 0 );
+
+/**
+ * Add preconnect for Google Fonts.
+ *
+ * @since Twenty Sixteen 1.6
+ *
+ * @param array  $urls           URLs to print for resource hints.
+ * @param string $relation_type  The relation type the URLs are printed.
+ * @return array $urls           URLs to print for resource hints.
+ */
+function molecule_resource_hints( $urls, $relation_type ) {
+  if ( wp_style_is( 'molecule-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
+    $urls[] = array(
+      'href' => 'https://fonts.gstatic.com',
+      'crossorigin',
+    );
+  }
+
+  return $urls;
+}
+add_filter( 'wp_resource_hints', 'molecule_resource_hints', 10, 2 );
 
 /**
 * Registers a widget area.
@@ -334,17 +349,18 @@ add_action( 'wp_head', 'molecule_javascript_detection', 0 );
 
 function molecule_scripts() {
 
+  // Add custom fonts, used in the main stylesheet.
+  wp_enqueue_style( 'molecule-fonts', molecule_fonts_url(), array(), null );
+
   // Add Genericons, used in the main stylesheet.
   wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
 
   // Theme stylesheet.
-  wp_enqueue_style( 'molecule-style', get_stylesheet_uri() );
+  // wp_enqueue_style( 'molecule-style', get_stylesheet_uri() );
+  wp_enqueue_style( 'molecule-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
-  // Gutenberg stylesheet.
-  // wp_enqueue_style( 'molecule-gutes', get_template_directory_uri() . '/assets/css/gutes.css');
-
-  // Add custom fonts, used in the main stylesheet.
-  wp_enqueue_style( 'molecule-fonts', molecule_fonts_url(), array(), null );
+  // Theme block stylesheet.
+  wp_enqueue_style( 'molecule-block-style', get_template_directory_uri() . '/assets/css/blocks.css', array( 'molecule-style' ), '20181230' );
 
   // Load the Internet Explorer specific stylesheet.
   wp_enqueue_style( 'molecule-ie', get_template_directory_uri() . '/assets/css/ie.css', array( 'molecule-style' ), '20160816' );
@@ -353,31 +369,52 @@ function molecule_scripts() {
   // Load the Internet Explorer 8 specific stylesheet.
   wp_enqueue_style( 'molecule-ie8', get_template_directory_uri() . '/assets/css/ie8.css', array( 'molecule-style' ), '20160816' );
   wp_style_add_data( 'molecule-ie8', 'conditional', 'lt IE 9' );
-  
+
   // Load the Internet Explorer 7 specific stylesheet.
   wp_enqueue_style( 'molecule-ie7', get_template_directory_uri() . '/assets/css/ie7.css', array( 'molecule-style' ), '20160816' );
   wp_style_add_data( 'molecule-ie7', 'conditional', 'lt IE 8' );
+
+  // Load the html5 shiv.
+  wp_enqueue_script( 'molecule-html5', get_template_directory_uri() . '/assets/js/html5.js', array(), '3.7.3' );
+  wp_script_add_data( 'molecule-html5', 'conditional', 'lt IE 9' );
+
+  wp_enqueue_script( 'molecule-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20160816', true );
 
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
     wp_enqueue_script( 'comment-reply' );
   }
 
   if ( is_singular() && wp_attachment_is_image() ) {
-    wp_enqueue_script( 'molecule-keyboard-image-navigation-min', get_template_directory_uri() . '/assets/js/min/keyboard-image-navigation.min.js', array( 'jquery' ), '20160816' );
+    wp_enqueue_script( 'molecule-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20160816' );
   }
-  
-  // Enqueue Scripts
-  wp_enqueue_script( 'molecule-script', get_template_directory_uri() . '/assets/js/min/custom-functions.min.js', array( 'jquery' ), '20160816', true );
-  
 
-  wp_localize_script( 'molecule-script', 'screenReaderText', array(
-    'expand'   => __( 'expand child menu', 'molecule' ),
-    'collapse' => __( 'collapse child menu', 'molecule' ),
-  ) );
+  wp_enqueue_script( 'molecule-script', get_template_directory_uri() . '/assets/js/functions.js', array( 'jquery' ), '20181230', true );
 
+  wp_enqueue_script( 'molecule-custom-script', get_template_directory_uri() . '/assets/js/custom-functions.js', array( 'jquery' ), '20181230', true );
+
+  wp_localize_script(
+    'molecule-script',
+    'screenReaderText',
+    array(
+      'expand'   => __( 'expand child menu', 'molecule' ),
+      'collapse' => __( 'collapse child menu', 'molecule' ),
+    )
+  );
 }
-
 add_action( 'wp_enqueue_scripts', 'molecule_scripts' );
+
+/**
+ * Enqueue styles for the block-based editor.
+ *
+ * @since Twenty Sixteen 1.6
+ */
+function molecule_block_editor_styles() {
+  // Block styles.
+  wp_enqueue_style( 'molecule-block-editor-style', get_template_directory_uri() . '/assets/css/editor-blocks.css', array(), '20181230' );
+  // Add custom fonts.
+  wp_enqueue_style( 'molecule-fonts', molecule_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'molecule_block_editor_styles' );
 
 /**
 * Adds custom classes to the array of body classes.
@@ -513,20 +550,18 @@ add_filter( 'wp_get_attachment_image_attributes', 'twentysixteen_post_thumbnail_
 /**
 * Modifies tag cloud widget arguments to have all tags in the widget same font size.
 *
-* @since Molecule 1.0
+* @since Twenty Sixteen 1.1 and Molecule 1.0
 *
 * @param array $args Arguments for tag cloud widget.
 * @return array A new modified arguments.
 */
 function molecule_widget_tag_cloud_args( $args ) {
-
   $args['largest']  = 1;
   $args['smallest'] = 1;
   $args['unit']     = 'em';
   $args['format']   = 'list';
-  
-  return $args;
 
+  return $args;
 }
 
 add_filter( 'widget_tag_cloud_args', 'molecule_widget_tag_cloud_args' );

@@ -13,7 +13,7 @@
 <?php get_template_part( 'template-parts/head', 'meta' ); ?>
 
     <body <?php body_class(); ?> >
-    
+    <?php if ( function_exists( 'wp_body_open' ) ) wp_body_open(); ?>
     <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'molecule' ); ?></a>
 
         <header id="masthead" class="header-global">
@@ -22,7 +22,7 @@
 
             <div id="molecule-topbar">
                 
-                <div class="grid wfull">
+                <div class="grid">
 
                     <div class="row">
 

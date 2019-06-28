@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage Molecule
- * @since Molecule 2.4.3
+ * @since Molecule 3.0
  */
 
 /**
@@ -19,7 +19,7 @@ function molecule_custom_header_and_background() {
 	/**
 	 * Filter the arguments used when adding 'custom-background' support in Molecule.
 	 *
-	 * @since Molecule 1.0
+	 * @since Molecule 3.0
 	 *
 	 * @param array $args {
 	 *     An array of custom-background support arguments.
@@ -27,7 +27,7 @@ function molecule_custom_header_and_background() {
 	 *     @type string $default-color Default color of the background.
 	 * }
 	 */
-	add_theme_support( 'custom-background' );
+	// add_theme_support( 'custom-background' );
 	/**
 	 * Filter the arguments used when adding 'custom-header' support in Molecule.
 	 *
@@ -115,7 +115,7 @@ add_action( 'customize_register', 'molecule_customize_register', 11 );
 /**
  * Render the site title for the selective refresh partial.
  *
- * @since Molecule 1.2
+ * @since Twenty Sixteen 1.2 and Molecule 1.2
  * @see molecule_customize_register()
  *
  * @return void
@@ -127,7 +127,7 @@ function molecule_customize_partial_blogname() {
 /**
  * Render the site tagline for the selective refresh partial.
  *
- * @since Molecule 1.2
+ * @since Twenty Sixteen 1.2 and Molecule 1.2
  * @see molecule_customize_register()
  *
  * @return void
@@ -142,16 +142,15 @@ function molecule_customize_partial_blogdescription() {
  * @since Molecule 1.0
  */
 function molecule_customize_preview_js() {
-	wp_enqueue_script( 'molecule-customize-preview', get_template_directory_uri() . '/assets/js/min/customize-preview-min.js', array( 'customize-preview' ), '20160816', true );
+	wp_enqueue_script( 'molecule-customize-preview', get_template_directory_uri() . '/assets/js/customize-preview.js', array( 'customize-preview' ), '20160816', true );
 }
 add_action( 'customize_preview_init', 'molecule_customize_preview_js' );
 
-// add_action( "customize_register", "molecule_theme_customize_register" );
-// function molecule_theme_customize_register( $wp_customize ) {
-
+function molecule_theme_customize_register( $wp_customize ) {
+//=============================================================
+ // Remove Colors option from theme customizer     
  //=============================================================
- // Remove Colors, Background image, and Static front page 
- // option from theme customizer     
- //=============================================================
-//  $wp_customize->remove_section("colors");
-// }
+ 	$wp_customize->remove_section("colors");
+	$wp_customize->remove_section("background_image");
+}
+add_action( "customize_register", "molecule_theme_customize_register" );

@@ -1,9 +1,10 @@
 # Molecule Theme
 
 * Author: Jason Davis
-* Requires at least: WordPress 4.7+
-* Tested up to: WordPress 4.9+
-* Version: 2.5.4
+* Requires at least: WordPress 5.0+
+* Tested up to: WordPress 5.3+
+* Requires PHP: 5.2.4
+* Version: 3.0
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -170,10 +171,10 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="https://iamjasondav
 * re-writing of molecule-woo.css and restricted to only load on woo pages.
 
 = 2.4.1 =
-* updated index.php page title <h1> to <h2>.
+* updated index.php page title from h1 to h2.
 
 = 2.4.2 =
-* added proper markup and sperated <div>'s for .c3 columns classes in sidebar.php.
+* added proper markup and sperated div's for .c3 columns classes in sidebar.php.
 
 = 2.4.3 =
 * see changelog for Twentysixteen for version 1.4
@@ -205,3 +206,6 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="https://iamjasondav
 
 = 2.5.4 = 
 * Added Media Queries for iPhone X and fixed tabel of contents on style.css
+
+= 3.0 = 
+* Updated Theme URI and interior page header (/templates/custom-header.php) for WordPress 5.2+ compatibility. (See https://codex.wordpress.org/Twenty_Sixteen_Theme_Changelog#Version_2.0)
