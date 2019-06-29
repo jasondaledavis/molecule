@@ -209,3 +209,6 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="https://iamjasondav
 
 = 3.0 = 
 * Updated Theme URI and interior page header (/templates/custom-header.php) for WordPress 5.2+ compatibility. (See https://codex.wordpress.org/Twenty_Sixteen_Theme_Changelog#Version_2.0)
+
+= 3.0.1 = 
+* Removed script that inserts .mobile class on responsive < 1024 devices.

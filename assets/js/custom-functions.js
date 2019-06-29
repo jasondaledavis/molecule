@@ -5,17 +5,17 @@ jQuery(document).ready(function ($) {
     /* Add/Remove class to header on mobile devices
     --------------------------------------------------*/
     
-    var $window = $(window),
-    $headerMobile = $('.header-top');
-    $(window).on('load resize', function () {
+    // var $window = $(window),
+    // $headerMobile = $('.header-top');
+    // $(window).on('load resize', function () {
         
-        if ($window.width() < 1024) {
-            $headerMobile.removeClass('header-top').addClass('mobile');
-        } else {
-            $headerMobile.removeClass('mobile').addClass('header-top');
-        }
+    //     if ($window.width() < 1024) {
+    //         $headerMobile.removeClass('header-top').addClass('mobile');
+    //     } else {
+    //         $headerMobile.removeClass('mobile').addClass('header-top');
+    //     }
     
-    });
+    // });
 
     /* Sticky navigation
     --------------------------------------------------*/
