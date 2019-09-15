@@ -4,7 +4,7 @@
 * Requires at least: WordPress 5.2+
 * Tested up to: WordPress 5.3+
 * Requires PHP: 5.2.4
-* Version: 3.0
+* Version: 3.0.2
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -16,13 +16,13 @@ Molecule is a modernized take on an ever-popular WordPress layout — the horizo
 * Customizer Enabled for Background, Header, and Widgets
 * The GPL v2.0 or later license. :) Use it to make something cool.
 
-For more information about Molecule please go to <a href="https://molecule.element502.com">https://molecule.element502.com</a> Molecule is based on the popular theme Twenty Sixteen. 
+For more information about Molecule please go to <a href="https://github.com/jasondaledavis/molecule" target="_blank">https://github.com/jasondaledavis/molecule</a> Molecule is based on the popular theme Twenty Sixteen. 
 
 For more information about Twenty Sixteen please go to https://codex.wordpress.org/Twenty_Sixteen.
 
 ### Copyright
 
-Molecule WordPress Theme, Copyright 2017 <a href="https://iamjasondavis.com">https://iamjasondavis.com</a>
+Molecule WordPress Theme, Copyright 2017 <a href="https://iamjasondavis.com" target="_blank">https://iamjasondavis.com</a>
 Molecule is distributed under the terms of the GNU GPL WordPress.org
 
 This program is free software: you can redistribute it and/or modify
@@ -39,19 +39,19 @@ Molecule Theme bundles the following third-party resources:
 
 Genericons icon font, Copyright 2013-2015 Automattic.com<br>
 License: GNU GPL, Version 2 (or later)<br>
-Source: <a href="http://www.genericons.com">http://www.genericons.com</a>
+Source: <a href="http://www.genericons.com" target="_blank">http://www.genericons.com</a>
 
 HTML5 Shiv v3.7.0, Copyright 2014 Alexander Farkas<br>
 Licenses: MIT/GPL2<br>
-Source: <a href="https://github.com/aFarkas/html5shiv">https://github.com/aFarkas/html5shiv</a>
+Source: <a href="https://github.com/aFarkas/html5shiv" target="_blank">https://github.com/aFarkas/html5shiv</a>
 
 TGM-Plugin-Activation<br>
 License: GPL-2.0+<br>
-Source: <a href="https://github.com/TGMPA/TGM-Plugin-Activation">https://github.com/TGMPA/TGM-Plugin-Activation</a><br>
+Source: <a href="https://github.com/TGMPA/TGM-Plugin-Activation" target="_blank">https://github.com/TGMPA/TGM-Plugin-Activation</a><br>
 Lead Developers: Thomas Griffin (@jthomasgriffin), Gary Jones (@GaryJ), Juliette Reinders Folmer (@jrf_nl)<br>
 Version: 2.6.1 Requires at least: 3.7.0 Tested up to: 4.5.2
 
-Image used in screenshot.png: Photo by Jason Davis (<a href="https://iamjasondavis.com">https://iamjasondavis.com</a>)
+Image used in screenshot.png: Photo by Jason Davis (<a href="https://iamjasondavis.com" target="_blank">https://iamjasondavis.com</a>)
 
 #### Changelog
 
@@ -212,3 +212,7 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="https://iamjasondav
 
 = 3.0.1 = 
 * Removed script that inserts .mobile class on responsive < 1024 devices.
+
+= 3.0.2 =
+
+Changed wp-block class max-width to 1200px. This change in editors canvas is to accomodate more room for editing in Gutenberg Editor. Especially with columns.
