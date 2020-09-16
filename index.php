@@ -36,13 +36,9 @@ get_header(); ?>
 
         		<?php if ( is_home() && ! is_front_page() ) : ?>
 
-        			<header>
-
-                        <?php if ( function_exists('yoast_breadcrumb') ) {
-                            yoast_breadcrumb('<p id="breadcrumbs">','</p>'); 
+        			<?php if ( function_exists('yoast_breadcrumb') ) {
+                            yoast_breadcrumb('<header><p id="breadcrumbs">','</p></header>'); 
                         } ?>
-                      
-                    </header>
 
         		<?php endif; ?>
 

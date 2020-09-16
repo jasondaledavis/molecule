@@ -4,7 +4,7 @@
 * Requires at least: WordPress 5.2+
 * Tested up to: WordPress 5.3+
 * Requires PHP: 5.2.4
-* Version: 3.0.2
+* Version: 3.1
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -22,7 +22,7 @@ For more information about Twenty Sixteen please go to https://codex.wordpress.o
 
 ### Copyright
 
-Molecule WordPress Theme, Copyright 2017 <a href="https://iamjasondavis.com" target="_blank">https://iamjasondavis.com</a>
+Molecule WordPress Theme, Copyright 2017 <a href="https://nerdbrandagency.com" target="_blank">https://nerdbrandagency.com</a>
 Molecule is distributed under the terms of the GNU GPL WordPress.org
 
 This program is free software: you can redistribute it and/or modify
@@ -45,13 +45,7 @@ HTML5 Shiv v3.7.0, Copyright 2014 Alexander Farkas<br>
 Licenses: MIT/GPL2<br>
 Source: <a href="https://github.com/aFarkas/html5shiv" target="_blank">https://github.com/aFarkas/html5shiv</a>
 
-TGM-Plugin-Activation<br>
-License: GPL-2.0+<br>
-Source: <a href="https://github.com/TGMPA/TGM-Plugin-Activation" target="_blank">https://github.com/TGMPA/TGM-Plugin-Activation</a><br>
-Lead Developers: Thomas Griffin (@jthomasgriffin), Gary Jones (@GaryJ), Juliette Reinders Folmer (@jrf_nl)<br>
-Version: 2.6.1 Requires at least: 3.7.0 Tested up to: 4.5.2
-
-Image used in screenshot.png: Photo by Jason Davis (<a href="https://iamjasondavis.com" target="_blank">https://iamjasondavis.com</a>)
+Image used in screenshot.png: Photo by Jason Davis (<a href="https://nerdbrandagency.com" target="_blank">https://nerdbrandagency.com</a>)
 
 #### Changelog
 
@@ -216,3 +210,15 @@ Image used in screenshot.png: Photo by Jason Davis (<a href="https://iamjasondav
 = 3.0.2 =
 
 Changed wp-block class max-width to 1200px. This change in editors canvas is to accomodate more room for editing in Gutenberg Editor. Especially with columns.
+
+= 3.1 =
+
+* Removed in read.me note about TGMP plugin activation. 
+* Changed theme and author URI to https://nerdbrandagency.com. 
+* Minified custom-functions.js and removed commented out js. 
+* Revised function.php add_theme_support for latest release of Gutenberg Editor (under function molecule_setup()). 
+* Revised function.php for get_stylesheet function to match Twenty-Sixteen. 
+* Removed Github connection for autoupdating theme in style.css.  
+* Removed theme styles (function.php) for block based editor (TwentySixteen 1.6).
+* Removed Comments from pages.
+* Removed editor-blocks.css, blocks.css, and editor-styles.css

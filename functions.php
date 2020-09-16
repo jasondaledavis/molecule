@@ -22,7 +22,7 @@
  *
  * @package WordPress
  * @subpackage Molecule
- * @since Molecule 3.0
+ * @since Molecule 3.1
  */
  
 //================================================================================//
@@ -30,9 +30,9 @@
 //================================================================================//
 require get_template_directory() . '/inc/theme-function.php';
 /**
- * Molecule only works in WordPress 4.4 or later.
+ * Molecule only works in WordPress 5.2 or later.
  */
-if ( version_compare( $GLOBALS['wp_version'], '4.4-alpha', '<' ) ) {
+if ( version_compare( $GLOBALS['wp_version'], '5.2', '<' ) ) {
     require get_template_directory() . '/inc/back-compat.php';
 }
 /**
@@ -109,37 +109,39 @@ function molecule_setup() {
     ) );
 
     /*
-    * Switch default core markup for search form, comment form, and comments
-    * to output valid HTML5.
-    */
-    add_theme_support( 'html5', array(
+     * Switch default core markup for search form, comment form, and comments
+     * to output valid HTML5.
+     */
+    add_theme_support(
+      'html5',
+      array(
         'search-form',
         'comment-form',
         'comment-list',
         'gallery',
         'caption',
-    ) );
+        'script',
+        'style',
+      )
+    );
 
-    /*
-    * This theme styles the visual editor to resemble the theme style,
-    * specifically font, colors, icons, and column width.
-    */
-    add_editor_style( array( 'assets/css/editor-style.css', molecule_fonts_url() ) );
+    // Add theme support for selective refresh for widgets.
+    add_theme_support( 'customize-selective-refresh-widgets' );
+
+    // Add support for Block Styles.
+    add_theme_support( 'wp-block-styles' );
 
     // Add support for full and wide align images.
     add_theme_support( 'align-wide' );
-    
-    // Load regular editor styles into the new block-based editor.
+
+    // Add support for editor styles.
     add_theme_support( 'editor-styles' );
 
-    // Load default block styles.
-    add_theme_support( 'wp-block-styles' );
+    // Enqueue editor styles.
+    add_editor_style( 'style-editor.css' );
 
-    // Add support for responsive embeds.
+    // Add support for responsive embedded content.
     add_theme_support( 'responsive-embeds' );
-
-    // Indicate widget sidebars can use selective refresh in the Customizer.
-    add_theme_support( 'customize-selective-refresh-widgets' );
 
 }
 endif; // molecule_setup
@@ -356,23 +358,11 @@ function molecule_scripts() {
   wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
 
   // Theme stylesheet.
-  // wp_enqueue_style( 'molecule-style', get_stylesheet_uri() );
   wp_enqueue_style( 'molecule-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
-
-  // Theme block stylesheet.
-  wp_enqueue_style( 'molecule-block-style', get_template_directory_uri() . '/assets/css/blocks.css', array( 'molecule-style' ), '20181230' );
 
   // Load the Internet Explorer specific stylesheet.
   wp_enqueue_style( 'molecule-ie', get_template_directory_uri() . '/assets/css/ie.css', array( 'molecule-style' ), '20160816' );
   wp_style_add_data( 'molecule-ie', 'conditional', 'lt IE 10' );
-
-  // Load the Internet Explorer 8 specific stylesheet.
-  wp_enqueue_style( 'molecule-ie8', get_template_directory_uri() . '/assets/css/ie8.css', array( 'molecule-style' ), '20160816' );
-  wp_style_add_data( 'molecule-ie8', 'conditional', 'lt IE 9' );
-
-  // Load the Internet Explorer 7 specific stylesheet.
-  wp_enqueue_style( 'molecule-ie7', get_template_directory_uri() . '/assets/css/ie7.css', array( 'molecule-style' ), '20160816' );
-  wp_style_add_data( 'molecule-ie7', 'conditional', 'lt IE 8' );
 
   // Load the html5 shiv.
   wp_enqueue_script( 'molecule-html5', get_template_directory_uri() . '/assets/js/html5.js', array(), '3.7.3' );
@@ -403,18 +393,25 @@ function molecule_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'molecule_scripts' );
 
+
+
 /**
- * Enqueue styles for the block-based editor.
+ * Fix skip link focus in IE11.
  *
- * @since Twenty Sixteen 1.6
+ * This does not enqueue the script because it is tiny and because it is only for IE11,
+ * thus it does not warrant having an entire dedicated blocking script being loaded.
+ *
+ * @link https://git.io/vWdr2
  */
-function molecule_block_editor_styles() {
-  // Block styles.
-  wp_enqueue_style( 'molecule-block-editor-style', get_template_directory_uri() . '/assets/css/editor-blocks.css', array(), '20181230' );
-  // Add custom fonts.
-  wp_enqueue_style( 'molecule-fonts', molecule_fonts_url(), array(), null );
+function molecule_skip_link_focus_fix() {
+  // The following is minified via `terser --compress --mangle -- js/skip-link-focus-fix.js`.
+  ?>
+  <script>
+  /(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+  </script>
+  <?php
 }
-add_action( 'enqueue_block_editor_assets', 'molecule_block_editor_styles' );
+add_action( 'wp_print_footer_scripts', 'molecule_skip_link_focus_fix' );
 
 /**
 * Adds custom classes to the array of body classes.
