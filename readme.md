@@ -2,7 +2,7 @@
 
 * Author: Jason Davis
 * Requires at least: WordPress 5.2+
-* Tested up to: WordPress 5.3+
+* Tested up to: WordPress 5.5+
 * Requires PHP: 5.2.4
 * Version: 3.1
 * License: GPLv2 or later
