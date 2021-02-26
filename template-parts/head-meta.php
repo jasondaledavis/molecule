@@ -16,5 +16,6 @@
     <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
     <link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>">
     <?php endif; ?>
+
     <?php wp_head(); ?>
 </head>

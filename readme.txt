@@ -213,12 +213,10 @@ Changed wp-block class max-width to 1200px. This change in editors canvas is to 
 
 = 3.1 =
 
-* Removed in read.me note about TGMP plugin activation. 
-* Changed theme and author URI to https://nerdbrandagency.com. 
-* Minified custom-functions.js and removed commented out js. 
-* Revised function.php add_theme_support for latest release of Gutenberg Editor (under function molecule_setup()). 
-* Revised function.php for get_stylesheet function to match Twenty-Sixteen. 
-* Removed Github connection for autoupdating theme in style.css.  
-* Removed theme styles (function.php) for block based editor (TwentySixteen 1.6).
-* Removed Comments from pages.
-* Removed editor-blocks.css, blocks.css, and editor-styles.css
+* Added new font calc CSS (credit to Lora Byrnside)
+* Removed font-size rem's, inherit for font-weight's, and Montserrat, and Merriweather font families. Replaced with NerdBrand branded font Raleway.
+* removed comments from pages
+* Fixed CSS for Gutenberg wide-width, and alignfull classes
+* Removed "print" css
+* changed theme URI to https://nerdbrandagency.com
+* Removed Github connection for updates.

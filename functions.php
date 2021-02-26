@@ -22,7 +22,7 @@
  *
  * @package WordPress
  * @subpackage Molecule
- * @since Molecule 3.1
+ * @since Molecule 3.0
  */
  
 //================================================================================//
@@ -305,19 +305,9 @@ function molecule_fonts_url() {
   $fonts     = array();
   $subsets   = 'latin,latin-ext';
 
-  /* translators: If there are characters in your language that are not supported by Open Sans, translate this to 'off'. Do not translate into your own language. */
-  if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'molecule' ) ) {
-    $fonts[] = 'Open Sans:400,700,900,400italic,700italic,900italic';
-  }
-
   /* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
-  if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'molecule' ) ) {
-    $fonts[] = 'Montserrat:300,400,500,600,700';
-  }
-
-  /* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
-  if ( 'off' !== _x( 'on', 'Merriweather font: on or off', 'molecule' ) ) {
-    $fonts[] = 'Merriweather:300,400,500,600,700';
+  if ( 'off' !== _x( 'on', 'Raleway font: on or off', 'molecule' ) ) {
+    $fonts[] = 'Raleway:300,400,500,600,700';
   }
 
   if ( $fonts ) {
@@ -392,8 +382,6 @@ function molecule_scripts() {
   );
 }
 add_action( 'wp_enqueue_scripts', 'molecule_scripts' );
-
-
 
 /**
  * Fix skip link focus in IE11.

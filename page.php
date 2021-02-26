@@ -41,7 +41,7 @@ get_header(); ?>
 
 						// Include the page content template.
 						get_template_part( 'template-parts/content', 'page' );
-
+						
 						// End of the loop.
 					endwhile;
 				?>
