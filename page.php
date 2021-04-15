@@ -13,7 +13,7 @@
 
 get_header(); ?>
 
-    <div class="grid wfull">
+    <div class="grid alignfull wfull">
 
         <div class="row">
 

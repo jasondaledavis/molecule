@@ -4,7 +4,7 @@
 * Requires at least: WordPress 5.2+
 * Tested up to: WordPress 5.3+
 * Requires PHP: 5.2.4
-* Version: 3.1
+* Version: 3.1.1
 * License: GPLv2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog
@@ -220,3 +220,7 @@ Changed wp-block class max-width to 1200px. This change in editors canvas is to 
 * Removed "print" css
 * changed theme URI to https://nerdbrandagency.com
 * Removed Github connection for updates.
+
+= 3.1.1 = 
+* updated custom-header.php to have H2 page subtitle not render in source code if not filed out in editor.
+* added "alignfull" class to main wrapper in page.php for latest Gutenberg CSS change.

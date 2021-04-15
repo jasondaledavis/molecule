@@ -83,7 +83,11 @@
           
             <?php } ?>
 
+            <?php if ( get_post_meta( $page_id, 'molecule_page_subtitle', true ) ) { ?>
+
             <h2 class="page-subtitle"><?php echo get_post_meta($post->ID, 'molecule_page_subtitle', true) ?></h2>
+
+            <?php } ?>
 
         </div>
 
