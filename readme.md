@@ -224,3 +224,6 @@ Changed wp-block class max-width to 1200px. This change in editors canvas is to 
 = 3.1.1 = 
 * updated custom-header.php to have H2 page subtitle not render in source code if not filed out in editor.
 * added "alignfull" class to main wrapper in page.php for latest Gutenberg CSS change.
+
+= 3.2 = 
+* Removed wfull class from page.php and single.php
